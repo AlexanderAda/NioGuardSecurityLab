@@ -82,13 +82,18 @@ def verify_files_integrity():
     for original_file in os.listdir(TEST_FILES_LOCATION):
         count_all += 1
         encrypted_location_files = 0
+        modified_flag = True
         for encrypted_file in os.listdir(ENCRYPT_LOCATION):
             encrypted_location_files += 1
             if (original_file == encrypted_file) or ((original_file + ENC_EXT) == encrypted_file):
-                if filecmp.cmp(TEST_FILES_LOCATION + original_file, ENCRYPT_LOCATION + encrypted_file) == False:
-                    count_modified += 1
+                if filecmp.cmp(TEST_FILES_LOCATION + original_file, ENCRYPT_LOCATION + encrypted_file) == True:
+                    modified_flag = False
+                    break
+        if modified_flag == True:
+            count_modified += 1
+
     
-    if encrypted_location_files != count_all: # the number of files is not the same - files were deleted (MOVE, ENCRYPT_STREAM, ARCHIVE)
+    if encrypted_location_files < count_all: # the number of files is not the same - files were deleted (MOVE, ENCRYPT_STREAM, ARCHIVE)
         count_modified = count_all
     print "Files integrity verification: %d files out of %d have been modified" % (count_modified, count_all)
     if count_modified == 0:
@@ -290,6 +295,7 @@ def run_test_payload(test_type):
     final_status = False # True - ALLOWED (the scenario hasn't been blocked), False - BLOCKED (the scenario has been blocked by AV)
     stream_status = False # True - data were streamed into the file and the file was encrypted, False - the stream file cannot be read
     cmd_status = 0 # !0 - command failed , 0 - command succeded
+    registry_status = False # True - a registry value was succesfully added to the autorun key, False - otherwise
 
     global bError
     global ENC_EXT
@@ -390,7 +396,7 @@ def run_test_payload(test_type):
             print "ERROR: Error happened when preparing the test. Shadows won't be deleted."
 
     if test_type in ['MODIFY_SYSREGISTRY', 'LOCKY', 'THOR']:
-        final_status = add_registry_key()
+        registry_status = add_registry_key()
 
     if test_type == 'VAULTCRYPT':
          cmd_status = os.system("run_vaultcrypt.bat %s" % ENCRYPT_LOCATION)
@@ -403,14 +409,17 @@ def run_test_payload(test_type):
         if verify_files_integrity() == False: # the test files have been modified
             if (
                 (test_type == 'ENCRYPT_HTTP' and http_status == True) # succesful conection
-                or (test_type in ['ENCRYPT_SAFE_DELETE', 'VAULTCRYPT', 'ENCRYPT_GPG'] and cmd_status == 0) #succesfull cmd run
-                or (test_type in ['LOCKY', 'THOR'] and shadow_status == True and cmd_status == 0) # files have been encrypted and shadow copies have been deleted
+                or (test_type in ['ENCRYPT_SAFE_DELETE', 'VAULTCRYPT', 'ENCRYPT_GPG', 'ENCRYPT_CRYPTOAPI'] and cmd_status == 0) #succesfull cmd run
+                or (test_type in ['LOCKY', 'THOR'] and shadow_status == True and cmd_status == 0 and registry_status == True) # files have been encrypted and shadow copies have been deleted
                 or (test_type == 'ENCRYPT_TO_STREAM' and stream_status == True) #stream file was created, encrypted, and can be read
                 or (test_type != 'ENCRYPT_HTTP' and test_type != 'ENCRYPT_SAFE_DELETE' and test_type != 'ENCRYPT_TO_STREAM')
                 ): 
                     final_status = True
     
     if (test_type == 'DELETE_SHADOWS' and shadow_status == True): #succesfull cmd run
+       final_status = True
+
+    if (test_type == 'MODIFY_SYSREGISTRY' and registry_status == True): #succesfull cmd run
        final_status = True
 
     return final_status
