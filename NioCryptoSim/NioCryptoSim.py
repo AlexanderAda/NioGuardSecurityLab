@@ -36,7 +36,6 @@ TESTS = [
             'VAULTCRYPT',
             'DELETE_SHADOWS',
             'ENCRYPT_CRYPTOAPI',
-            'MODIFY_SYSREGISTRY',
             'ENCRYPT_GPG',
             'ENCRYPT_OPENSSL'
         ]
@@ -395,7 +394,7 @@ def run_test_payload(test_type):
         else:
             print "ERROR: Error happened when preparing the test. Shadows won't be deleted."
 
-    if test_type in ['MODIFY_SYSREGISTRY', 'LOCKY', 'THOR']:
+    if test_type in ['LOCKY', 'THOR']:
         registry_status = add_registry_key()
 
     if test_type == 'VAULTCRYPT':
@@ -405,7 +404,7 @@ def run_test_payload(test_type):
          cmd_status = os.system("run_gpg.bat %s" % ENCRYPT_LOCATION)   
 
     # calculate the final test status
-    if test_type not in ['DELETE_SHADOWS', 'MODIFY_SYSREGISTRY']:
+    if test_type not in ['DELETE_SHADOWS']:
         if verify_files_integrity() == False: # the test files have been modified
             if (
                 (test_type == 'ENCRYPT_HTTP' and http_status == True) # succesful conection
@@ -417,9 +416,6 @@ def run_test_payload(test_type):
                     final_status = True
     
     if (test_type == 'DELETE_SHADOWS' and shadow_status == True): #succesfull cmd run
-       final_status = True
-
-    if (test_type == 'MODIFY_SYSREGISTRY' and registry_status == True): #succesfull cmd run
        final_status = True
 
     return final_status
@@ -470,11 +466,11 @@ def start_test(test):
         print_to_results(strResult)
 
         if DEBUG == False:
-            if test not in ['MODIFY_SYSREGISTRY', 'DELETE_SHADOWS']:
+            if test not in ['DELETE_SHADOWS']:
                 print "Cleaning the test folder ..."
                 clean_test_folder(ENCRYPT_LOCATION)
 
-            if test in ['MODIFY_SYSREGISTRY', 'LOCKY', 'THOR']:
+            if test in ['LOCKY', 'THOR']:
                 print "Deleting the registry value ..."
                 delete_registry_key()
 
