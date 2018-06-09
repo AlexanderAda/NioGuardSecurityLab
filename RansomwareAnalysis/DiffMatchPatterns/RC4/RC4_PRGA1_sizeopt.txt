@@ -1,0 +1,7 @@
+movzx   plaintext, byte ptr [edi+S]
+add     plaintext, [ebp+var_8]
+and     plaintext, 800000FFh
+jns     short loc_401050
+dec     plaintext
+or      plaintext, 0FFFFFF00h
+inc     plaintext

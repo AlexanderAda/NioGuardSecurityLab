@@ -1,0 +1,428 @@
+call func
+_s20_crypt@24   proc near               
+keystream       = byte ptr -50h
+n               = byte ptr -10h
+key             = dword ptr  8
+keylen          = dword ptr  0Ch
+nonce           = dword ptr  10h
+arg_C           = dword ptr  14h
+buf             = dword ptr  18h
+buflen          = dword ptr  1Ch
+push operand
+mov operand, operand
+sub operand, 50h
+xor operand, operand
+xor operand, operand
+cmp operand, operand
+mov operand, operand
+push operand
+push operand
+lea operand, operand
+stos
+stos
+stos
+stos
+stos
+mov operand, operand
+cmovz operand, operand
+cmp operand, 1
+mov operand, operand
+cmovz operand, operand
+mov operand, operand
+test operand, operand
+jz      loc_addr
+cmp operand, 0
+jz      short loc_addr
+mov operand, operand
+test operand, operand
+jz      short loc_addr
+mov operand, operand
+test operand, operand
+jz      short loc_addr
+mov operand, operand
+push operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+test operand, 3Fh
+jz      short loc_addr
+mov operand, operand
+shr operand, 6
+push operand
+lea operand, operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+push operand
+call func
+loc_addr:
+cmp operand, 0
+jbe     short loc_addr
+sub operand, operand
+loc_addr:
+mov operand, operand
+and operand, 3Fh
+jnz     short loc_addr
+mov operand, operand
+shr operand, 6
+push operand
+lea operand, operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+push operand
+call func
+loc_addr:
+mov operand, operand
+lea operand, operand
+xor operand, operand
+inc operand
+dec operand
+jnz     short loc_addr
+loc_addr:
+xor operand, operand
+pop operand
+jmp     short loc_addr
+
+loc_addr:
+
+xor operand, operand
+inc operand
+loc_addr:
+pop operand
+pop operand
+mov operand, operand
+pop operand
+retn 18h
+_s20_crypt@24   endp
+
+
+
+s20_doubleround proc near               
+x               = dword ptr  8
+push operand
+mov operand, operand
+push operand
+push operand
+mov operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+lea operand, operand
+push operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+lea operand, operand
+push operand
+push operand
+call func
+mov operand, operand
+lea operand, operand
+push operand
+lea operand, operand
+add operand, 3Ch
+push operand
+add operand, 0Ch
+push operand
+push operand
+call func
+push operand
+push operand
+mov operand, operand
+lea operand, operand
+push operand
+push operand
+call func
+lea operand, operand
+push operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+call func
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+lea operand, operand
+push operand
+call func
+pop operand
+pop operand
+pop operand
+pop operand
+retn 4
+s20_doubleround endp
+
+
+
+s20_expand16    proc near               
+t               = byte ptr -10h
+k               = dword ptr  8
+n               = dword ptr  0Ch
+keystream       = dword ptr  10h
+push operand
+mov operand, operand
+sub operand, 10h
+push operand
+push operand
+mov operand, operand
+xor operand, operand
+push operand
+push 14h
+mov operand, 61707865h
+mov operand, 3120646Eh
+mov operand, 79622D36h
+mov operand, 6B206574h
+pop operand
+loc_addr:
+mov operand, operand
+cd
+idiv operand
+lea operand, operand
+mov operand, operand
+mov operand, operand
+add operand, operand
+cmp operand, 40h
+jl      short loc_addr
+mov operand, operand
+lea operand, operand
+mov operand, operand
+sub operand, operand
+push 10h
+pop operand
+loc_addr:
+mov operand, operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+inc operand
+mov operand, operand
+inc operand
+dec operand
+jnz     short loc_addr
+push operand
+call func
+pop operand
+pop operand
+pop operand
+mov operand, operand
+pop operand
+retn 0Ch
+s20_expand16    endp
+
+
+
+s20_expand32    proc near               
+o               = byte ptr -10h
+k               = dword ptr  8
+n               = dword ptr  0Ch
+keystream       = dword ptr  10h
+push operand
+mov operand, operand
+sub operand, 10h
+push operand
+push operand
+mov operand, operand
+xor operand, operand
+push operand
+push 14h
+mov operand, 61707865h
+mov operand, 3320646Eh
+mov operand, 79622D32h
+mov operand, 6B206574h
+pop operand
+loc_addr:
+mov operand, operand
+cd
+idiv operand
+lea operand, operand
+mov operand, operand
+mov operand, operand
+add operand, operand
+cmp operand, 40h
+jl      short loc_addr
+mov operand, operand
+lea operand, operand
+mov operand, operand
+add operand, 10h
+push 10h
+pop operand
+loc_addr:
+mov operand, operand
+mov operand, operand
+mov operand, operand
+inc operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+inc operand
+inc operand
+dec operand
+jnz     short loc_addr
+push operand
+call func
+pop operand
+pop operand
+pop operand
+mov operand, operand
+pop operand
+retn 0Ch
+s20_expand32    endp
+
+
+
+s20_hash        proc near               
+
+x               = dword ptr -80h
+z               = dword ptr -40h
+seq             = dword ptr  8
+push operand
+mov operand, operand
+sub operand, 80h
+push operand
+mov operand, operand
+push operand
+xor operand, operand
+push operand
+lea operand, operand
+mov operand, operand
+loc_addr:
+movzx operand, operand
+movzx operand, operand
+lea operand, operand
+shl operand, 8
+add operand, operand
+movzx operand, operand
+shl operand, 8
+add operand, operand
+movzx operand, operand
+shl operand, 8
+add operand, operand
+mov operand, operand
+mov operand, operand
+add operand, 4
+cmp operand, 40h
+jl      short loc_addr
+push 0Ah
+pop operand
+loc_addr:
+lea operand, operand
+push operand
+call func
+dec operand
+jnz     short loc_addr
+loc_addr:
+mov operand, operand
+add operand, operand
+lea operand, operand
+push operand
+push operand
+call func
+add operand, 4
+cmp operand, 40h
+jl      short loc_addr
+pop operand
+pop operand
+pop operand
+mov operand, operand
+pop operand
+retn 4
+s20_hash        endp
+
+
+
+s20_quarterround proc near              
+
+y0              = dword ptr  8
+y1              = dword ptr  0Ch
+y2              = dword ptr  10h
+y3              = dword ptr  14h
+push operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+push operand
+mov operand, operand
+push operand
+mov operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 7
+xor operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 9
+xor operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 0Dh
+xor operand, operand
+mov operand, operand
+add operand, operand
+ror operand, 0Eh
+xor operand, operand
+pop operand
+pop operand
+pop operand
+retn 10h
+s20_quarterround endp
+
+
+
+s20_rev_littleendian proc near          
+
+b               = dword ptr  8
+w               = dword ptr  0Ch
+push operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+shr operand, 8
+mov operand, operand
+mov operand, operand
+shr operand, 10h
+mov operand, operand
+shr operand, 18h
+mov operand, operand
+mov operand, operand
+pop operand
+retn 8
+s20_rev_littleendian endp

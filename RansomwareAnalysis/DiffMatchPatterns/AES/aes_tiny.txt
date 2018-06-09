@@ -1,0 +1,2129 @@
+void __stdcall KeyExpansion(char *RoundKey, const char *Key)
+KeyExpansion    proc near               ; CODE XREF: AES_init_ctx_iv(AES_ctx *,uchar const *,uchar const *)+Bp
+
+j               = dword ptr -10h
+k               = dword ptr -0Ch
+i               = dword ptr -8
+tempa           = byte ptr -4
+RoundKey        = dword ptr  8
+Key             = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    esi
+                mov     [ebp+i], 0
+                jmp     short loc_401019
+; ---------------------------------------------------------------------------
+
+loc_401010:                             ; CODE XREF: KeyExpansion+6Dj
+                mov     eax, [ebp+i]
+                add     eax, 1
+                mov     [ebp+i], eax
+
+loc_401019:                             ; CODE XREF: KeyExpansion+Ej
+                cmp     [ebp+i], 8
+                jnb     short loc_40106F
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+RoundKey]
+                mov     eax, [ebp+i]
+                mov     esi, [ebp+Key]
+                mov     al, [esi+eax*4]
+                mov     [edx+ecx*4], al
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+RoundKey]
+                mov     eax, [ebp+i]
+                mov     esi, [ebp+Key]
+                mov     al, [esi+eax*4+1]
+                mov     [edx+ecx*4+1], al
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+RoundKey]
+                mov     eax, [ebp+i]
+                mov     esi, [ebp+Key]
+                mov     al, [esi+eax*4+2]
+                mov     [edx+ecx*4+2], al
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+RoundKey]
+                mov     eax, [ebp+i]
+                mov     esi, [ebp+Key]
+                mov     al, [esi+eax*4+3]
+                mov     [edx+ecx*4+3], al
+                jmp     short loc_401010
+; ---------------------------------------------------------------------------
+
+loc_40106F:                             ; CODE XREF: KeyExpansion+1Dj
+                mov     [ebp+i], 8
+                jmp     short loc_401081
+; ---------------------------------------------------------------------------
+
+loc_401078:                             ; CODE XREF: KeyExpansion+32Bj
+                mov     ecx, [ebp+i]
+                add     ecx, 1
+                mov     [ebp+i], ecx
+
+loc_401081:                             ; CODE XREF: KeyExpansion+76j
+                cmp     [ebp+i], 3Ch
+                jnb     loc_401330
+                mov     edx, [ebp+i]
+                lea     eax, ds:0FFFFFFFCh[edx*4]
+                mov     [ebp+k], eax
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     eax, [ebp+RoundKey]
+                add     eax, [ebp+k]
+                mov     cl, [eax]
+                mov     [ebp+edx+tempa], cl
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, [ebp+RoundKey]
+                add     eax, [ebp+k]
+                mov     cl, [eax+1]
+                mov     [ebp+edx+tempa], cl
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, [ebp+RoundKey]
+                add     eax, [ebp+k]
+                mov     cl, [eax+2]
+                mov     [ebp+edx+tempa], cl
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     ecx, [ebp+RoundKey]
+                add     ecx, [ebp+k]
+                mov     dl, [ecx+3]
+                mov     [ebp+eax+tempa], dl
+                mov     eax, [ebp+i]
+                xor     edx, edx
+                mov     ecx, 8
+                div     ecx
+                test    edx, edx
+                jnz     loc_401205
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, [ebp+eax+tempa]
+                mov     [ebp+k], ecx
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     dl, [ebp+edx+tempa]
+                mov     [ebp+ecx+tempa], dl
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [ebp+eax+tempa]
+                mov     [ebp+ecx+tempa], dl
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [ebp+ecx+tempa]
+                mov     [ebp+edx+tempa], al
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     al, byte ptr [ebp+k]
+                mov     [ebp+edx+tempa], al
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   eax, [ebp+edx+tempa]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     al, ds:sbox[eax]
+                mov     [ebp+edx+tempa], al
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   edx, [ebp+ecx+tempa]
+                mov     eax, 1
+                shl     eax, 0
+                mov     cl, ds:sbox[edx]
+                mov     [ebp+eax+tempa], cl
+                mov     edx, 1
+                shl     edx, 1
+                movzx   eax, [ebp+edx+tempa]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     dl, ds:sbox[eax]
+                mov     [ebp+ecx+tempa], dl
+                mov     eax, 1
+                imul    ecx, eax, 3
+                movzx   edx, [ebp+ecx+tempa]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     dl, ds:sbox[edx]
+                mov     [ebp+ecx+tempa], dl
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, [ebp+ecx+tempa]
+                mov     eax, [ebp+i]
+                shr     eax, 3
+                movzx   ecx, ds:Rcon[eax]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     [ebp+ecx+tempa], dl
+
+loc_401205:                             ; CODE XREF: KeyExpansion+F8j
+                mov     eax, [ebp+i]
+                xor     edx, edx
+                mov     ecx, 8
+                div     ecx
+                cmp     edx, 4
+                jnz     short loc_401290
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, [ebp+eax+tempa]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     cl, ds:sbox[ecx]
+                mov     [ebp+eax+tempa], cl
+                mov     edx, 1
+                shl     edx, 0
+                movzx   eax, [ebp+edx+tempa]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, ds:sbox[eax]
+                mov     [ebp+ecx+tempa], dl
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, [ebp+eax+tempa]
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, ds:sbox[ecx]
+                mov     [ebp+edx+tempa], al
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                movzx   eax, [ebp+edx+tempa]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     al, ds:sbox[eax]
+                mov     [ebp+edx+tempa], al
+
+loc_401290:                             ; CODE XREF: KeyExpansion+214j
+                mov     ecx, [ebp+i]
+                shl     ecx, 2
+                mov     [ebp+j], ecx
+                mov     edx, [ebp+i]
+                lea     eax, ds:0FFFFFFE0h[edx*4]
+                mov     [ebp+k], eax
+                mov     ecx, [ebp+RoundKey]
+                add     ecx, [ebp+k]
+                movzx   edx, byte ptr [ecx]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   eax, [ebp+ecx+tempa]
+                xor     edx, eax
+                mov     ecx, [ebp+RoundKey]
+                add     ecx, [ebp+j]
+                mov     [ecx], dl
+                mov     edx, [ebp+RoundKey]
+                add     edx, [ebp+k]
+                movzx   eax, byte ptr [edx+1]
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   edx, [ebp+ecx+tempa]
+                xor     eax, edx
+                mov     ecx, [ebp+RoundKey]
+                add     ecx, [ebp+j]
+                mov     [ecx+1], al
+                mov     edx, [ebp+RoundKey]
+                add     edx, [ebp+k]
+                movzx   eax, byte ptr [edx+2]
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   edx, [ebp+ecx+tempa]
+                xor     eax, edx
+                mov     ecx, [ebp+RoundKey]
+                add     ecx, [ebp+j]
+                mov     [ecx+2], al
+                mov     edx, [ebp+RoundKey]
+                add     edx, [ebp+k]
+                movzx   eax, byte ptr [edx+3]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                movzx   ecx, [ebp+edx+tempa]
+                xor     eax, ecx
+                mov     edx, [ebp+RoundKey]
+                add     edx, [ebp+j]
+                mov     [edx+3], al
+                jmp     loc_401078
+; ---------------------------------------------------------------------------
+
+loc_401330:                             ; CODE XREF: KeyExpansion+85j
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+KeyExpansion    endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall AES_init_ctx_iv(AES_ctx *ctx, const char *key, const char *iv)
+?AES_init_ctx_iv@@YGXPAUAES_ctx@@PBE1@Z proc near ; CODE XREF: test_decrypt_cbc+368p
+                                        ; test_encrypt_cbc+368p
+
+ctx             = dword ptr  8
+key             = dword ptr  0Ch
+iv              = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                mov     eax, [ebp+key]
+                push    eax             ; Key
+                mov     ecx, [ebp+ctx]
+                push    ecx             ; RoundKey
+                call    KeyExpansion
+                mov     edx, [ebp+ctx]
+                add     edx, 0F0h
+                mov     eax, [ebp+iv]
+                mov     ecx, [eax]
+                mov     [edx], ecx
+                mov     ecx, [eax+4]
+                mov     [edx+4], ecx
+                mov     ecx, [eax+8]
+                mov     [edx+8], ecx
+                mov     eax, [eax+0Ch]
+                mov     [edx+0Ch], eax
+                pop     ebp
+                retn    0Ch
+?AES_init_ctx_iv@@YGXPAUAES_ctx@@PBE1@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall AddRoundKey(char round, char (*state)[4][4], char *RoundKey)
+AddRoundKey     proc near               ; CODE XREF: Cipher+12p Cipher+57p ...
+
+i               = byte ptr -2
+j               = byte ptr -1
+round           = byte ptr  8
+state           = dword ptr  0Ch
+RoundKey        = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     [ebp+i], 0
+                jmp     short loc_401393
+; ---------------------------------------------------------------------------
+
+loc_40138B:                             ; CODE XREF: AddRoundKey:loc_4013F7j
+                mov     al, [ebp+i]
+                add     al, 1
+                mov     [ebp+i], al
+
+loc_401393:                             ; CODE XREF: AddRoundKey+9j
+                movzx   ecx, [ebp+i]
+                cmp     ecx, 4
+                jge     short loc_4013F9
+                mov     [ebp+j], 0
+                jmp     short loc_4013AB
+; ---------------------------------------------------------------------------
+
+loc_4013A2:                             ; CODE XREF: AddRoundKey+75j
+                mov     dl, [ebp+j]
+                add     dl, 1
+                mov     [ebp+j], dl
+
+loc_4013AB:                             ; CODE XREF: AddRoundKey+20j
+                movzx   eax, [ebp+j]
+                cmp     eax, 4
+                jge     short loc_4013F7
+                movzx   ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                movzx   ecx, [ebp+j]
+                movzx   edx, [ebp+round]
+                shl     edx, 2
+                movzx   esi, [ebp+i]
+                shl     esi, 2
+                lea     edx, [esi+edx*4]
+                movzx   esi, [ebp+j]
+                add     esi, [ebp+RoundKey]
+                movzx   edx, byte ptr [esi+edx]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                movzx   ecx, [ebp+j]
+                movzx   edx, [ebp+i]
+                mov     esi, [ebp+state]
+                lea     edx, [esi+edx*4]
+                mov     [edx+ecx], al
+                jmp     short loc_4013A2
+; ---------------------------------------------------------------------------
+
+loc_4013F7:                             ; CODE XREF: AddRoundKey+32j
+                jmp     short loc_40138B
+; ---------------------------------------------------------------------------
+
+loc_4013F9:                             ; CODE XREF: AddRoundKey+1Aj
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+AddRoundKey     endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall SubBytes(char (*state)[4][4])
+SubBytes        proc near               ; CODE XREF: Cipher+33p Cipher+62p
+
+i               = byte ptr -2
+j               = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+i], 0
+                jmp     short loc_401412
+; ---------------------------------------------------------------------------
+
+loc_40140A:                             ; CODE XREF: SubBytes:loc_40145Ej
+                mov     al, [ebp+i]
+                add     al, 1
+                mov     [ebp+i], al
+
+loc_401412:                             ; CODE XREF: SubBytes+8j
+                movzx   ecx, [ebp+i]
+                cmp     ecx, 4
+                jge     short loc_401460
+                mov     [ebp+j], 0
+                jmp     short loc_40142A
+; ---------------------------------------------------------------------------
+
+loc_401421:                             ; CODE XREF: SubBytes+5Cj
+                mov     dl, [ebp+j]
+                add     dl, 1
+                mov     [ebp+j], dl
+
+loc_40142A:                             ; CODE XREF: SubBytes+1Fj
+                movzx   eax, [ebp+j]
+                cmp     eax, 4
+                jge     short loc_40145E
+                movzx   ecx, [ebp+j]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                movzx   ecx, [ebp+i]
+                movzx   edx, byte ptr [eax+ecx]
+                movzx   eax, [ebp+j]
+                mov     ecx, [ebp+state]
+                lea     eax, [ecx+eax*4]
+                movzx   ecx, [ebp+i]
+                mov     dl, ds:sbox[edx]
+                mov     [eax+ecx], dl
+                jmp     short loc_401421
+; ---------------------------------------------------------------------------
+
+loc_40145E:                             ; CODE XREF: SubBytes+31j
+                jmp     short loc_40140A
+; ---------------------------------------------------------------------------
+
+loc_401460:                             ; CODE XREF: SubBytes+19j
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+SubBytes        endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall ShiftRows(char (*state)[4][4])
+ShiftRows       proc near               ; CODE XREF: Cipher+3Cp Cipher+6Bp
+
+temp            = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     al, [ecx+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     dl, [edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [ebp+temp]
+                mov     [eax+ecx], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [ecx+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ebp+temp]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [edx+eax]
+                mov     [ebp+temp], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     al, [eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ebp+temp]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     al, [eax+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, [edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, [edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, [edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     al, [ebp+temp]
+                mov     [edx+ecx], al
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+ShiftRows       endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; char __stdcall xtime(char x)
+xtime           proc near               ; CODE XREF: MixColumns+CEp
+                                        ; MixColumns+142p ...
+
+x               = byte ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                movzx   eax, [ebp+x]
+                shl     eax, 1
+                movzx   ecx, [ebp+x]
+                sar     ecx, 7
+                and     ecx, 1
+                imul    edx, ecx, 1Bh
+                xor     eax, edx
+                pop     ebp
+                retn    4
+xtime           endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall MixColumns(char (*state)[4][4])
+MixColumns      proc near               ; CODE XREF: Cipher+45p
+
+t               = byte ptr -4
+Tmp             = byte ptr -3
+Tm              = byte ptr -2
+i               = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     [ebp+i], 0
+                jmp     short loc_4016D3
+; ---------------------------------------------------------------------------
+
+loc_4016CB:                             ; CODE XREF: MixColumns+256j
+                mov     al, [ebp+i]
+                add     al, 1
+                mov     [ebp+i], al
+
+loc_4016D3:                             ; CODE XREF: MixColumns+9j
+                movzx   ecx, [ebp+i]
+                cmp     ecx, 4
+                jge     loc_40191B
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     cl, [ecx+eax]
+                mov     [ebp+t], cl
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, byte ptr [ecx+eax]
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     edx, [eax+edx*4]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   edx, byte ptr [edx+eax]
+                xor     ecx, edx
+                movzx   eax, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+eax*4]
+                mov     edx, 1
+                shl     edx, 1
+                movzx   eax, byte ptr [eax+edx]
+                xor     ecx, eax
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     edx, [eax+edx*4]
+                mov     eax, 1
+                imul    eax, 3
+                movzx   edx, byte ptr [edx+eax]
+                xor     ecx, edx
+                mov     [ebp+Tmp], cl
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+state]
+                lea     edx, [ecx+eax*4]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, byte ptr [edx+ecx]
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+state]
+                lea     eax, [ecx+eax*4]
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   eax, byte ptr [eax+ecx]
+                xor     edx, eax
+                mov     [ebp+Tm], dl
+                movzx   ecx, [ebp+Tm]
+                push    ecx             ; x
+                call    xtime
+                mov     [ebp+Tm], al
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   edx, [ebp+Tm]
+                movzx   esi, [ebp+Tmp]
+                xor     edx, esi
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   ecx, [ebp+i]
+                mov     esi, [ebp+state]
+                lea     ecx, [esi+ecx*4]
+                mov     [ecx+edx], al
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                shl     edx, 0
+                movzx   eax, byte ptr [ecx+edx]
+                movzx   ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     ecx, [edx+ecx*4]
+                mov     edx, 1
+                shl     edx, 1
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     eax, ecx
+                mov     [ebp+Tm], al
+                movzx   edx, [ebp+Tm]
+                push    edx             ; x
+                call    xtime
+                mov     [ebp+Tm], al
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+state]
+                lea     edx, [ecx+eax*4]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   ecx, [ebp+Tm]
+                movzx   esi, [ebp+Tmp]
+                xor     ecx, esi
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                movzx   ecx, [ebp+i]
+                mov     esi, [ebp+state]
+                lea     ecx, [esi+ecx*4]
+                mov     [ecx+eax], dl
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                shl     edx, 1
+                movzx   eax, byte ptr [ecx+edx]
+                movzx   ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     ecx, [edx+ecx*4]
+                mov     edx, 1
+                imul    edx, 3
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     eax, ecx
+                mov     [ebp+Tm], al
+                movzx   edx, [ebp+Tm]
+                push    edx             ; x
+                call    xtime
+                mov     [ebp+Tm], al
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+state]
+                lea     edx, [ecx+eax*4]
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, [ebp+Tm]
+                movzx   esi, [ebp+Tmp]
+                xor     ecx, esi
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, [ebp+i]
+                mov     esi, [ebp+state]
+                lea     ecx, [esi+ecx*4]
+                mov     [ecx+eax], dl
+                movzx   edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 3
+                movzx   ecx, byte ptr [ecx+eax]
+                movzx   edx, [ebp+t]
+                xor     ecx, edx
+                mov     [ebp+Tm], cl
+                movzx   eax, [ebp+Tm]
+                push    eax             ; x
+                call    xtime
+                mov     [ebp+Tm], al
+                movzx   ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                movzx   ecx, [ebp+Tm]
+                movzx   esi, [ebp+Tmp]
+                xor     ecx, esi
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                movzx   eax, [ebp+i]
+                mov     esi, [ebp+state]
+                lea     eax, [esi+eax*4]
+                mov     [eax+ecx], dl
+                jmp     loc_4016CB
+; ---------------------------------------------------------------------------
+
+loc_40191B:                             ; CODE XREF: MixColumns+1Aj
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+MixColumns      endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall InvMixColumns(char (*state)[4][4])
+InvMixColumns   proc near               ; CODE XREF: InvCipher+56p
+
+i               = dword ptr -8
+d               = byte ptr -4
+c               = byte ptr -3
+b               = byte ptr -2
+a               = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 8
+                push    ebx
+                push    esi
+                mov     [ebp+i], 0
+                jmp     short loc_40194A
+; ---------------------------------------------------------------------------
+
+loc_401941:                             ; CODE XREF: InvMixColumns+8B2j
+                mov     eax, [ebp+i]
+                add     eax, 1
+                mov     [ebp+i], eax
+
+loc_40194A:                             ; CODE XREF: InvMixColumns+Fj
+                cmp     [ebp+i], 4
+                jge     loc_4021E7
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     al, [eax+edx]
+                mov     [ebp+a], al
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [eax+ecx]
+                mov     [ebp+b], dl
+                mov     eax, [ebp+i]
+                mov     ecx, [ebp+state]
+                lea     edx, [ecx+eax*4]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [edx+eax]
+                mov     [ebp+c], cl
+                mov     edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     cl, [ecx+eax]
+                mov     [ebp+d], cl
+                movzx   edx, [ebp+a]
+                imul    ebx, edx, 0
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     ebx, ecx
+                movzx   edx, [ebp+a]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     ebx, ecx
+                movzx   edx, [ebp+a]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     ebx, edx
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     ebx, edx
+                movzx   esi, [ebp+b]
+                movzx   eax, [ebp+b]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+b]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                movzx   eax, [ebp+b]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                xor     ebx, esi
+                movzx   esi, [ebp+c]
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+c]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                xor     ebx, esi
+                movzx   esi, [ebp+d]
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                movzx   eax, [ebp+d]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                xor     ebx, esi
+                mov     ecx, [ebp+i]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     [eax+edx], bl
+                movzx   ebx, [ebp+a]
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     ebx, edx
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     ebx, eax
+                movzx   ecx, [ebp+a]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     ebx, ecx
+                movzx   edx, [ebp+a]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     ebx, ecx
+                movzx   edx, [ebp+b]
+                imul    esi, edx, 0
+                movzx   eax, [ebp+b]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+b]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+b]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     esi, edx
+                movzx   eax, [ebp+b]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                xor     ebx, esi
+                movzx   esi, [ebp+c]
+                movzx   eax, [ebp+c]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+c]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                movzx   eax, [ebp+c]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                xor     ebx, esi
+                movzx   esi, [ebp+d]
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                xor     ebx, esi
+                mov     edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                shl     edx, 0
+                mov     [ecx+edx], bl
+                movzx   ebx, [ebp+a]
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     ebx, edx
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     ebx, edx
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     ebx, eax
+                movzx   ecx, [ebp+a]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     ebx, eax
+                movzx   esi, [ebp+b]
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                movzx   edx, [ebp+b]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     esi, edx
+                movzx   eax, [ebp+b]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                xor     ebx, esi
+                movzx   eax, [ebp+c]
+                imul    esi, eax, 0
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     esi, edx
+                movzx   eax, [ebp+c]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     esi, edx
+                movzx   eax, [ebp+c]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                xor     ebx, esi
+                movzx   esi, [ebp+d]
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                xor     esi, edx
+                movzx   eax, [ebp+d]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                xor     ebx, esi
+                mov     edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                shl     edx, 1
+                mov     [ecx+edx], bl
+                movzx   ebx, [ebp+a]
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     ebx, ecx
+                movzx   edx, [ebp+a]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     ebx, edx
+                movzx   eax, [ebp+a]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     ebx, eax
+                movzx   ecx, [ebp+a]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     ebx, eax
+                movzx   esi, [ebp+b]
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+b]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+b]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                xor     ebx, esi
+                movzx   esi, [ebp+c]
+                movzx   edx, [ebp+c]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                movzx   edx, [ebp+c]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                imul    edx, ecx, 0
+                xor     esi, edx
+                movzx   eax, [ebp+c]
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+c]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                imul    eax, edx, 0
+                xor     esi, eax
+                xor     ebx, esi
+                movzx   ecx, [ebp+d]
+                imul    esi, ecx, 0
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                xor     esi, eax
+                movzx   ecx, [ebp+d]
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                xor     esi, ecx
+                movzx   edx, [ebp+d]
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                push    eax             ; x
+                call    xtime
+                movzx   ecx, al
+                push    ecx             ; x
+                call    xtime
+                movzx   edx, al
+                push    edx             ; x
+                call    xtime
+                movzx   eax, al
+                imul    ecx, eax, 0
+                xor     esi, ecx
+                xor     ebx, esi
+                mov     edx, [ebp+i]
+                mov     eax, [ebp+state]
+                lea     ecx, [eax+edx*4]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     [ecx+eax], bl
+                jmp     loc_401941
+; ---------------------------------------------------------------------------
+
+loc_4021E7:                             ; CODE XREF: InvMixColumns+1Ej
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+InvMixColumns   endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall InvSubBytes(char (*state)[4][4])
+InvSubBytes     proc near               ; CODE XREF: InvCipher+3Bp
+                                        ; InvCipher+6Ap
+
+i               = byte ptr -2
+j               = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+i], 0
+                jmp     short loc_402202
+; ---------------------------------------------------------------------------
+
+loc_4021FA:                             ; CODE XREF: InvSubBytes:loc_40224Ej
+                mov     al, [ebp+i]
+                add     al, 1
+                mov     [ebp+i], al
+
+loc_402202:                             ; CODE XREF: InvSubBytes+8j
+                movzx   ecx, [ebp+i]
+                cmp     ecx, 4
+                jge     short loc_402250
+                mov     [ebp+j], 0
+                jmp     short loc_40221A
+; ---------------------------------------------------------------------------
+
+loc_402211:                             ; CODE XREF: InvSubBytes+5Cj
+                mov     dl, [ebp+j]
+                add     dl, 1
+                mov     [ebp+j], dl
+
+loc_40221A:                             ; CODE XREF: InvSubBytes+1Fj
+                movzx   eax, [ebp+j]
+                cmp     eax, 4
+                jge     short loc_40224E
+                movzx   ecx, [ebp+j]
+                mov     edx, [ebp+state]
+                lea     eax, [edx+ecx*4]
+                movzx   ecx, [ebp+i]
+                movzx   edx, byte ptr [eax+ecx]
+                movzx   eax, [ebp+j]
+                mov     ecx, [ebp+state]
+                lea     eax, [ecx+eax*4]
+                movzx   ecx, [ebp+i]
+                mov     dl, ds:rsbox[edx]
+                mov     [eax+ecx], dl
+                jmp     short loc_402211
+; ---------------------------------------------------------------------------
+
+loc_40224E:                             ; CODE XREF: InvSubBytes+31j
+                jmp     short loc_4021FA
+; ---------------------------------------------------------------------------
+
+loc_402250:                             ; CODE XREF: InvSubBytes+19j
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+InvSubBytes     endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall InvShiftRows(char (*state)[4][4])
+InvShiftRows    proc near               ; CODE XREF: InvCipher+32p
+                                        ; InvCipher+61p
+
+temp            = byte ptr -1
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     al, [ecx+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     dl, [edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [ebp+temp]
+                mov     [eax+ecx], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [ecx+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ebp+temp]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [edx+eax]
+                mov     [ebp+temp], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     al, [eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ebp+temp]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     al, [eax+edx]
+                mov     [ebp+temp], al
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     al, [ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     al, [ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, [edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     cl, [ebp+temp]
+                mov     [eax+edx], cl
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+InvShiftRows    endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall Cipher(char (*state)[4][4], char *RoundKey)
+Cipher          proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+40p
+
+round           = byte ptr -1
+state           = dword ptr  8
+RoundKey        = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+round], 0
+                mov     eax, [ebp+RoundKey]
+                push    eax             ; RoundKey
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                push    0               ; round
+                call    AddRoundKey
+                mov     [ebp+round], 1
+                jmp     short loc_4024B6
+; ---------------------------------------------------------------------------
+
+loc_4024AD:                             ; CODE XREF: Cipher+5Cj
+                mov     dl, [ebp+round]
+                add     dl, 1
+                mov     [ebp+round], dl
+
+loc_4024B6:                             ; CODE XREF: Cipher+1Bj
+                movzx   eax, [ebp+round]
+                cmp     eax, 0Eh
+                jge     short loc_4024EE
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                call    SubBytes
+                mov     edx, [ebp+state]
+                push    edx             ; state
+                call    ShiftRows
+                mov     eax, [ebp+state]
+                push    eax             ; state
+                call    MixColumns
+                mov     ecx, [ebp+RoundKey]
+                push    ecx             ; RoundKey
+                mov     edx, [ebp+state]
+                push    edx             ; state
+                movzx   eax, [ebp+round]
+                push    eax             ; round
+                call    AddRoundKey
+                jmp     short loc_4024AD
+; ---------------------------------------------------------------------------
+
+loc_4024EE:                             ; CODE XREF: Cipher+2Dj
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                call    SubBytes
+                mov     edx, [ebp+state]
+                push    edx             ; state
+                call    ShiftRows
+                mov     eax, [ebp+RoundKey]
+                push    eax             ; RoundKey
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                push    0Eh             ; round
+                call    AddRoundKey
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+Cipher          endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall InvCipher(char (*state)[4][4], char *RoundKey)
+InvCipher       proc near               ; CODE XREF: AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+42p
+
+round           = byte ptr -1
+state           = dword ptr  8
+RoundKey        = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+round], 0
+                mov     eax, [ebp+RoundKey]
+                push    eax             ; RoundKey
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                push    0Eh             ; round
+                call    AddRoundKey
+                mov     [ebp+round], 0Dh
+                jmp     short loc_402546
+; ---------------------------------------------------------------------------
+
+loc_40253D:                             ; CODE XREF: InvCipher+5Bj
+                mov     dl, [ebp+round]
+                sub     dl, 1
+                mov     [ebp+round], dl
+
+loc_402546:                             ; CODE XREF: InvCipher+1Bj
+                movzx   eax, [ebp+round]
+                test    eax, eax
+                jle     short loc_40257D
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                call    InvShiftRows
+                mov     edx, [ebp+state]
+                push    edx             ; state
+                call    InvSubBytes
+                mov     eax, [ebp+RoundKey]
+                push    eax             ; RoundKey
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                movzx   edx, [ebp+round]
+                push    edx             ; round
+                call    AddRoundKey
+                mov     eax, [ebp+state]
+                push    eax             ; state
+                call    InvMixColumns
+                jmp     short loc_40253D
+; ---------------------------------------------------------------------------
+
+loc_40257D:                             ; CODE XREF: InvCipher+2Cj
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                call    InvShiftRows
+                mov     edx, [ebp+state]
+                push    edx             ; state
+                call    InvSubBytes
+                mov     eax, [ebp+RoundKey]
+                push    eax             ; RoundKey
+                mov     ecx, [ebp+state]
+                push    ecx             ; state
+                push    0               ; round
+                call    AddRoundKey
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+InvCipher       endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall XorWithIv(char *buf, char *Iv)
+XorWithIv       proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+33p
+                                        ; AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+55p
+
+i               = byte ptr -1
+buf             = dword ptr  8
+Iv              = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+i], 0
+                jmp     short loc_4025C2
+; ---------------------------------------------------------------------------
+
+loc_4025BA:                             ; CODE XREF: XorWithIv+3Dj
+                mov     al, [ebp+i]
+                add     al, 1
+                mov     [ebp+i], al
+
+loc_4025C2:                             ; CODE XREF: XorWithIv+8j
+                movzx   ecx, [ebp+i]
+                cmp     ecx, 10h
+                jge     short loc_4025EF
+                movzx   edx, [ebp+i]
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+Iv]
+                movzx   eax, byte ptr [ecx+eax]
+                mov     ecx, [ebp+buf]
+                movzx   edx, byte ptr [ecx+edx]
+                xor     edx, eax
+                movzx   eax, [ebp+i]
+                mov     ecx, [ebp+buf]
+                mov     [ecx+eax], dl
+                jmp     short loc_4025BA
+; ---------------------------------------------------------------------------
+
+loc_4025EF:                             ; CODE XREF: XorWithIv+19j
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+XorWithIv       endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall AES_CBC_encrypt_buffer(AES_ctx *ctx, char *buf, unsigned int length)
+?AES_CBC_encrypt_buffer@@YGXPAUAES_ctx@@PAEI@Z proc near ; CODE XREF: test_encrypt_cbc+37Ap
+
+Iv              = dword ptr -8
+i               = dword ptr -4
+ctx             = dword ptr  8
+buf             = dword ptr  0Ch
+length          = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 8
+                mov     eax, [ebp+ctx]
+                add     eax, 0F0h
+                mov     [ebp+Iv], eax
+                mov     [ebp+i], 0
+                jmp     short loc_402623
+; ---------------------------------------------------------------------------
+
+loc_40261A:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+54j
+                mov     ecx, [ebp+i]
+                add     ecx, 10h
+                mov     [ebp+i], ecx
+
+loc_402623:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+18j
+                mov     edx, [ebp+i]
+                cmp     edx, [ebp+length]
+                jnb     short loc_402656
+                mov     eax, [ebp+Iv]
+                push    eax             ; Iv
+                mov     ecx, [ebp+buf]
+                push    ecx             ; buf
+                call    XorWithIv
+                mov     edx, [ebp+ctx]
+                push    edx             ; RoundKey
+                mov     eax, [ebp+buf]
+                push    eax             ; state
+                call    Cipher
+                mov     ecx, [ebp+buf]
+                mov     [ebp+Iv], ecx
+                mov     edx, [ebp+buf]
+                add     edx, 10h
+                mov     [ebp+buf], edx
+                jmp     short loc_40261A
+; ---------------------------------------------------------------------------
+
+loc_402656:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+29j
+                mov     eax, [ebp+ctx]
+                add     eax, 0F0h
+                mov     ecx, [ebp+Iv]
+                mov     edx, [ecx]
+                mov     [eax], edx
+                mov     edx, [ecx+4]
+                mov     [eax+4], edx
+                mov     edx, [ecx+8]
+                mov     [eax+8], edx
+                mov     ecx, [ecx+0Ch]
+                mov     [eax+0Ch], ecx
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+?AES_CBC_encrypt_buffer@@YGXPAUAES_ctx@@PAEI@Z endp
+

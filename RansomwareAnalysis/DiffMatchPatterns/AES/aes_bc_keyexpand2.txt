@@ -1,0 +1,14 @@
+                movzx   edx, byte ptr [ecx+eax*4]
+                shl     edx, 18h
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+key]
+                movzx   eax, byte ptr [ecx+eax*4+1]
+                shl     eax, 10h
+                or      edx, eax
+                mov     ecx, [ebp+idx]
+                mov     eax, [ebp+key]
+                movzx   ecx, byte ptr [eax+ecx*4+2]
+                shl     ecx, 8
+                or      edx, ecx
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+key]

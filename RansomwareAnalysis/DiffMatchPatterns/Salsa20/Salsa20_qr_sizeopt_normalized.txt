@@ -1,0 +1,35 @@
+s20_quarterround proc near              
+
+y0              = dword ptr  8
+y1              = dword ptr  0Ch
+y2              = dword ptr  10h
+y3              = dword ptr  14h
+push operand
+mov operand, operand
+mov operand, operand
+mov operand, operand
+push operand
+mov operand, operand
+push operand
+mov operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 7
+xor operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 9
+xor operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 0Dh
+xor operand, operand
+mov operand, operand
+add operand, operand
+ror operand, 0Eh
+xor operand, operand
+pop operand
+pop operand
+pop operand
+retn 10h
+s20_quarterround endp

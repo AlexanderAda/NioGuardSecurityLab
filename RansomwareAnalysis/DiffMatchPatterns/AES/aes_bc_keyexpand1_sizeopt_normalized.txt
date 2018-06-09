@@ -1,0 +1,16 @@
+loc_addr:
+movzx operand, operand
+movzx operand, operand
+shl operand, 8
+or operand, operand
+movzx operand, operand
+shl operand, 8
+lea operand, operand
+or operand, operand
+movzx operand, operand
+shl operand, 8
+or operand, operand
+mov operand, operand
+inc operand
+cmp operand, operand
+jl      short loc_addr

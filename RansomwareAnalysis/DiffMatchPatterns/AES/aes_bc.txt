@@ -1,0 +1,3188 @@
+ void __stdcall xor_buf(const char *in, char *out, unsigned int len)
+?xor_buf@@YGXQBEQAEI@Z proc near        ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+88p
+
+idx             = dword ptr -4
+in              = dword ptr  8
+out             = dword ptr  0Ch
+len             = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     [ebp+idx], 0
+                jmp     short loc_401016
+; ---------------------------------------------------------------------------
+
+loc_40100D:                             ; CODE XREF: xor_buf(uchar const * const,uchar * const,uint)+3Aj
+                mov     eax, [ebp+idx]
+                add     eax, 1
+                mov     [ebp+idx], eax
+
+loc_401016:                             ; CODE XREF: xor_buf(uchar const * const,uchar * const,uint)+Bj
+                mov     ecx, [ebp+idx]
+                cmp     ecx, [ebp+len]
+                jnb     short loc_40103C
+                mov     edx, [ebp+in]
+                add     edx, [ebp+idx]
+                movzx   eax, byte ptr [edx]
+                mov     ecx, [ebp+out]
+                add     ecx, [ebp+idx]
+                movzx   edx, byte ptr [ecx]
+                xor     edx, eax
+                mov     eax, [ebp+out]
+                add     eax, [ebp+idx]
+                mov     [eax], dl
+                jmp     short loc_40100D
+; ---------------------------------------------------------------------------
+
+loc_40103C:                             ; CODE XREF: xor_buf(uchar const * const,uchar * const,uint)+1Cj
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+?xor_buf@@YGXQBEQAEI@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; int __stdcall aes_encrypt_cbc(const char *in, unsigned int in_len, char *out, const unsigned int *key, int keysize, const char *iv)
+?aes_encrypt_cbc@@YGHQBEIQAEQBIH0@Z proc near ; CODE XREF: aes_cbc_test(void)+21Dp
+
+buf_in          = byte ptr -38h
+iv_buf          = byte ptr -28h
+buf_out         = byte ptr -18h
+blocks          = dword ptr -8
+idx             = dword ptr -4
+in              = dword ptr  8
+in_len          = dword ptr  0Ch
+out             = dword ptr  10h
+key             = dword ptr  14h
+keysize         = dword ptr  18h
+iv              = dword ptr  1Ch
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 38h
+                mov     eax, [ebp+in_len]
+                xor     edx, edx
+                mov     ecx, 10h
+                div     ecx
+                test    edx, edx
+                jz      short loc_40106D
+                xor     eax, eax
+                jmp     loc_401134
+; ---------------------------------------------------------------------------
+
+loc_40106D:                             ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+14j
+                mov     edx, [ebp+in_len]
+                shr     edx, 4
+                mov     [ebp+blocks], edx
+                mov     eax, [ebp+iv]
+                mov     ecx, [eax]
+                mov     dword ptr [ebp+iv_buf], ecx
+                mov     edx, [eax+4]
+                mov     dword ptr [ebp+iv_buf+4], edx
+                mov     ecx, [eax+8]
+                mov     dword ptr [ebp+iv_buf+8], ecx
+                mov     edx, [eax+0Ch]
+                mov     dword ptr [ebp+iv_buf+0Ch], edx
+                mov     [ebp+idx], 0
+                jmp     short loc_4010A2
+; ---------------------------------------------------------------------------
+
+loc_401099:                             ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+DAj
+                mov     eax, [ebp+idx]
+                add     eax, 1
+                mov     [ebp+idx], eax
+
+loc_4010A2:                             ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+47j
+                mov     ecx, [ebp+idx]
+                cmp     ecx, [ebp+blocks]
+                jge     loc_40112F
+                mov     edx, [ebp+idx]
+                shl     edx, 4
+                add     edx, [ebp+in]
+                mov     eax, [edx]
+                mov     dword ptr [ebp+buf_in], eax
+                mov     ecx, [edx+4]
+                mov     dword ptr [ebp+buf_in+4], ecx
+                mov     eax, [edx+8]
+                mov     dword ptr [ebp+buf_in+8], eax
+                mov     ecx, [edx+0Ch]
+                mov     dword ptr [ebp+buf_in+0Ch], ecx
+                push    10h             ; len
+                lea     edx, [ebp+buf_in]
+                push    edx             ; out
+                lea     eax, [ebp+iv_buf]
+                push    eax             ; in
+                call    ?xor_buf@@YGXQBEQAEI@Z ; xor_buf(uchar const * const,uchar * const,uint)
+                mov     ecx, [ebp+keysize]
+                push    ecx             ; keysize
+                mov     edx, [ebp+key]
+                push    edx             ; key
+                lea     eax, [ebp+buf_out]
+                push    eax             ; out
+                lea     ecx, [ebp+buf_in]
+                push    ecx             ; in
+                call    ?aes_encrypt@@YGXQBEQAEQBIH@Z ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)
+                mov     edx, [ebp+idx]
+                shl     edx, 4
+                add     edx, [ebp+out]
+                mov     eax, dword ptr [ebp+buf_out]
+                mov     [edx], eax
+                mov     ecx, dword ptr [ebp+buf_out+4]
+                mov     [edx+4], ecx
+                mov     eax, dword ptr [ebp+buf_out+8]
+                mov     [edx+8], eax
+                mov     ecx, dword ptr [ebp+buf_out+0Ch]
+                mov     [edx+0Ch], ecx
+                mov     edx, dword ptr [ebp+buf_out]
+                mov     dword ptr [ebp+iv_buf], edx
+                mov     eax, dword ptr [ebp+buf_out+4]
+                mov     dword ptr [ebp+iv_buf+4], eax
+                mov     ecx, dword ptr [ebp+buf_out+8]
+                mov     dword ptr [ebp+iv_buf+8], ecx
+                mov     edx, dword ptr [ebp+buf_out+0Ch]
+                mov     dword ptr [ebp+iv_buf+0Ch], edx
+                jmp     loc_401099
+; ---------------------------------------------------------------------------
+
+loc_40112F:                             ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+58j
+                mov     eax, 1
+
+loc_401134:                             ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+18j
+                mov     esp, ebp
+                pop     ebp
+                retn    18h
+?aes_encrypt_cbc@@YGHQBEIQAEQBIH0@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; unsigned int __stdcall SubWord(unsigned int word)
+?SubWord@@YGII@Z proc near              ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+174p
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+1A4p
+
+result          = dword ptr -4
+word            = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     eax, [ebp+word]
+                shr     eax, 4
+                and     eax, 0Fh
+                shl     eax, 4
+                mov     ecx, [ebp+word]
+                and     ecx, 0Fh
+                movzx   edx, ds:aes_sbox[eax+ecx]
+                mov     [ebp+result], edx
+                mov     eax, [ebp+word]
+                shr     eax, 0Ch
+                and     eax, 0Fh
+                shl     eax, 4
+                mov     ecx, [ebp+word]
+                shr     ecx, 8
+                and     ecx, 0Fh
+                movzx   edx, ds:aes_sbox[eax+ecx]
+                shl     edx, 8
+                add     edx, [ebp+result]
+                mov     [ebp+result], edx
+                mov     eax, [ebp+word]
+                shr     eax, 14h
+                and     eax, 0Fh
+                shl     eax, 4
+                mov     ecx, [ebp+word]
+                shr     ecx, 10h
+                and     ecx, 0Fh
+                movzx   edx, ds:aes_sbox[eax+ecx]
+                shl     edx, 10h
+                add     edx, [ebp+result]
+                mov     [ebp+result], edx
+                mov     eax, [ebp+word]
+                shr     eax, 1Ch
+                and     eax, 0Fh
+                shl     eax, 4
+                mov     ecx, [ebp+word]
+                shr     ecx, 18h
+                and     ecx, 0Fh
+                movzx   edx, ds:aes_sbox[eax+ecx]
+                shl     edx, 18h
+                add     edx, [ebp+result]
+                mov     [ebp+result], edx
+                mov     eax, [ebp+result]
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+?SubWord@@YGII@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall aes_key_setup(const char *key, unsigned int *w, int keysize)
+?aes_key_setup@@YGXQBEQAIH@Z proc near  ; CODE XREF: aes_cbc_test(void)+1E9p
+
+Rcon            = dword ptr -54h
+Nb              = dword ptr -18h
+Nr              = dword ptr -14h
+var_10          = dword ptr -10h
+temp            = dword ptr -0Ch
+Nk              = dword ptr -8
+idx             = dword ptr -4
+key             = dword ptr  8
+w               = dword ptr  0Ch
+keysize         = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 54h
+                mov     [ebp+Nb], 4
+                mov     [ebp+Rcon], 1000000h
+                mov     [ebp+Rcon+4], 2000000h
+                mov     [ebp+Rcon+8], 4000000h
+                mov     [ebp+Rcon+0Ch], 8000000h
+                mov     [ebp+Rcon+10h], 10000000h
+                mov     [ebp+Rcon+14h], 20000000h
+                mov     [ebp+Rcon+18h], 40000000h
+                mov     [ebp+Rcon+1Ch], 80000000h
+                mov     [ebp+Rcon+20h], 1B000000h
+                mov     [ebp+Rcon+24h], 36000000h
+                mov     [ebp+Rcon+28h], 6C000000h
+                mov     [ebp+Rcon+2Ch], 0D8000000h
+                mov     [ebp+Rcon+30h], 0AB000000h
+                mov     [ebp+Rcon+34h], 4D000000h
+                mov     [ebp+Rcon+38h], 9A000000h
+                mov     eax, [ebp+keysize]
+                mov     [ebp+var_10], eax
+                cmp     [ebp+var_10], 80h
+                jz      short loc_401279
+                cmp     [ebp+var_10], 0C0h
+                jz      short loc_401289
+                cmp     [ebp+var_10], 100h
+                jz      short loc_401299
+                jmp     short loc_4012A9
+; ---------------------------------------------------------------------------
+
+loc_401279:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+83j
+                mov     [ebp+Nr], 0Ah
+                mov     [ebp+Nk], 4
+                jmp     short loc_4012AE
+; ---------------------------------------------------------------------------
+
+loc_401289:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+8Cj
+                mov     [ebp+Nr], 0Ch
+                mov     [ebp+Nk], 6
+                jmp     short loc_4012AE
+; ---------------------------------------------------------------------------
+
+loc_401299:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+95j
+                mov     [ebp+Nr], 0Eh
+                mov     [ebp+Nk], 8
+                jmp     short loc_4012AE
+; ---------------------------------------------------------------------------
+
+loc_4012A9:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+97j
+                jmp     loc_4013A9
+; ---------------------------------------------------------------------------
+
+loc_4012AE:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+A7j
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+B7j ...
+                mov     [ebp+idx], 0
+                jmp     short loc_4012C0
+; ---------------------------------------------------------------------------
+
+loc_4012B7:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+12Bj
+                mov     ecx, [ebp+idx]
+                add     ecx, 1
+                mov     [ebp+idx], ecx
+
+loc_4012C0:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+D5j
+                mov     edx, [ebp+idx]
+                cmp     edx, [ebp+Nk]
+                jge     short loc_40130D
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+key]
+                movzx   edx, byte ptr [ecx+eax*4]
+                shl     edx, 18h
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+key]
+                movzx   eax, byte ptr [ecx+eax*4+1]
+                shl     eax, 10h
+                or      edx, eax
+                mov     ecx, [ebp+idx]
+                mov     eax, [ebp+key]
+                movzx   ecx, byte ptr [eax+ecx*4+2]
+                shl     ecx, 8
+                or      edx, ecx
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+key]
+                movzx   eax, byte ptr [ecx+eax*4+3]
+                or      edx, eax
+                mov     ecx, [ebp+idx]
+                mov     eax, [ebp+w]
+                mov     [eax+ecx*4], edx
+                jmp     short loc_4012B7
+; ---------------------------------------------------------------------------
+
+loc_40130D:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+E6j
+                mov     ecx, [ebp+Nk]
+                mov     [ebp+idx], ecx
+                jmp     short loc_40131E
+; ---------------------------------------------------------------------------
+
+loc_401315:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+1C4j
+                mov     edx, [ebp+idx]
+                add     edx, 1
+                mov     [ebp+idx], edx
+
+loc_40131E:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+133j
+                mov     eax, [ebp+Nr]
+                add     eax, 1
+                imul    eax, [ebp+Nb]
+                cmp     [ebp+idx], eax
+                jge     short loc_4013A9
+                mov     ecx, [ebp+idx]
+                mov     edx, [ebp+w]
+                mov     eax, [edx+ecx*4-4]
+                mov     [ebp+temp], eax
+                mov     eax, [ebp+idx]
+                cdq
+                idiv    [ebp+Nk]
+                test    edx, edx
+                jnz     short loc_40136E
+                mov     ecx, [ebp+temp]
+                shl     ecx, 8
+                mov     edx, [ebp+temp]
+                shr     edx, 18h
+                or      ecx, edx
+                push    ecx             ; word
+                call    ?SubWord@@YGII@Z ; SubWord(uint)
+                mov     ecx, eax
+                mov     eax, [ebp+idx]
+                sub     eax, 1
+                cdq
+                idiv    [ebp+Nk]
+                xor     ecx, [ebp+eax*4+Rcon]
+                mov     [ebp+temp], ecx
+                jmp     short loc_40138C
+; ---------------------------------------------------------------------------
+
+loc_40136E:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+163j
+                cmp     [ebp+Nk], 6
+                jle     short loc_40138C
+                mov     eax, [ebp+idx]
+                cdq
+                idiv    [ebp+Nk]
+                cmp     edx, 4
+                jnz     short loc_40138C
+                mov     edx, [ebp+temp]
+                push    edx             ; word
+                call    ?SubWord@@YGII@Z ; SubWord(uint)
+                mov     [ebp+temp], eax
+
+loc_40138C:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+18Cj
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+192j ...
+                mov     eax, [ebp+idx]
+                sub     eax, [ebp+Nk]
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax*4]
+                xor     edx, [ebp+temp]
+                mov     eax, [ebp+idx]
+                mov     ecx, [ebp+w]
+                mov     [ecx+eax*4], edx
+                jmp     loc_401315
+; ---------------------------------------------------------------------------
+
+loc_4013A9:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int):loc_4012A9j
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+14Bj
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+?aes_key_setup@@YGXQBEQAIH@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall AddRoundKey(char (*state)[4], const unsigned int *w)
+?AddRoundKey@@YGXQAY03EQBI@Z proc near  ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+25Ep
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+28Ep ...
+
+subkey          = byte ptr -4
+state           = dword ptr  8
+w               = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     eax, 4
+                imul    ecx, eax, 0
+                mov     edx, [ebp+w]
+                mov     eax, [edx+ecx]
+                shr     eax, 18h
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     [ebp+edx+subkey], al
+                mov     eax, 4
+                imul    ecx, eax, 0
+                mov     edx, [ebp+w]
+                mov     eax, [edx+ecx]
+                shr     eax, 10h
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     [ebp+ecx+subkey], al
+                mov     edx, 4
+                imul    eax, edx, 0
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 8
+                mov     eax, 1
+                shl     eax, 1
+                mov     [ebp+eax+subkey], dl
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, [ebp+w]
+                mov     dl, [eax+edx]
+                mov     [ebp+ecx+subkey], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                imul    edx, 0
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+subkey]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                shl     eax, 0
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 18h
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     [ebp+ecx+subkey], dl
+                mov     edx, 4
+                shl     edx, 0
+                mov     eax, [ebp+w]
+                mov     ecx, [eax+edx]
+                shr     ecx, 10h
+                mov     edx, 1
+                shl     edx, 0
+                mov     [ebp+edx+subkey], cl
+                mov     eax, 4
+                shl     eax, 0
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 8
+                mov     eax, 1
+                shl     eax, 1
+                mov     [ebp+eax+subkey], dl
+                mov     ecx, 4
+                shl     ecx, 0
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, [ebp+w]
+                mov     cl, [edx+ecx]
+                mov     [ebp+eax+subkey], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 0
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                shl     ecx, 1
+                mov     edx, [ebp+w]
+                mov     eax, [edx+ecx]
+                shr     eax, 18h
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     [ebp+edx+subkey], al
+                mov     eax, 4
+                shl     eax, 1
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 10h
+                mov     eax, 1
+                shl     eax, 0
+                mov     [ebp+eax+subkey], dl
+                mov     ecx, 4
+                shl     ecx, 1
+                mov     edx, [ebp+w]
+                mov     eax, [edx+ecx]
+                shr     eax, 8
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     [ebp+ecx+subkey], al
+                mov     edx, 4
+                shl     edx, 1
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, [ebp+w]
+                mov     dl, [eax+edx]
+                mov     [ebp+ecx+subkey], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                imul    eax, 0
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+subkey]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                imul    eax, edx, 3
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 18h
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     [ebp+ecx+subkey], dl
+                mov     edx, 4
+                imul    eax, edx, 3
+                mov     ecx, [ebp+w]
+                mov     edx, [ecx+eax]
+                shr     edx, 10h
+                mov     eax, 1
+                shl     eax, 0
+                mov     [ebp+eax+subkey], dl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                mov     eax, [ebp+w]
+                mov     ecx, [eax+edx]
+                shr     ecx, 8
+                mov     edx, 1
+                shl     edx, 1
+                mov     [ebp+edx+subkey], cl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, [ebp+w]
+                mov     cl, [edx+ecx]
+                mov     [ebp+eax+subkey], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                imul    ecx, 0
+                movzx   ecx, [ebp+ecx+subkey]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+subkey]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+subkey]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+?AddRoundKey@@YGXQAY03EQBI@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall SubBytes(char (*state)[4])
+?SubBytes@@YGXQAY03E@Z proc near        ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+267p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+297p ...
+
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    esi
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, byte ptr [ecx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     edx, 1
+                imul    edx, 0
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                movzx   edx, byte ptr [edx+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     eax, 1
+                imul    eax, 3
+                movzx   ecx, byte ptr [ecx+eax]
+                and     ecx, 0Fh
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, ds:aes_sbox[edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, byte ptr [edx+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    ecx, 0
+                movzx   eax, byte ptr [eax+ecx]
+                and     eax, 0Fh
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     dl, ds:aes_sbox[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   edx, byte ptr [eax+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   eax, byte ptr [eax+ecx]
+                and     eax, 0Fh
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     dl, ds:aes_sbox[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   edx, byte ptr [eax+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   eax, byte ptr [eax+ecx]
+                and     eax, 0Fh
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     dl, ds:aes_sbox[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                movzx   eax, byte ptr [eax+edx]
+                sar     eax, 4
+                shl     eax, 4
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    edx, 3
+                movzx   ecx, byte ptr [ecx+edx]
+                and     ecx, 0Fh
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     al, ds:aes_sbox[eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, byte ptr [ecx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    eax, 0
+                movzx   edx, byte ptr [edx+eax]
+                and     edx, 0Fh
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     cl, ds:aes_sbox[ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   edx, byte ptr [edx+eax]
+                and     edx, 0Fh
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     cl, ds:aes_sbox[ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                movzx   edx, byte ptr [edx+eax]
+                and     edx, 0Fh
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     cl, ds:aes_sbox[ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                movzx   edx, byte ptr [edx+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   eax, byte ptr [eax+ecx]
+                and     eax, 0Fh
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     dl, ds:aes_sbox[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, byte ptr [ecx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     edx, 1
+                imul    edx, 0
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                movzx   ecx, byte ptr [edx+eax]
+                sar     ecx, 4
+                shl     ecx, 4
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                movzx   eax, byte ptr [eax+edx]
+                and     eax, 0Fh
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     al, ds:aes_sbox[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                movzx   edx, byte ptr [edx+ecx]
+                sar     edx, 4
+                shl     edx, 4
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     eax, 1
+                imul    eax, 3
+                movzx   ecx, byte ptr [ecx+eax]
+                and     ecx, 0Fh
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, ds:aes_sbox[edx+ecx]
+                mov     [eax+esi], cl
+                pop     esi
+                pop     ebp
+                retn    4
+?SubBytes@@YGXQAY03E@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall ShiftRows(char (*state)[4])
+?ShiftRows@@YGXQAY03E@Z proc near       ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+270p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+2A0p ...
+
+t               = dword ptr -4
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   eax, byte ptr [eax+edx]
+                mov     [ebp+t], eax
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     dl, [edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     dl, [eax+edx]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     cl, byte ptr [ebp+t]
+                mov     [eax+edx], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, byte ptr [edx+ecx]
+                mov     [ebp+t], edx
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     al, [eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, byte ptr [ebp+t]
+                mov     [ecx+edx], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                movzx   eax, byte ptr [ecx+edx]
+                mov     [ebp+t], eax
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     al, [ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     dl, byte ptr [ebp+t]
+                mov     [ecx+eax], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, byte ptr [ecx+eax]
+                mov     [ebp+t], ecx
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     dl, [eax+edx]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     cl, [ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     al, [eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     cl, byte ptr [ebp+t]
+                mov     [edx+eax], cl
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+?ShiftRows@@YGXQAY03E@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall MixColumns(char (*state)[4])
+?MixColumns@@YGXQAY03E@Z proc near      ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+279p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+2A9p ...
+
+col             = byte ptr -4
+state           = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                push    esi
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                imul    edx, 0
+                mov     al, [ecx+eax]
+                mov     [ebp+edx+col], al
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 0
+                mov     al, [ecx+eax]
+                mov     [ebp+edx+col], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [ecx+eax]
+                mov     [ebp+edx+col], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                imul    eax, 3
+                mov     cl, [edx+ecx]
+                mov     [ebp+eax+col], cl
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, [ebp+eax+col]
+                imul    edx, ecx, 6
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     cl, ds:gf_mul[edx+ecx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    edx, 0
+                mov     al, [ebp+eax+col]
+                mov     [ecx+edx], al
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    ecx, 0
+                mov     dl, [ebp+edx+col]
+                mov     [eax+ecx], dl
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, [ebp+ecx+col]
+                imul    eax, edx, 6
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 0
+                mov     al, ds:gf_mul[eax+ecx]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                imul    ecx, 0
+                mov     dl, [edx+eax]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 0
+                mov     al, [eax+ecx]
+                mov     [ebp+edx+col], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ecx+edx]
+                mov     [ebp+eax+col], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 3
+                mov     al, [eax+ecx]
+                mov     [ebp+edx+col], al
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   eax, [ebp+edx+col]
+                imul    ecx, eax, 6
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     al, ds:gf_mul[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [ebp+edx+col]
+                mov     [eax+ecx], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     cl, [ebp+ecx+col]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, [ebp+eax+col]
+                imul    edx, ecx, 6
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 0
+                mov     dl, ds:gf_mul[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                imul    eax, 0
+                mov     cl, [ecx+edx]
+                mov     [ebp+eax+col], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [edx+eax]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [eax+ecx]
+                mov     [ebp+edx+col], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                imul    ecx, 3
+                mov     dl, [edx+eax]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 1
+                imul    ecx, eax, 0
+                movzx   edx, [ebp+ecx+col]
+                imul    eax, edx, 6
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     dl, ds:gf_mul[eax+edx]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     cl, [ebp+ecx+col]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     al, [ebp+eax+col]
+                mov     [ecx+edx], al
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   eax, [ebp+edx+col]
+                imul    ecx, eax, 6
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     esi, 1
+                shl     esi, 1
+                mov     cl, ds:gf_mul[ecx+edx]
+                mov     [eax+esi], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [eax+ecx]
+                xor     eax, edx
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     [edx+ecx], al
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                shl     eax, 1
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [ecx+edx]
+                xor     ecx, eax
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     [eax+edx], cl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [edx+eax]
+                xor     edx, ecx
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+eax], dl
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                imul    ecx, 0
+                mov     dl, [eax+edx]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     dl, [eax+edx]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     dl, [eax+edx]
+                mov     [ebp+ecx+col], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                imul    edx, 3
+                mov     al, [ecx+eax]
+                mov     [ebp+edx+col], al
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                movzx   eax, [ebp+edx+col]
+                imul    ecx, eax, 6
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     al, ds:gf_mul[ecx+eax]
+                mov     [edx+esi], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                imul    edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                imul    ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                imul    eax, edx, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                imul    ecx, 3
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                imul    eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    ecx, 3
+                mov     dl, [ebp+edx+col]
+                mov     [eax+ecx], dl
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                shl     ecx, 0
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                shl     eax, 0
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                shl     edx, 1
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                shl     ecx, 0
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                shl     edx, 0
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    eax, 3
+                mov     cl, [ebp+ecx+col]
+                mov     [edx+eax], cl
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                shl     eax, 0
+                movzx   eax, [ebp+eax+col]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                shl     edx, 1
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                imul    ecx, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   ecx, ds:gf_mul[ecx+esi]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                shl     eax, 1
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                imul    edx, 3
+                movzx   edx, [ebp+edx+col]
+                imul    edx, 6
+                mov     esi, 1
+                shl     esi, 0
+                movzx   edx, ds:gf_mul[edx+esi]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                shl     ecx, 1
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 1
+                imul    eax, edx, 0
+                movzx   ecx, [ebp+eax+col]
+                imul    edx, ecx, 6
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     esi, 1
+                imul    esi, 3
+                mov     dl, ds:gf_mul[edx+eax]
+                mov     [ecx+esi], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                add     ecx, [ebp+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                shl     edx, 0
+                movzx   edx, [ebp+edx+col]
+                movzx   eax, byte ptr [ecx+eax]
+                xor     eax, edx
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 4
+                imul    ecx, 3
+                add     ecx, [ebp+state]
+                mov     [ecx+edx], al
+                mov     edx, 4
+                imul    eax, edx, 3
+                add     eax, [ebp+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                shl     ecx, 1
+                movzx   ecx, [ebp+ecx+col]
+                movzx   edx, byte ptr [eax+edx]
+                xor     edx, ecx
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 4
+                imul    eax, 3
+                add     eax, [ebp+state]
+                mov     [eax+ecx], dl
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                add     edx, [ebp+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                imul    eax, 3
+                movzx   eax, [ebp+eax+col]
+                imul    eax, 6
+                mov     esi, 1
+                imul    esi, 0
+                movzx   eax, ds:gf_mul[eax+esi]
+                movzx   ecx, byte ptr [edx+ecx]
+                xor     ecx, eax
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 4
+                imul    edx, 3
+                add     edx, [ebp+state]
+                mov     [edx+eax], cl
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+?MixColumns@@YGXQAY03E@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall aes_encrypt(const char *in, char *out, const unsigned int *key, int keysize)
+?aes_encrypt@@YGXQBEQAEQBIH@Z proc near ; CODE XREF: aes_encrypt_cbc(uchar const * const,uint,uchar * const,uint const * const,int,uchar const * const)+9Dp
+
+state           = byte ptr -10h
+in              = dword ptr  8
+out             = dword ptr  0Ch
+key             = dword ptr  10h
+keysize         = dword ptr  14h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    esi
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     edx, 4
+                imul    eax, edx, 0
+                lea     edx, [ebp+eax+state]
+                mov     eax, 1
+                imul    eax, 0
+                mov     esi, [ebp+in]
+                mov     cl, [esi+ecx]
+                mov     [edx+eax], cl
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 4
+                shl     eax, 0
+                lea     ecx, [ebp+eax+state]
+                mov     eax, 1
+                imul    eax, 0
+                mov     esi, [ebp+in]
+                mov     dl, [esi+edx]
+                mov     [ecx+eax], dl
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 4
+                shl     ecx, 1
+                lea     edx, [ebp+ecx+state]
+                mov     ecx, 1
+                imul    ecx, 0
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [edx+ecx], al
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     eax, 4
+                imul    ecx, eax, 3
+                lea     eax, [ebp+ecx+state]
+                mov     ecx, 1
+                imul    ecx, 0
+                mov     esi, [ebp+in]
+                mov     dl, [esi+edx]
+                mov     [eax+ecx], dl
+                mov     eax, 1
+                shl     eax, 2
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                lea     ecx, [ebp+edx+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [ecx+edx], al
+                mov     ecx, 1
+                imul    edx, ecx, 5
+                mov     eax, 4
+                shl     eax, 0
+                lea     ecx, [ebp+eax+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     esi, [ebp+in]
+                mov     dl, [esi+edx]
+                mov     [ecx+eax], dl
+                mov     eax, 1
+                imul    ecx, eax, 6
+                mov     edx, 4
+                shl     edx, 1
+                lea     eax, [ebp+edx+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     esi, [ebp+in]
+                mov     cl, [esi+ecx]
+                mov     [eax+edx], cl
+                mov     edx, 1
+                imul    eax, edx, 7
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                lea     ecx, [ebp+edx+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [ecx+edx], al
+                mov     ecx, 1
+                shl     ecx, 3
+                mov     edx, 4
+                imul    eax, edx, 0
+                lea     edx, [ebp+eax+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     esi, [ebp+in]
+                mov     cl, [esi+ecx]
+                mov     [edx+eax], cl
+                mov     edx, 1
+                imul    eax, edx, 9
+                mov     ecx, 4
+                shl     ecx, 0
+                lea     edx, [ebp+ecx+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [edx+ecx], al
+                mov     ecx, 1
+                imul    edx, ecx, 0Ah
+                mov     eax, 4
+                shl     eax, 1
+                lea     ecx, [ebp+eax+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     esi, [ebp+in]
+                mov     dl, [esi+edx]
+                mov     [ecx+eax], dl
+                mov     eax, 1
+                imul    ecx, eax, 0Bh
+                mov     edx, 4
+                imul    eax, edx, 3
+                lea     edx, [ebp+eax+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     esi, [ebp+in]
+                mov     cl, [esi+ecx]
+                mov     [edx+eax], cl
+                mov     edx, 1
+                imul    eax, edx, 0Ch
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                lea     ecx, [ebp+edx+state]
+                mov     edx, 1
+                imul    edx, 3
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [ecx+edx], al
+                mov     ecx, 1
+                imul    edx, ecx, 0Dh
+                mov     eax, 4
+                shl     eax, 0
+                lea     ecx, [ebp+eax+state]
+                mov     eax, 1
+                imul    eax, 3
+                mov     esi, [ebp+in]
+                mov     dl, [esi+edx]
+                mov     [ecx+eax], dl
+                mov     eax, 1
+                imul    ecx, eax, 0Eh
+                mov     edx, 4
+                shl     edx, 1
+                lea     eax, [ebp+edx+state]
+                mov     edx, 1
+                imul    edx, 3
+                mov     esi, [ebp+in]
+                mov     cl, [esi+ecx]
+                mov     [eax+edx], cl
+                mov     edx, 1
+                imul    eax, edx, 0Fh
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                lea     ecx, [ebp+edx+state]
+                mov     edx, 1
+                imul    edx, 3
+                mov     esi, [ebp+in]
+                mov     al, [esi+eax]
+                mov     [ecx+edx], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     ecx, 4
+                shl     ecx, 2
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                shl     eax, 3
+                add     eax, [ebp+key]
+                push    eax             ; w
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     edx, 4
+                imul    eax, edx, 0Ch
+                add     eax, [ebp+key]
+                push    eax             ; w
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     edx, 4
+                shl     edx, 4
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     ecx, 4
+                imul    edx, ecx, 14h
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     ecx, 4
+                imul    edx, ecx, 18h
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     ecx, 4
+                imul    edx, ecx, 1Ch
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     ecx, 4
+                shl     ecx, 5
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 24h
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                cmp     [ebp+keysize], 80h
+                jz      loc_40377F
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 28h
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 2Ch
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                cmp     [ebp+keysize], 0C0h
+                jz      loc_403756
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 30h
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 34h
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                mov     edx, 4
+                imul    eax, edx, 38h
+                add     eax, [ebp+key]
+                push    eax             ; w
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                jmp     short loc_40377D
+; ---------------------------------------------------------------------------
+
+loc_403756:                             ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+487j
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                mov     ecx, 4
+                imul    edx, ecx, 30h
+                add     edx, [ebp+key]
+                push    edx             ; w
+                lea     eax, [ebp+state]
+                push    eax             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+
+loc_40377D:                             ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+514j
+                jmp     short loc_4037A6
+; ---------------------------------------------------------------------------
+
+loc_40377F:                             ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+41Aj
+                lea     ecx, [ebp+state]
+                push    ecx             ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                mov     eax, 4
+                imul    ecx, eax, 28h
+                add     ecx, [ebp+key]
+                push    ecx             ; w
+                lea     edx, [ebp+state]
+                push    edx             ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+
+loc_4037A6:                             ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int):loc_40377Dj
+                mov     eax, 4
+                imul    ecx, eax, 0
+                lea     edx, [ebp+ecx+state]
+                mov     eax, 1
+                imul    ecx, eax, 0
+                mov     eax, 1
+                imul    eax, 0
+                mov     esi, [ebp+out]
+                mov     cl, [edx+ecx]
+                mov     [esi+eax], cl
+                mov     edx, 4
+                shl     edx, 0
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     esi, [ebp+out]
+                mov     dl, [eax+edx]
+                mov     [esi+ecx], dl
+                mov     eax, 4
+                shl     eax, 1
+                lea     ecx, [ebp+eax+state]
+                mov     edx, 1
+                imul    eax, edx, 0
+                mov     edx, 1
+                shl     edx, 1
+                mov     esi, [ebp+out]
+                mov     al, [ecx+eax]
+                mov     [esi+edx], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                imul    edx, ecx, 0
+                mov     ecx, 1
+                imul    ecx, 3
+                mov     esi, [ebp+out]
+                mov     dl, [eax+edx]
+                mov     [esi+ecx], dl
+                mov     eax, 4
+                imul    ecx, eax, 0
+                lea     edx, [ebp+ecx+state]
+                mov     eax, 1
+                shl     eax, 0
+                mov     ecx, 1
+                shl     ecx, 2
+                mov     esi, [ebp+out]
+                mov     dl, [edx+eax]
+                mov     [esi+ecx], dl
+                mov     eax, 4
+                shl     eax, 0
+                lea     ecx, [ebp+eax+state]
+                mov     edx, 1
+                shl     edx, 0
+                mov     eax, 1
+                imul    eax, 5
+                mov     esi, [ebp+out]
+                mov     cl, [ecx+edx]
+                mov     [esi+eax], cl
+                mov     edx, 4
+                shl     edx, 1
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 6
+                mov     esi, [ebp+out]
+                mov     al, [eax+ecx]
+                mov     [esi+edx], al
+                mov     ecx, 4
+                imul    edx, ecx, 3
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                shl     ecx, 0
+                mov     edx, 1
+                imul    edx, 7
+                mov     esi, [ebp+out]
+                mov     al, [eax+ecx]
+                mov     [esi+edx], al
+                mov     ecx, 4
+                imul    edx, ecx, 0
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                shl     ecx, 1
+                mov     edx, 1
+                shl     edx, 3
+                mov     esi, [ebp+out]
+                mov     al, [eax+ecx]
+                mov     [esi+edx], al
+                mov     ecx, 4
+                shl     ecx, 0
+                lea     edx, [ebp+ecx+state]
+                mov     eax, 1
+                shl     eax, 1
+                mov     ecx, 1
+                imul    ecx, 9
+                mov     esi, [ebp+out]
+                mov     dl, [edx+eax]
+                mov     [esi+ecx], dl
+                mov     eax, 4
+                shl     eax, 1
+                lea     ecx, [ebp+eax+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                imul    eax, 0Ah
+                mov     esi, [ebp+out]
+                mov     cl, [ecx+edx]
+                mov     [esi+eax], cl
+                mov     edx, 4
+                imul    eax, edx, 3
+                lea     ecx, [ebp+eax+state]
+                mov     edx, 1
+                shl     edx, 1
+                mov     eax, 1
+                imul    eax, 0Bh
+                mov     esi, [ebp+out]
+                mov     cl, [ecx+edx]
+                mov     [esi+eax], cl
+                mov     edx, 4
+                imul    eax, edx, 0
+                lea     ecx, [ebp+eax+state]
+                mov     edx, 1
+                imul    eax, edx, 3
+                mov     edx, 1
+                imul    edx, 0Ch
+                mov     esi, [ebp+out]
+                mov     al, [ecx+eax]
+                mov     [esi+edx], al
+                mov     ecx, 4
+                shl     ecx, 0
+                lea     edx, [ebp+ecx+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                imul    eax, 0Dh
+                mov     esi, [ebp+out]
+                mov     cl, [edx+ecx]
+                mov     [esi+eax], cl
+                mov     edx, 4
+                shl     edx, 1
+                lea     eax, [ebp+edx+state]
+                mov     ecx, 1
+                imul    edx, ecx, 3
+                mov     ecx, 1
+                imul    ecx, 0Eh
+                mov     esi, [ebp+out]
+                mov     dl, [eax+edx]
+                mov     [esi+ecx], dl
+                mov     eax, 4
+                imul    ecx, eax, 3
+                lea     edx, [ebp+ecx+state]
+                mov     eax, 1
+                imul    ecx, eax, 3
+                mov     eax, 1
+                imul    eax, 0Fh
+                mov     esi, [ebp+out]
+                mov     cl, [edx+ecx]
+                mov     [esi+eax], cl
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    10h
+?aes_encrypt@@YGXQBEQAEQBIH@Z endp

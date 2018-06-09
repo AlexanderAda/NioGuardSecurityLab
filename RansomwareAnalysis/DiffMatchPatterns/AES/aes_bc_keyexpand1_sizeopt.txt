@@ -1,0 +1,16 @@
+loc_4010EC:
+movzx   key, byte ptr [w-2]
+movzx   eax, byte ptr [w-1]
+shl     key, 8
+or      key, eax
+movzx   eax, byte ptr [w]
+shl     key, 8
+lea     w, [w+4]
+or      key, eax
+movzx   eax, byte ptr [w-3]
+shl     key, 8
+or      key, eax
+mov     [esi+ebx*4], key
+inc     ebx
+cmp     ebx, edi
+jl      short loc_4010EC

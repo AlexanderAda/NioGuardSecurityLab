@@ -1,0 +1,847 @@
+; void __userpurge KeyExpansion(char *RoundKey@<ecx>, const char *Key@<edx>)
+KeyExpansion    proc near               ; CODE XREF: test_decrypt_cbc+16Fp
+                                        ; test_encrypt_cbc+16Fp
+
+var_18          = dword ptr -18h
+var_14          = dword ptr -14h
+var_10          = dword ptr -10h
+var_C           = dword ptr -0Ch
+var_8           = dword ptr -8
+var_4           = byte ptr -4
+var_3           = byte ptr -3
+var_2           = byte ptr -2
+var_1           = byte ptr -1
+
+RoundKey = ecx
+Key = edx
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 18h
+                push    ebx
+                push    esi
+                push    edi
+                mov     edi, RoundKey
+                lea     RoundKey, [Key+3]
+                push    8
+                sub     Key, edi
+                lea     ebx, [edi+1]
+                mov     [ebp+var_C], ebx
+                mov     esi, ebx
+                pop     ebx
+
+loc_40101B:                             ; CODE XREF: KeyExpansion+38j
+                mov     al, [RoundKey-3]
+                mov     [esi-1], al
+                mov     al, [Key+esi]
+                mov     [esi], al
+                lea     esi, [esi+4]
+                mov     al, [RoundKey-1]
+                mov     [esi-3], al
+                mov     al, [RoundKey]
+                lea     RoundKey, [RoundKey+4]
+                mov     [esi-2], al
+                dec     ebx
+                jnz     short loc_40101B
+                mov     ebx, [ebp+var_C]
+                lea     RoundKey, [edi+3]
+                lea     eax, [edi+2]
+                mov     [ebp+var_8], RoundKey
+                mov     RoundKey, eax
+                lea     esi, [edi+21h]
+                sub     RoundKey, ebx
+                sub     edi, ebx
+                mov     [ebp+var_10], RoundKey
+                lea     Key, [ebx+1Ch]
+                mov     RoundKey, [ebp+var_8]
+                mov     [ebp+var_C], RoundKey
+                sub     [ebp+var_C], ebx
+                sub     eax, RoundKey
+                push    8
+                mov     [ebp+var_18], eax
+                pop     ebx
+
+loc_401066:                             ; CODE XREF: KeyExpansion+149j
+                mov     al, [edi+Key]
+                mov     RoundKey, [ebp+var_10]
+                mov     [ebp+var_1], al
+                mov     al, [Key]
+                mov     [ebp+var_2], al
+                mov     al, [RoundKey+Key]
+                mov     RoundKey, [ebp+var_C]
+                mov     [ebp+var_3], al
+                mov     al, [RoundKey+Key]
+                mov     RoundKey, [ebp+var_8]
+                mov     [ebp+var_4], al
+                mov     eax, ebx
+                and     eax, 7
+                mov     [ebp+var_14], eax
+                jnz     short loc_4010DB
+                movzx   eax, [ebp+var_2]
+                movzx   RoundKey, [ebp+var_1]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_1], al
+                movzx   eax, [ebp+var_3]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_2], al
+                movzx   eax, [ebp+var_4]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_3], al
+                mov     al, ds:sbox[RoundKey]
+                mov     cl, [ebp+var_1]
+                mov     [ebp+var_4], al
+                mov     eax, ebx
+                shr     eax, 3
+                xor     cl, ds:Rcon[eax]
+                mov     eax, [ebp+var_14]
+                mov     [ebp+var_1], cl
+                mov     RoundKey, [ebp+var_8]
+
+loc_4010DB:                             ; CODE XREF: KeyExpansion+8Ej
+                cmp     eax, 4
+                jnz     short loc_401114
+                movzx   eax, [ebp+var_1]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_1], al
+                movzx   eax, [ebp+var_2]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_2], al
+                movzx   eax, [ebp+var_3]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_3], al
+                movzx   eax, [ebp+var_4]
+                mov     al, ds:sbox[eax]
+                mov     [ebp+var_4], al
+
+loc_401114:                             ; CODE XREF: KeyExpansion+DEj
+                mov     al, [esi-21h]
+                xor     al, [ebp+var_1]
+                mov     [esi-1], al
+                mov     al, [Key-1Ch]
+                add     Key, 4
+                xor     al, [ebp+var_2]
+                mov     [esi], al
+                mov     eax, [ebp+var_18]
+                mov     al, [RoundKey+eax]
+                xor     al, [ebp+var_3]
+                mov     [esi+1], al
+                mov     al, [RoundKey]
+                add     RoundKey, 4
+                xor     al, [ebp+var_4]
+                inc     ebx
+                mov     [esi+2], al
+                add     esi, 4
+                mov     [ebp+var_8], RoundKey
+                cmp     ebx, 3Ch
+                jb      loc_401066
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn
+KeyExpansion    endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge AddRoundKey(char round@<cl>, char (*state)[4][4]@<edx>, char *RoundKey)
+AddRoundKey     proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+34p
+                                        ; AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+58p ...
+
+RoundKey        = dword ptr  8
+
+round = ecx
+state = edx
+                push    ebp
+                mov     ebp, esp
+                push    esi
+                push    edi
+                movzx   round, cl
+                shl     round, 4
+                add     round, [ebp+RoundKey]
+                push    4
+                pop     edi
+
+loc_401167:                             ; CODE XREF: AddRoundKey+1Ej
+                push    4
+                pop     esi
+
+loc_40116A:                             ; CODE XREF: AddRoundKey+1Bj
+                mov     al, [round]
+                xor     [state], al
+                inc     round
+                inc     state
+                dec     esi
+                jnz     short loc_40116A
+                dec     edi
+                jnz     short loc_401167
+                pop     edi
+                pop     esi
+                pop     ebp
+                retn    4
+AddRoundKey     endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge SubBytes(char (*state)[4][4]@<ecx>)
+SubBytes        proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+3Fp
+                                        ; AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+6Bp
+state = ecx
+                push    esi
+                push    edi
+                push    4
+                pop     esi
+
+loc_401181:                             ; CODE XREF: SubBytes+1Dj
+                push    4
+                mov     edx, state
+                pop     edi
+
+loc_401186:                             ; CODE XREF: SubBytes+19j
+                movzx   eax, byte ptr [edx]
+                mov     al, ds:sbox[eax]
+                mov     [edx], al
+                lea     edx, [edx+4]
+                dec     edi
+                jnz     short loc_401186
+                inc     state
+                dec     esi
+                jnz     short loc_401181
+                pop     edi
+                pop     esi
+                retn
+SubBytes        endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge ShiftRows(char (*state)[4][4]@<ecx>)
+ShiftRows       proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+46p
+                                        ; AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+72p
+state = ecx
+                push    esi
+                mov     esi, state
+                mov     al, [esi+5]
+                mov     dl, [esi+1]
+                mov     cl, [esi+2]
+                mov     [esi+1], al
+                mov     al, [esi+9]
+                mov     [esi+5], al
+                mov     al, [esi+0Dh]
+                mov     [esi+9], al
+                mov     al, [esi+0Ah]
+                mov     [esi+2], al
+                mov     al, [esi+0Eh]
+                mov     [esi+0Ah], cl
+                mov     cl, [esi+6]
+                mov     [esi+6], al
+                mov     al, [esi+0Fh]
+                mov     [esi+0Eh], cl
+                mov     cl, [esi+3]
+                mov     [esi+3], al
+                mov     al, [esi+0Bh]
+                mov     [esi+0Fh], al
+                mov     al, [esi+7]
+                mov     [esi+0Dh], dl
+                mov     [esi+0Bh], al
+                mov     [esi+7], cl
+                pop     esi
+                retn
+ShiftRows       endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge MixColumns(char (*state)[4][4]@<ecx>)
+MixColumns      proc near               ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+4Dp
+
+var_8           = dword ptr -8
+var_1           = byte ptr -1
+
+state = ecx
+                push    ebp
+                mov     ebp, esp
+                push    state
+                push    state
+                push    ebx
+                push    esi
+                push    edi
+                push    4
+                lea     esi, [state+2]
+                mov     [ebp+var_8], 1Bh
+                pop     edi
+
+loc_401200:                             ; CODE XREF: MixColumns+8Aj
+                mov     dh, [esi-2]
+                mov     dl, [esi-1]
+                mov     cl, dh
+                mov     al, [esi+1]
+                xor     cl, dl
+                mov     ch, [esi]
+                mov     bl, al
+                mov     [ebp+var_1], al
+                xor     bl, ch
+                mov     al, cl
+                mov     bh, bl
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_8]
+                xor     bh, dh
+                xor     al, cl
+                xor     bh, dl
+                xor     al, dh
+                mov     cl, dl
+                xor     al, bh
+                xor     cl, ch
+                mov     [esi-2], al
+                mov     al, cl
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_8]
+                xor     al, cl
+                mov     cl, [ebp+var_1]
+                xor     al, dl
+                xor     cl, dh
+                xor     al, bh
+                mov     [esi-1], al
+                mov     al, bl
+                shr     al, 7
+                add     bl, bl
+                imul    byte ptr [ebp+var_8]
+                xor     al, bl
+                xor     al, ch
+                xor     al, bh
+                mov     [esi], al
+                mov     al, cl
+                shr     al, 7
+                lea     esi, [esi+4]
+                imul    byte ptr [ebp+var_8]
+                add     cl, cl
+                xor     al, cl
+                xor     al, [ebp+var_1]
+                xor     al, bh
+                mov     [esi-3], al
+                dec     edi
+                jnz     short loc_401200
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn
+MixColumns      endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge InvMixColumns(char (*state)[4][4]@<ecx>)
+InvMixColumns   proc near               ; CODE XREF: AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+4Cp
+
+var_10          = dword ptr -10h
+var_A           = byte ptr -0Ah
+var_9           = byte ptr -9
+var_8           = byte ptr -8
+var_7           = byte ptr -7
+var_6           = byte ptr -6
+var_5           = byte ptr -5
+var_4           = byte ptr -4
+var_3           = byte ptr -3
+var_2           = byte ptr -2
+var_1           = byte ptr -1
+
+state = ecx
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    ebx
+                push    esi
+                push    edi
+                push    4
+                lea     esi, [state+2]
+                mov     [ebp+var_10], 1Bh
+                pop     edi
+
+loc_401294:                             ; CODE XREF: InvMixColumns+308j
+                mov     al, [esi+1]
+                mov     cl, [esi-2]
+                mov     [ebp+var_3], al
+                mov     al, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     [ebp+var_8], cl
+                add     cl, cl
+                xor     cl, al
+                mov     [ebp+var_A], al
+                mov     al, cl
+                mov     bl, [esi-1]
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     [ebp+var_2], cl
+                add     cl, cl
+                mov     ch, al
+                mov     dl, [esi]
+                xor     ch, cl
+                mov     [ebp+var_6], bl
+                mov     al, bl
+                mov     [ebp+var_5], dl
+                shr     al, 7
+                mov     cl, bl
+                imul    byte ptr [ebp+var_10]
+                add     cl, cl
+                mov     dh, al
+                xor     cl, dh
+                mov     al, cl
+                mov     [ebp+var_1], cl
+                shr     al, 7
+                add     cl, cl
+                push    1Bh
+                pop     ebx
+                imul    bl
+                mov     bl, al
+                mov     al, dl
+                shr     al, 7
+                xor     bl, cl
+                imul    byte ptr [ebp+var_10]
+                mov     cl, dl
+                add     cl, cl
+                mov     bh, al
+                xor     cl, bh
+                mov     al, cl
+                mov     [ebp+var_7], cl
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_10]
+                mov     dl, al
+                xor     dl, cl
+                mov     cl, [ebp+var_3]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     [ebp+var_9], al
+                mov     al, cl
+                mov     [ebp+var_4], cl
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_10]
+                xor     al, cl
+                mov     cl, al
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, dl
+                shr     dl, 7
+                xor     cl, [ebp+var_7]
+                xor     cl, bl
+                xor     cl, ch
+                xor     cl, [ebp+var_2]
+                xor     cl, [ebp+var_6]
+                xor     cl, [ebp+var_8]
+                add     cl, cl
+                xor     cl, al
+                mov     al, dl
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, [ebp+var_7]
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     dl, [ebp+var_2]
+                xor     cl, al
+                shr     bl, 7
+                mov     al, bl
+                shr     ch, 7
+                imul    byte ptr [ebp+var_10]
+                push    1Bh
+                xor     cl, al
+                mov     al, ch
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                xor     cl, dh
+                shr     al, 7
+                xor     cl, [ebp+var_A]
+                xor     cl, [ebp+var_3]
+                xor     cl, [ebp+var_5]
+                xor     cl, [ebp+var_6]
+                mov     [esi-2], cl
+                pop     state
+                imul    cl
+                mov     cl, dl
+                mov     ch, al
+                add     cl, cl
+                xor     ch, cl
+                mov     cl, [ebp+var_1]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     bl, al
+                xor     bl, cl
+                mov     cl, [ebp+var_7]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     dl, al
+                xor     dl, cl
+                mov     cl, [ebp+var_4]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     al, cl
+                mov     cl, al
+                shr     al, 7
+                xor     cl, [ebp+var_4]
+                imul    byte ptr [ebp+var_10]
+                xor     cl, dl
+                shr     dl, 7
+                xor     cl, bl
+                shr     bl, 7
+                xor     cl, [ebp+var_1]
+                xor     cl, ch
+                xor     cl, [ebp+var_5]
+                xor     cl, [ebp+var_6]
+                add     cl, cl
+                xor     cl, al
+                mov     al, [ebp+var_4]
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                imul    byte ptr [ebp+var_10]
+                mov     dl, [ebp+var_1]
+                xor     cl, al
+                mov     al, bl
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                shr     ch, 7
+                mov     al, ch
+                imul    byte ptr [ebp+var_10]
+                push    1Bh
+                xor     cl, al
+                xor     cl, bh
+                xor     cl, dh
+                mov     dh, [ebp+var_7]
+                xor     cl, [ebp+var_3]
+                xor     cl, [ebp+var_5]
+                xor     cl, [ebp+var_8]
+                mov     [esi-1], cl
+                mov     cl, [ebp+var_2]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                mov     ch, al
+                mov     al, dl
+                shr     al, 7
+                xor     ch, cl
+                imul    byte ptr [ebp+var_10]
+                mov     cl, dl
+                mov     bl, al
+                add     cl, cl
+                xor     bl, cl
+                mov     al, dh
+                shr     al, 7
+                mov     cl, dh
+                imul    byte ptr [ebp+var_10]
+                add     cl, cl
+                mov     dl, al
+                xor     dl, cl
+                mov     cl, [ebp+var_4]
+                mov     al, cl
+                add     cl, cl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     al, cl
+                mov     cl, al
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, dl
+                shr     dl, 7
+                xor     cl, dh
+                xor     cl, bl
+                shr     bl, 7
+                xor     cl, ch
+                shr     ch, 7
+                xor     cl, [ebp+var_2]
+                xor     cl, [ebp+var_3]
+                xor     cl, [ebp+var_5]
+                add     cl, cl
+                xor     cl, al
+                mov     al, dl
+                imul    byte ptr [ebp+var_10]
+                mov     dl, [ebp+var_2]
+                xor     cl, al
+                mov     al, dh
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, bl
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, ch
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                xor     cl, [ebp+var_9]
+                xor     cl, bh
+                shr     al, 7
+                xor     cl, [ebp+var_3]
+                xor     cl, [ebp+var_6]
+                xor     cl, [ebp+var_8]
+                mov     [esi], cl
+                pop     state
+                imul    cl
+                mov     cl, [ebp+var_1]
+                lea     esi, [esi+4]
+                mov     ch, al
+                add     dl, dl
+                mov     al, cl
+                xor     ch, dl
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_10]
+                push    1Bh
+                mov     bl, al
+                mov     al, dh
+                shr     al, 7
+                xor     bl, cl
+                imul    byte ptr [ebp+var_10]
+                add     dh, dh
+                mov     dl, al
+                xor     dl, dh
+                mov     dh, [ebp+var_4]
+                mov     al, dh
+                mov     cl, dh
+                shr     al, 7
+                add     cl, cl
+                imul    byte ptr [ebp+var_10]
+                xor     al, cl
+                mov     cl, al
+                shr     al, 7
+                imul    byte ptr [ebp+var_10]
+                xor     cl, dh
+                shr     dh, 7
+                xor     cl, dl
+                shr     dl, 7
+                xor     cl, bl
+                shr     bl, 7
+                xor     cl, [ebp+var_1]
+                xor     cl, ch
+                shr     ch, 7
+                xor     cl, [ebp+var_3]
+                xor     cl, [ebp+var_8]
+                add     cl, cl
+                xor     cl, al
+                mov     al, dh
+                imul    byte ptr [ebp+var_10]
+                xor     cl, al
+                mov     al, dl
+                pop     edx
+                imul    dl
+                xor     cl, al
+                mov     al, bl
+                imul    dl
+                xor     cl, al
+                mov     al, [ebp+var_1]
+                shr     al, 7
+                imul    dl
+                xor     cl, al
+                mov     al, ch
+                imul    dl
+                xor     cl, al
+                xor     cl, [ebp+var_9]
+                xor     cl, [ebp+var_A]
+                xor     cl, [ebp+var_5]
+                xor     cl, [ebp+var_6]
+                xor     cl, [ebp+var_8]
+                mov     [esi-3], cl
+                dec     edi
+                jnz     loc_401294
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn
+InvMixColumns   endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge InvSubBytes(char (*state)[4][4]@<ecx>)
+InvSubBytes     proc near               ; CODE XREF: AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+3Ap
+                                        ; AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+5Fp
+state = ecx
+                push    esi
+                push    edi
+                push    4
+                pop     esi
+
+loc_401598:                             ; CODE XREF: InvSubBytes+1Dj
+                push    4
+                mov     edx, state
+                pop     edi
+
+loc_40159D:                             ; CODE XREF: InvSubBytes+19j
+                movzx   eax, byte ptr [edx]
+                mov     al, ds:rsbox[eax]
+                mov     [edx], al
+                lea     edx, [edx+4]
+                dec     edi
+                jnz     short loc_40159D
+                inc     state
+                dec     esi
+                jnz     short loc_401598
+                pop     edi
+                pop     esi
+                retn
+InvSubBytes     endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge InvShiftRows(char (*state)[4][4]@<ecx>)
+InvShiftRows    proc near               ; CODE XREF: AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+33p
+                                        ; AES_CBC_decrypt_buffer(AES_ctx *,uchar *,uint)+58p
+state = ecx
+                push    esi
+                mov     esi, state
+                mov     al, [esi+9]
+                mov     dl, [esi+0Dh]
+                mov     cl, [esi+2]
+                mov     [esi+0Dh], al
+                mov     al, [esi+5]
+                mov     [esi+9], al
+                mov     al, [esi+1]
+                mov     [esi+5], al
+                mov     al, [esi+0Ah]
+                mov     [esi+2], al
+                mov     al, [esi+0Eh]
+                mov     [esi+0Ah], cl
+                mov     cl, [esi+6]
+                mov     [esi+6], al
+                mov     al, [esi+7]
+                mov     [esi+0Eh], cl
+                mov     cl, [esi+3]
+                mov     [esi+3], al
+                mov     al, [esi+0Bh]
+                mov     [esi+7], al
+                mov     al, [esi+0Fh]
+                mov     [esi+1], dl
+                mov     [esi+0Bh], al
+                mov     [esi+0Fh], cl
+                pop     esi
+                retn
+InvShiftRows    endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge AES_CBC_encrypt_buffer(AES_ctx *ctx@<ecx>, char *buf@<edx>, unsigned int length)
+?AES_CBC_encrypt_buffer@@YGXPAUAES_ctx@@PAEI@Z proc near ; CODE XREF: test_encrypt_cbc+18Bp
+
+var_C           = dword ptr -0Ch
+var_8           = dword ptr -8
+round           = byte ptr -1
+length          = dword ptr  8
+
+ctx = ecx
+buf = edx
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 0Ch
+                push    ebx
+                push    esi
+                push    edi
+                mov     edi, ctx
+                mov     [ebp+var_8], 4
+                mov     ebx, buf
+                lea     eax, [edi+0F0h]
+                mov     [ebp+var_C], eax
+                mov     esi, eax
+
+loc_401621:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+89j
+                push    10h
+                mov     buf, ebx
+                sub     esi, ebx
+                pop     ctx
+
+loc_401628:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+2Dj
+                mov     al, [esi+buf]
+                xor     [buf], al
+                inc     buf
+                dec     ctx
+                jnz     short loc_401628
+                push    edi             ; RoundKey
+                mov     buf, ebx        ; state
+                xor     cl, cl          ; round
+                call    AddRoundKey
+                mov     [ebp+round], 1
+
+loc_40163F:                             ; CODE XREF: AES_CBC_encrypt_buffer(AES_ctx *,uchar *,uint)+67j
+                mov     ctx, ebx        ; state
+                call    SubBytes
+                mov     ctx, ebx        ; state
+                call    ShiftRows
+                mov     ctx, ebx        ; state
+                call    MixColumns
+                mov     cl, [ebp+round] ; round
+                mov     buf, ebx        ; state
+                push    edi             ; RoundKey
+                call    AddRoundKey
+                mov     al, [ebp+round]
+                inc     al
+                mov     [ebp+round], al
+                cmp     al, 0Eh
+                jb      short loc_40163F
+                mov     ctx, ebx        ; state
+                call    SubBytes
+                mov     ctx, ebx        ; state
+                call    ShiftRows
+                push    edi             ; RoundKey
+                mov     buf, ebx        ; state
+                mov     cl, 0Eh         ; round
+                call    AddRoundKey
+                mov     esi, ebx
+                add     ebx, 10h
+                dec     [ebp+var_8]
+                jnz     short loc_401621
+                mov     edi, [ebp+var_C]
+                movsd
+                movsd
+                movsd
+                movsd
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+?AES_CBC_encrypt_buffer@@YGXPAUAES_ctx@@PAEI@Z endp

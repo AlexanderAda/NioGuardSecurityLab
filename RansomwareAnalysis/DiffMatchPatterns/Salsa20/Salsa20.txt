@@ -1,0 +1,878 @@
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; s20_status_t __stdcall s20_crypt(char	*key, s20_keylen_t keylen, char	*nonce,	unsigned int si, char *buf, unsigned int buflen)
+_s20_crypt@24	proc near		; CODE XREF: _main+136p
+
+keystream	= byte ptr -58h
+n		= byte ptr -18h
+expand		= dword	ptr -8
+i		= dword	ptr -4
+key		= dword	ptr  8
+keylen		= dword	ptr  0Ch
+nonce		= dword	ptr  10h
+arg_C		= dword	ptr  14h
+buf		= dword	ptr  18h
+buflen		= dword	ptr  1Ch
+
+		push	ebp
+		mov	ebp, esp
+		sub	esp, 58h
+		mov	[ebp+n], 0
+		xor	eax, eax
+		mov	dword ptr [ebp+n+1], eax
+		mov	dword ptr [ebp+n+5], eax
+		mov	dword ptr [ebp+n+9], eax
+		mov	word ptr [ebp+n+0Dh], ax
+		mov	[ebp+n+0Fh], al
+		mov	[ebp+expand], 0
+		cmp	[ebp+keylen], 0
+		jnz	short loc_4011B0
+		mov	[ebp+expand], offset s20_expand32
+
+loc_4011B0:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+27j
+		cmp	[ebp+keylen], 1
+		jnz	short loc_4011BD
+		mov	[ebp+expand], offset s20_expand16
+
+loc_4011BD:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+34j
+		cmp	[ebp+expand], 0
+		jz	short loc_4011D5
+		cmp	[ebp+key], 0
+		jz	short loc_4011D5
+		cmp	[ebp+nonce], 0
+		jz	short loc_4011D5
+		cmp	[ebp+buf], 0
+		jnz	short loc_4011DF
+
+loc_4011D5:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+41j
+					; s20_crypt(x,x,x,x,x,x)+47j ...
+		mov	eax, 1
+		jmp	loc_4012B1
+; ---------------------------------------------------------------------------
+
+loc_4011DF:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+53j
+		mov	[ebp+i], 0
+		jmp	short loc_4011F1
+; ---------------------------------------------------------------------------
+
+loc_4011E8:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+86j
+		mov	ecx, [ebp+i]
+		add	ecx, 1
+		mov	[ebp+i], ecx
+
+loc_4011F1:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+66j
+		cmp	[ebp+i], 8
+		jnb	short loc_401208
+		mov	edx, [ebp+nonce]
+		add	edx, [ebp+i]
+		mov	eax, [ebp+i]
+		mov	cl, [edx]
+		mov	[ebp+eax+n], cl
+		jmp	short loc_4011E8
+; ---------------------------------------------------------------------------
+
+loc_401208:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+75j
+		mov	eax, [ebp+arg_C]
+		xor	edx, edx
+		mov	ecx, 40h
+		div	ecx
+		test	edx, edx
+		jz	short loc_401237
+		mov	edx, [ebp+arg_C]
+		shr	edx, 6
+		push	edx		; w
+		lea	eax, [ebp+n+8]
+		push	eax		; b
+		call	s20_rev_littleendian
+		lea	ecx, [ebp+keystream]
+		push	ecx		; char *
+		lea	edx, [ebp+n]
+		push	edx		; char *
+		mov	eax, [ebp+key]
+		push	eax		; char *
+		call	[ebp+expand]
+
+loc_401237:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+96j
+		mov	[ebp+i], 0
+		jmp	short loc_401249
+; ---------------------------------------------------------------------------
+
+loc_401240:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+12Dj
+		mov	ecx, [ebp+i]
+		add	ecx, 1
+		mov	[ebp+i], ecx
+
+loc_401249:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+BEj
+		mov	edx, [ebp+i]
+		cmp	edx, [ebp+buflen]
+		jnb	short loc_4012AF
+		mov	eax, [ebp+arg_C]
+		add	eax, [ebp+i]
+		xor	edx, edx
+		mov	ecx, 40h
+		div	ecx
+		test	edx, edx
+		jnz	short loc_401286
+		mov	edx, [ebp+arg_C]
+		add	edx, [ebp+i]
+		shr	edx, 6
+		push	edx		; w
+		lea	eax, [ebp+n+8]
+		push	eax		; b
+		call	s20_rev_littleendian
+		lea	ecx, [ebp+keystream]
+		push	ecx		; char *
+		lea	edx, [ebp+n]
+		push	edx		; char *
+		mov	eax, [ebp+key]
+		push	eax		; char *
+		call	[ebp+expand]
+
+loc_401286:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+E2j
+		mov	eax, [ebp+arg_C]
+		add	eax, [ebp+i]
+		xor	edx, edx
+		mov	ecx, 40h
+		div	ecx
+		movzx	edx, [ebp+edx+keystream]
+		mov	eax, [ebp+buf]
+		add	eax, [ebp+i]
+		movzx	ecx, byte ptr [eax]
+		xor	ecx, edx
+		mov	edx, [ebp+buf]
+		add	edx, [ebp+i]
+		mov	[edx], cl
+		jmp	short loc_401240
+; ---------------------------------------------------------------------------
+
+loc_4012AF:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+CFj
+		xor	eax, eax
+
+loc_4012B1:				; CODE XREF: s20_crypt(x,x,x,x,x,x)+5Aj
+		mov	esp, ebp
+		pop	ebp
+		retn	18h
+_s20_crypt@24	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; unsigned int __stdcall rotl(unsigned int value, int shift)
+rotl		proc near		; CODE XREF: s20_quarterround+10p
+					; s20_quarterround+2Cp	...
+
+value		= dword	ptr  8
+shift		= dword	ptr  0Ch
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, [ebp+value]
+		mov	ecx, [ebp+shift]
+		shl	eax, cl
+		mov	ecx, 20h
+		sub	ecx, [ebp+shift]
+		mov	edx, [ebp+value]
+		shr	edx, cl
+		or	eax, edx
+		pop	ebp
+		retn	8
+rotl		endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_quarterround(unsigned int *y0, unsigned int *y1, unsigned int *y2,	unsigned int *y3)
+s20_quarterround proc near		; CODE XREF: s20_rowround+32p
+					; s20_rowround+67p ...
+
+y0		= dword	ptr  8
+y1		= dword	ptr  0Ch
+y2		= dword	ptr  10h
+y3		= dword	ptr  14h
+
+		push	ebp
+		mov	ebp, esp
+		push	7		; shift
+		mov	eax, [ebp+y0]
+		mov	ecx, [eax]
+		mov	edx, [ebp+y3]
+		add	ecx, [edx]
+		push	ecx		; value
+		call	rotl
+		mov	ecx, [ebp+y1]
+		xor	eax, [ecx]
+		mov	edx, [ebp+y1]
+		mov	[edx], eax
+		push	9		; shift
+		mov	eax, [ebp+y1]
+		mov	ecx, [eax]
+		mov	edx, [ebp+y0]
+		add	ecx, [edx]
+		push	ecx		; value
+		call	rotl
+		mov	ecx, [ebp+y2]
+		xor	eax, [ecx]
+		mov	edx, [ebp+y2]
+		mov	[edx], eax
+		push	0Dh		; shift
+		mov	eax, [ebp+y2]
+		mov	ecx, [eax]
+		mov	edx, [ebp+y1]
+		add	ecx, [edx]
+		push	ecx		; value
+		call	rotl
+		mov	ecx, [ebp+y3]
+		xor	eax, [ecx]
+		mov	edx, [ebp+y3]
+		mov	[edx], eax
+		push	12h		; shift
+		mov	eax, [ebp+y3]
+		mov	ecx, [eax]
+		mov	edx, [ebp+y2]
+		add	ecx, [edx]
+		push	ecx		; value
+		call	rotl
+		mov	ecx, [ebp+y0]
+		xor	eax, [ecx]
+		mov	edx, [ebp+y0]
+		mov	[edx], eax
+		pop	ebp
+		retn	10h
+s20_quarterround endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_rowround(unsigned int *y)
+s20_rowround	proc near		; CODE XREF: s20_doubleround+10p
+
+y		= dword	ptr  8
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, 4
+		imul	ecx, eax, 3
+		add	ecx, [ebp+y]
+		push	ecx		; y3
+		mov	edx, 4
+		shl	edx, 1
+		add	edx, [ebp+y]
+		push	edx		; y2
+		mov	eax, 4
+		shl	eax, 0
+		add	eax, [ebp+y]
+		push	eax		; y1
+		mov	ecx, 4
+		imul	edx, ecx, 0
+		add	edx, [ebp+y]
+		push	edx		; y0
+		call	s20_quarterround
+		mov	eax, 4
+		shl	eax, 2
+		add	eax, [ebp+y]
+		push	eax		; y3
+		mov	ecx, 4
+		imul	edx, ecx, 7
+		add	edx, [ebp+y]
+		push	edx		; y2
+		mov	eax, 4
+		imul	ecx, eax, 6
+		add	ecx, [ebp+y]
+		push	ecx		; y1
+		mov	edx, 4
+		imul	eax, edx, 5
+		add	eax, [ebp+y]
+		push	eax		; y0
+		call	s20_quarterround
+		mov	ecx, 4
+		imul	edx, ecx, 9
+		add	edx, [ebp+y]
+		push	edx		; y3
+		mov	eax, 4
+		shl	eax, 3
+		add	eax, [ebp+y]
+		push	eax		; y2
+		mov	ecx, 4
+		imul	edx, ecx, 0Bh
+		add	edx, [ebp+y]
+		push	edx		; y1
+		mov	eax, 4
+		imul	ecx, eax, 0Ah
+		add	ecx, [ebp+y]
+		push	ecx		; y0
+		call	s20_quarterround
+		mov	edx, 4
+		imul	eax, edx, 0Eh
+		add	eax, [ebp+y]
+		push	eax		; y3
+		mov	ecx, 4
+		imul	edx, ecx, 0Dh
+		add	edx, [ebp+y]
+		push	edx		; y2
+		mov	eax, 4
+		imul	ecx, eax, 0Ch
+		add	ecx, [ebp+y]
+		push	ecx		; y1
+		mov	edx, 4
+		imul	eax, edx, 0Fh
+		add	eax, [ebp+y]
+		push	eax		; y0
+		call	s20_quarterround
+		pop	ebp
+		retn	4
+s20_rowround	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_columnround(unsigned int *x)
+s20_columnround	proc near		; CODE XREF: s20_doubleround+7p
+
+x		= dword	ptr  8
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, 4
+		imul	ecx, eax, 0Ch
+		add	ecx, [ebp+x]
+		push	ecx		; y3
+		mov	edx, 4
+		shl	edx, 3
+		add	edx, [ebp+x]
+		push	edx		; y2
+		mov	eax, 4
+		shl	eax, 2
+		add	eax, [ebp+x]
+		push	eax		; y1
+		mov	ecx, 4
+		imul	edx, ecx, 0
+		add	edx, [ebp+x]
+		push	edx		; y0
+		call	s20_quarterround
+		mov	eax, 4
+		shl	eax, 0
+		add	eax, [ebp+x]
+		push	eax		; y3
+		mov	ecx, 4
+		imul	edx, ecx, 0Dh
+		add	edx, [ebp+x]
+		push	edx		; y2
+		mov	eax, 4
+		imul	ecx, eax, 9
+		add	ecx, [ebp+x]
+		push	ecx		; y1
+		mov	edx, 4
+		imul	eax, edx, 5
+		add	eax, [ebp+x]
+		push	eax		; y0
+		call	s20_quarterround
+		mov	ecx, 4
+		imul	edx, ecx, 6
+		add	edx, [ebp+x]
+		push	edx		; y3
+		mov	eax, 4
+		shl	eax, 1
+		add	eax, [ebp+x]
+		push	eax		; y2
+		mov	ecx, 4
+		imul	edx, ecx, 0Eh
+		add	edx, [ebp+x]
+		push	edx		; y1
+		mov	eax, 4
+		imul	ecx, eax, 0Ah
+		add	ecx, [ebp+x]
+		push	ecx		; y0
+		call	s20_quarterround
+		mov	edx, 4
+		imul	eax, edx, 0Bh
+		add	eax, [ebp+x]
+		push	eax		; y3
+		mov	ecx, 4
+		imul	edx, ecx, 7
+		add	edx, [ebp+x]
+		push	edx		; y2
+		mov	eax, 4
+		imul	ecx, eax, 3
+		add	ecx, [ebp+x]
+		push	ecx		; y1
+		mov	edx, 4
+		imul	eax, edx, 0Fh
+		add	eax, [ebp+x]
+		push	eax		; y0
+		call	s20_quarterround
+		pop	ebp
+		retn	4
+s20_columnround	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_doubleround(unsigned int *x)
+s20_doubleround	proc near		; CODE XREF: s20_hash+68p
+
+x		= dword	ptr  8
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, [ebp+x]
+		push	eax		; x
+		call	s20_columnround
+		mov	ecx, [ebp+x]
+		push	ecx		; y
+		call	s20_rowround
+		pop	ebp
+		retn	4
+s20_doubleround	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; unsigned int __stdcall s20_littleendian(char *b)
+s20_littleendian proc near		; CODE XREF: s20_hash+2Bp
+
+b		= dword	ptr  8
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, 1
+		imul	ecx, eax, 0
+		mov	edx, [ebp+b]
+		movzx	eax, byte ptr [edx+ecx]
+		mov	ecx, 1
+		shl	ecx, 0
+		mov	edx, [ebp+b]
+		movzx	ecx, byte ptr [edx+ecx]
+		shl	ecx, 8
+		add	eax, ecx
+		mov	edx, 1
+		shl	edx, 1
+		mov	ecx, [ebp+b]
+		movzx	edx, byte ptr [ecx+edx]
+		shl	edx, 10h
+		add	eax, edx
+		mov	ecx, 1
+		imul	edx, ecx, 3
+		mov	ecx, [ebp+b]
+		movzx	edx, byte ptr [ecx+edx]
+		shl	edx, 18h
+		add	eax, edx
+		pop	ebp
+		retn	4
+s20_littleendian endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_rev_littleendian(char *b, unsigned	int w)
+s20_rev_littleendian proc near		; CODE XREF: s20_crypt(x,x,x,x,x,x)+A3p
+					; s20_crypt(x,x,x,x,x,x)+F2p ...
+
+b		= dword	ptr  8
+w		= dword	ptr  0Ch
+
+		push	ebp
+		mov	ebp, esp
+		mov	eax, 1
+		imul	ecx, eax, 0
+		mov	edx, [ebp+b]
+		mov	al, byte ptr [ebp+w]
+		mov	[edx+ecx], al
+		mov	ecx, [ebp+w]
+		shr	ecx, 8
+		mov	edx, 1
+		shl	edx, 0
+		mov	eax, [ebp+b]
+		mov	[eax+edx], cl
+		mov	ecx, [ebp+w]
+		shr	ecx, 10h
+		mov	edx, 1
+		shl	edx, 1
+		mov	eax, [ebp+b]
+		mov	[eax+edx], cl
+		mov	ecx, [ebp+w]
+		shr	ecx, 18h
+		mov	edx, 1
+		imul	eax, edx, 3
+		mov	edx, [ebp+b]
+		mov	[edx+eax], cl
+		pop	ebp
+		retn	8
+s20_rev_littleendian endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_hash(char *seq)
+s20_hash	proc near		; CODE XREF: s20_expand16+EDp
+					; s20_expand32+EEp
+
+x		= dword	ptr -88h
+z		= dword	ptr -48h
+var_8		= dword	ptr -8
+i		= dword	ptr -4
+seq		= dword	ptr  8
+
+		push	ebp
+		mov	ebp, esp
+		sub	esp, 88h
+		mov	[ebp+i], 0
+		jmp	short loc_40161B
+; ---------------------------------------------------------------------------
+
+loc_401612:				; CODE XREF: s20_hash+4Aj
+		mov	eax, [ebp+i]
+		add	eax, 1
+		mov	[ebp+i], eax
+
+loc_40161B:				; CODE XREF: s20_hash+10j
+		cmp	[ebp+i], 10h
+		jge	short loc_40164C
+		mov	ecx, [ebp+i]
+		mov	edx, [ebp+seq]
+		lea	eax, [edx+ecx*4]
+		push	eax		; b
+		call	s20_littleendian
+		mov	[ebp+var_8], eax
+		mov	ecx, [ebp+i]
+		mov	edx, [ebp+var_8]
+		mov	[ebp+ecx*4+z], edx
+		mov	eax, [ebp+i]
+		mov	ecx, [ebp+var_8]
+		mov	[ebp+eax*4+x], ecx
+		jmp	short loc_401612
+; ---------------------------------------------------------------------------
+
+loc_40164C:				; CODE XREF: s20_hash+1Fj
+		mov	[ebp+i], 0
+		jmp	short loc_40165E
+; ---------------------------------------------------------------------------
+
+loc_401655:				; CODE XREF: s20_hash+6Dj
+		mov	edx, [ebp+i]
+		add	edx, 1
+		mov	[ebp+i], edx
+
+loc_40165E:				; CODE XREF: s20_hash+53j
+		cmp	[ebp+i], 0Ah
+		jge	short loc_40166F
+		lea	eax, [ebp+z]
+		push	eax		; x
+		call	s20_doubleround
+		jmp	short loc_401655
+; ---------------------------------------------------------------------------
+
+loc_40166F:				; CODE XREF: s20_hash+62j
+		mov	[ebp+i], 0
+		jmp	short loc_401681
+; ---------------------------------------------------------------------------
+
+loc_401678:				; CODE XREF: s20_hash+B6j
+		mov	ecx, [ebp+i]
+		add	ecx, 1
+		mov	[ebp+i], ecx
+
+loc_401681:				; CODE XREF: s20_hash+76j
+		cmp	[ebp+i], 10h
+		jge	short loc_4016B8
+		mov	edx, [ebp+i]
+		mov	eax, [ebp+edx*4+z]
+		mov	ecx, [ebp+i]
+		add	eax, [ebp+ecx*4+x]
+		mov	edx, [ebp+i]
+		mov	[ebp+edx*4+z], eax
+		mov	eax, [ebp+i]
+		mov	ecx, [ebp+eax*4+z]
+		push	ecx		; w
+		mov	edx, [ebp+i]
+		mov	eax, [ebp+seq]
+		lea	ecx, [eax+edx*4]
+		push	ecx		; b
+		call	s20_rev_littleendian
+		jmp	short loc_401678
+; ---------------------------------------------------------------------------
+
+loc_4016B8:				; CODE XREF: s20_hash+85j
+		mov	esp, ebp
+		pop	ebp
+		retn	4
+s20_hash	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_expand16(char *k, char *n,	char *keystream)
+s20_expand16	proc near		; DATA XREF: s20_crypt(x,x,x,x,x,x)+36o
+
+t		= byte ptr -18h
+j		= dword	ptr -8
+i		= dword	ptr -4
+k		= dword	ptr  8
+n		= dword	ptr  0Ch
+keystream	= dword	ptr  10h
+
+		push	ebp
+		mov	ebp, esp
+		sub	esp, 18h
+		push	esi
+		mov	[ebp+t], 65h
+		mov	[ebp+t+1], 78h
+		mov	[ebp+t+2], 70h
+		mov	[ebp+t+3], 61h
+		mov	[ebp+t+4], 6Eh
+		mov	[ebp+t+5], 64h
+		mov	[ebp+t+6], 20h
+		mov	[ebp+t+7], 31h
+		mov	[ebp+t+8], 36h
+		mov	[ebp+t+9], 2Dh
+		mov	[ebp+t+0Ah], 62h
+		mov	[ebp+t+0Bh], 79h
+		mov	[ebp+t+0Ch], 74h
+		mov	[ebp+t+0Dh], 65h
+		mov	[ebp+t+0Eh], 20h
+		mov	[ebp+t+0Fh], 6Bh
+		mov	[ebp+i], 0
+		jmp	short loc_401719
+; ---------------------------------------------------------------------------
+
+loc_401710:				; CODE XREF: s20_expand16:loc_40175Aj
+		mov	eax, [ebp+i]
+		add	eax, 14h
+		mov	[ebp+i], eax
+
+loc_401719:				; CODE XREF: s20_expand16+4Ej
+		cmp	[ebp+i], 40h
+		jge	short loc_40175C
+		mov	[ebp+j], 0
+		jmp	short loc_401731
+; ---------------------------------------------------------------------------
+
+loc_401728:				; CODE XREF: s20_expand16+98j
+		mov	ecx, [ebp+j]
+		add	ecx, 1
+		mov	[ebp+j], ecx
+
+loc_401731:				; CODE XREF: s20_expand16+66j
+		cmp	[ebp+j], 4
+		jge	short loc_40175A
+		mov	eax, [ebp+i]
+		cdq
+		mov	ecx, 14h
+		idiv	ecx
+		lea	edx, [ebp+eax*4+t]
+		mov	eax, [ebp+i]
+		add	eax, [ebp+j]
+		mov	ecx, [ebp+keystream]
+		mov	esi, [ebp+j]
+		mov	dl, [edx+esi]
+		mov	[ecx+eax], dl
+		jmp	short loc_401728
+; ---------------------------------------------------------------------------
+
+loc_40175A:				; CODE XREF: s20_expand16+75j
+		jmp	short loc_401710
+; ---------------------------------------------------------------------------
+
+loc_40175C:				; CODE XREF: s20_expand16+5Dj
+		mov	[ebp+i], 0
+		jmp	short loc_40176E
+; ---------------------------------------------------------------------------
+
+loc_401765:				; CODE XREF: s20_expand16+E7j
+		mov	eax, [ebp+i]
+		add	eax, 1
+		mov	[ebp+i], eax
+
+loc_40176E:				; CODE XREF: s20_expand16+A3j
+		cmp	[ebp+i], 10h
+		jge	short loc_4017A9
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+k]
+		add	edx, [ebp+i]
+		mov	al, [edx]
+		mov	[ecx+4], al
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+k]
+		add	edx, [ebp+i]
+		mov	al, [edx]
+		mov	[ecx+2Ch], al
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+n]
+		add	edx, [ebp+i]
+		mov	al, [edx]
+		mov	[ecx+18h], al
+		jmp	short loc_401765
+; ---------------------------------------------------------------------------
+
+loc_4017A9:				; CODE XREF: s20_expand16+B2j
+		mov	ecx, [ebp+keystream]
+		push	ecx		; seq
+		call	s20_hash
+		pop	esi
+		mov	esp, ebp
+		pop	ebp
+		retn	0Ch
+s20_expand16	endp
+
+; ---------------------------------------------------------------------------
+		align 10h
+
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_expand32(char *k, char *n,	char *keystream)
+s20_expand32	proc near		; DATA XREF: s20_crypt(x,x,x,x,x,x)+29o
+
+o		= byte ptr -18h
+j		= dword	ptr -8
+i		= dword	ptr -4
+k		= dword	ptr  8
+n		= dword	ptr  0Ch
+keystream	= dword	ptr  10h
+
+		push	ebp
+		mov	ebp, esp
+		sub	esp, 18h
+		push	esi
+		mov	[ebp+o], 65h
+		mov	[ebp+o+1], 78h
+		mov	[ebp+o+2], 70h
+		mov	[ebp+o+3], 61h
+		mov	[ebp+o+4], 6Eh
+		mov	[ebp+o+5], 64h
+		mov	[ebp+o+6], 20h
+		mov	[ebp+o+7], 33h
+		mov	[ebp+o+8], 32h
+		mov	[ebp+o+9], 2Dh
+		mov	[ebp+o+0Ah], 62h
+		mov	[ebp+o+0Bh], 79h
+		mov	[ebp+o+0Ch], 74h
+		mov	[ebp+o+0Dh], 65h
+		mov	[ebp+o+0Eh], 20h
+		mov	[ebp+o+0Fh], 6Bh
+		mov	[ebp+i], 0
+		jmp	short loc_401819
+; ---------------------------------------------------------------------------
+
+loc_401810:				; CODE XREF: s20_expand32:loc_40185Aj
+		mov	eax, [ebp+i]
+		add	eax, 14h
+		mov	[ebp+i], eax
+
+loc_401819:				; CODE XREF: s20_expand32+4Ej
+		cmp	[ebp+i], 40h
+		jge	short loc_40185C
+		mov	[ebp+j], 0
+		jmp	short loc_401831
+; ---------------------------------------------------------------------------
+
+loc_401828:				; CODE XREF: s20_expand32+98j
+		mov	ecx, [ebp+j]
+		add	ecx, 1
+		mov	[ebp+j], ecx
+
+loc_401831:				; CODE XREF: s20_expand32+66j
+		cmp	[ebp+j], 4
+		jge	short loc_40185A
+		mov	eax, [ebp+i]
+		cdq
+		mov	ecx, 14h
+		idiv	ecx
+		lea	edx, [ebp+eax*4+o]
+		mov	eax, [ebp+i]
+		add	eax, [ebp+j]
+		mov	ecx, [ebp+keystream]
+		mov	esi, [ebp+j]
+		mov	dl, [edx+esi]
+		mov	[ecx+eax], dl
+		jmp	short loc_401828
+; ---------------------------------------------------------------------------
+
+loc_40185A:				; CODE XREF: s20_expand32+75j
+		jmp	short loc_401810
+; ---------------------------------------------------------------------------
+
+loc_40185C:				; CODE XREF: s20_expand32+5Dj
+		mov	[ebp+i], 0
+		jmp	short loc_40186E
+; ---------------------------------------------------------------------------
+
+loc_401865:				; CODE XREF: s20_expand32+E8j
+		mov	eax, [ebp+i]
+		add	eax, 1
+		mov	[ebp+i], eax
+
+loc_40186E:				; CODE XREF: s20_expand32+A3j
+		cmp	[ebp+i], 10h
+		jge	short loc_4018AA
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+k]
+		add	edx, [ebp+i]
+		mov	al, [edx]
+		mov	[ecx+4], al
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+k]
+		add	edx, [ebp+i]
+		mov	al, [edx+10h]
+		mov	[ecx+2Ch], al
+		mov	ecx, [ebp+keystream]
+		add	ecx, [ebp+i]
+		mov	edx, [ebp+n]
+		add	edx, [ebp+i]
+		mov	al, [edx]
+		mov	[ecx+18h], al
+		jmp	short loc_401865
+; ---------------------------------------------------------------------------
+
+loc_4018AA:				; CODE XREF: s20_expand32+B2j
+		mov	ecx, [ebp+keystream]
+		push	ecx		; seq
+		call	s20_hash
+		pop	esi
+		mov	esp, ebp
+		pop	ebp
+		retn	0Ch
+s20_expand32	endp

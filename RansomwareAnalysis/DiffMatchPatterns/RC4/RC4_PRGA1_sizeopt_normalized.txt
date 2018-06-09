@@ -1,0 +1,7 @@
+movzx operand, operand
+add operand, operand
+and operand, 800000FFh
+jns     short loc_addr
+dec operand
+or operand, 0FFFFFF00h
+inc operand

@@ -1,0 +1,479 @@
+s20_status_t __stdcall s20_crypt(char *key, s20_keylen_t keylen, char *nonce, unsigned int si, char *buf, unsigned int buflen)
+_s20_crypt@24   proc near               ; CODE XREF: _main+40p
+
+keystream       = byte ptr -50h
+n               = byte ptr -10h
+key             = dword ptr  8
+keylen          = dword ptr  0Ch
+nonce           = dword ptr  10h
+arg_C           = dword ptr  14h
+buf             = dword ptr  18h
+buflen          = dword ptr  1Ch
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 50h
+                xor     eax, eax
+                xor     ecx, ecx
+                cmp     [ebp+keylen], ecx
+                mov     [ebp+n], cl
+                push    esi
+                push    edi
+                lea     edi, [ebp+n+1]
+                stosd
+                stosd
+                stosd
+                stosw
+                stosb
+                mov     eax, offset s20_expand32
+                cmovz   ecx, eax
+                cmp     [ebp+keylen], 1
+                mov     eax, offset s20_expand16
+                cmovz   ecx, eax
+                mov     [ebp+keylen], ecx
+                test    ecx, ecx
+                jz      loc_40118B
+                cmp     [ebp+key], 0
+                jz      short loc_40118B
+                mov     ecx, [ebp+nonce]
+                test    ecx, ecx
+                jz      short loc_40118B
+                mov     esi, [ebp+buf]
+                test    esi, esi
+                jz      short loc_40118B
+                mov     eax, [ecx]
+                push    ebx
+                mov     ebx, [ebp+arg_C]
+                mov     dword ptr [ebp+n], eax
+                mov     eax, [ecx+4]
+                mov     dword ptr [ebp+n+4], eax
+                test    bl, 3Fh
+                jz      short loc_40114B
+                mov     eax, ebx
+                shr     eax, 6
+                push    eax             ; w
+                lea     eax, [ebp+n+8]
+                push    eax             ; b
+                call    s20_rev_littleendian
+                lea     eax, [ebp+keystream]
+                push    eax
+                lea     eax, [ebp+n]
+                push    eax
+                push    [ebp+key]
+                call    [ebp+keylen]
+
+loc_40114B:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+60j
+                cmp     [ebp+buflen], 0
+                jbe     short loc_401186
+                sub     esi, ebx
+
+loc_401153:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+B8j
+                mov     edi, ebx
+                and     edi, 3Fh
+                jnz     short loc_401177
+                mov     eax, ebx
+                shr     eax, 6
+                push    eax             ; w
+                lea     eax, [ebp+n+8]
+                push    eax             ; b
+                call    s20_rev_littleendian
+                lea     eax, [ebp+keystream]
+                push    eax
+                lea     eax, [ebp+n]
+                push    eax
+                push    [ebp+key]
+                call    [ebp+keylen]
+
+loc_401177:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+8Cj
+                mov     al, [ebp+edi+keystream]
+                lea     ecx, [esi+ebx]
+                xor     [ecx], al
+                inc     ebx
+                dec     [ebp+buflen]
+                jnz     short loc_401153
+
+loc_401186:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+83j
+                xor     eax, eax
+                pop     ebx
+                jmp     short loc_40118E
+; ---------------------------------------------------------------------------
+
+loc_40118B:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+34j
+                                        ; s20_crypt(x,x,x,x,x,x)+3Ej ...
+                xor     eax, eax
+                inc     eax
+
+loc_40118E:                             ; CODE XREF: s20_crypt(x,x,x,x,x,x)+BDj
+                pop     edi
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    18h
+_s20_crypt@24   endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_doubleround(unsigned int *x)
+s20_doubleround proc near               ; CODE XREF: s20_hash+4Ep
+
+x               = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                push    ebx
+                push    esi
+                mov     esi, [ebp+x]
+                push    edi
+                lea     edx, [esi+30h]
+                push    edx             ; y3
+                lea     ecx, [esi+20h]
+                push    ecx             ; y2
+                lea     eax, [esi+10h]
+                push    eax             ; y1
+                push    esi             ; y0
+                call    s20_quarterround
+                lea     eax, [esi+4]
+                push    eax             ; y3
+                lea     ebx, [esi+34h]
+                push    ebx             ; y2
+                lea     edx, [esi+24h]
+                lea     ecx, [esi+14h]
+                push    edx             ; y1
+                push    ecx             ; y0
+                call    s20_quarterround
+                lea     eax, [esi+18h]
+                push    eax             ; y3
+                lea     ebx, [esi+8]
+                push    ebx             ; y2
+                lea     edx, [esi+38h]
+                lea     ecx, [esi+28h]
+                push    edx             ; y1
+                push    ecx             ; y0
+                call    s20_quarterround
+                mov     ecx, [ebp+x]
+                lea     eax, [esi+2Ch]
+                push    eax             ; y3
+                lea     edi, [esi+1Ch]
+                add     ecx, 3Ch
+                push    edi             ; y2
+                add     esi, 0Ch
+                push    esi             ; y1
+                push    ecx             ; y0
+                call    s20_quarterround
+                push    esi             ; y3
+                push    ebx             ; y2
+                mov     ebx, [ebp+x]
+                lea     eax, [ebx+4]
+                push    eax             ; y1
+                push    ebx             ; y0
+                call    s20_quarterround
+                lea     eax, [ebx+10h]
+                push    eax             ; y3
+                push    edi             ; y2
+                lea     eax, [ebx+18h]
+                push    eax             ; y1
+                lea     eax, [ebx+14h]
+                push    eax             ; y0
+                call    s20_quarterround
+                lea     eax, [ebx+24h]
+                push    eax             ; y3
+                lea     eax, [ebx+20h]
+                push    eax             ; y2
+                lea     eax, [ebx+2Ch]
+                push    eax             ; y1
+                lea     eax, [ebx+28h]
+                push    eax             ; y0
+                call    s20_quarterround
+                lea     eax, [ebx+38h]
+                push    eax             ; y3
+                lea     eax, [ebx+34h]
+                push    eax             ; y2
+                lea     eax, [ebx+30h]
+                push    eax             ; y1
+                lea     eax, [ebx+3Ch]
+                push    eax             ; y0
+                call    s20_quarterround
+                pop     edi
+                pop     esi
+                pop     ebx
+                pop     ebp
+                retn    4
+s20_doubleround endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_expand16(char *k, char *n, char *keystream)
+s20_expand16    proc near               ; DATA XREF: s20_crypt(x,x,x,x,x,x)+27o
+
+t               = byte ptr -10h
+k               = dword ptr  8
+n               = dword ptr  0Ch
+keystream       = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    ebx
+                push    esi
+                mov     esi, [ebp+keystream]
+                xor     ecx, ecx
+                push    edi
+                push    14h
+                mov     dword ptr [ebp+t], 61707865h
+                mov     dword ptr [ebp+t+4], 3120646Eh
+                mov     dword ptr [ebp+t+8], 79622D36h
+                mov     dword ptr [ebp+t+0Ch], 6B206574h
+                pop     edi
+
+loc_401272:                             ; CODE XREF: s20_expand16+40j
+                mov     eax, ecx
+                cdq
+                idiv    edi
+                lea     eax, [ebp+eax*4+t]
+                mov     eax, [eax]
+                mov     [ecx+esi], eax
+                add     ecx, edi
+                cmp     ecx, 40h
+                jl      short loc_401272
+                mov     edi, [ebp+n]
+                lea     edx, [esi+2Ch]
+                mov     ecx, [ebp+k]
+                sub     edi, ecx
+                push    10h
+                pop     ebx
+
+loc_401295:                             ; CODE XREF: s20_expand16+62j
+                mov     al, [ecx]
+                mov     [edx-28h], al
+                mov     al, [ecx]
+                mov     [edx], al
+                mov     al, [edi+ecx]
+                inc     ecx
+                mov     [edx-14h], al
+                inc     edx
+                dec     ebx
+                jnz     short loc_401295
+                push    esi             ; seq
+                call    s20_hash
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+s20_expand16    endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_expand32(char *k, char *n, char *keystream)
+s20_expand32    proc near               ; DATA XREF: s20_crypt(x,x,x,x,x,x)+1Bo
+
+o               = byte ptr -10h
+k               = dword ptr  8
+n               = dword ptr  0Ch
+keystream       = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    ebx
+                push    esi
+                mov     esi, [ebp+keystream]
+                xor     ecx, ecx
+                push    edi
+                push    14h
+                mov     dword ptr [ebp+o], 61707865h
+                mov     dword ptr [ebp+o+4], 3320646Eh
+                mov     dword ptr [ebp+o+8], 79622D32h
+                mov     dword ptr [ebp+o+0Ch], 6B206574h
+                pop     edi
+
+loc_4012E5:                             ; CODE XREF: s20_expand32+40j
+                mov     eax, ecx
+                cdq
+                idiv    edi
+                lea     eax, [ebp+eax*4+o]
+                mov     eax, [eax]
+                mov     [ecx+esi], eax
+                add     ecx, edi
+                cmp     ecx, 40h
+                jl      short loc_4012E5
+                mov     edx, [ebp+k]
+                lea     ecx, [esi+2Ch]
+                mov     edi, [ebp+n]
+                add     edx, 10h
+                push    10h
+                pop     ebx
+
+loc_401309:                             ; CODE XREF: s20_expand32+64j
+                mov     al, [edx-10h]
+                mov     [ecx-28h], al
+                mov     al, [edx]
+                inc     edx
+                mov     [ecx], al
+                mov     al, [edi]
+                mov     [ecx-14h], al
+                inc     ecx
+                inc     edi
+                dec     ebx
+                jnz     short loc_401309
+                push    esi             ; seq
+                call    s20_hash
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+s20_expand32    endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_hash(char *seq)
+s20_hash        proc near               ; CODE XREF: s20_expand16+65p
+                                        ; s20_expand32+67p
+
+x               = dword ptr -80h
+z               = dword ptr -40h
+seq             = dword ptr  8
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 80h
+                push    ebx
+                mov     ebx, [ebp+seq]
+                push    esi
+                xor     esi, esi
+                push    edi
+                lea     edx, [ebx+2]
+                mov     edi, esi
+
+loc_401343:                             ; CODE XREF: s20_hash+45j
+                movzx   ecx, byte ptr [edx+1]
+                movzx   eax, byte ptr [edx]
+                lea     edx, [edx+4]
+                shl     ecx, 8
+                add     ecx, eax
+                movzx   eax, byte ptr [edx-5]
+                shl     ecx, 8
+                add     ecx, eax
+                movzx   eax, byte ptr [edx-6]
+                shl     ecx, 8
+                add     eax, ecx
+                mov     [ebp+edi+z], eax
+                mov     [ebp+edi+x], eax
+                add     edi, 4
+                cmp     edi, 40h
+                jl      short loc_401343
+                push    0Ah
+                pop     edi
+
+loc_401377:                             ; CODE XREF: s20_hash+54j
+                lea     eax, [ebp+z]
+                push    eax             ; x
+                call    s20_doubleround
+                dec     edi
+                jnz     short loc_401377
+
+loc_401383:                             ; CODE XREF: s20_hash+71j
+                mov     eax, [ebp+esi+x]
+                add     [ebp+esi+z], eax
+                lea     eax, [esi+ebx]
+                push    [ebp+esi+z]     ; w
+                push    eax             ; b
+                call    s20_rev_littleendian
+                add     esi, 4
+                cmp     esi, 40h
+                jl      short loc_401383
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+s20_hash        endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_quarterround(unsigned int *y0, unsigned int *y1, unsigned int *y2, unsigned int *y3)
+s20_quarterround proc near              ; CODE XREF: s20_doubleround+16p
+                                        ; s20_doubleround+2Bp ...
+
+y0              = dword ptr  8
+y1              = dword ptr  0Ch
+y2              = dword ptr  10h
+y3              = dword ptr  14h
+
+                push    ebp
+                mov     ebp, esp
+                mov     edx, [ebp+y1]
+                mov     ecx, [ebp+y2]
+                push    esi
+                mov     esi, [ebp+y3]
+                push    edi
+                mov     edi, [ebp+y0]
+                mov     eax, [edi]
+                add     eax, [esi]
+                rol     eax, 7
+                xor     [edx], eax
+                mov     eax, [edi]
+                add     eax, [edx]
+                rol     eax, 9
+                xor     [ecx], eax
+                mov     eax, [edx]
+                add     eax, [ecx]
+                rol     eax, 0Dh
+                xor     [esi], eax
+                mov     eax, [ecx]
+                add     eax, [esi]
+                ror     eax, 0Eh
+                xor     [edi], eax
+                pop     edi
+                pop     esi
+                pop     ebp
+                retn    10h
+s20_quarterround endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall s20_rev_littleendian(char *b, unsigned int w)
+s20_rev_littleendian proc near          ; CODE XREF: s20_crypt(x,x,x,x,x,x)+6Cp
+                                        ; s20_crypt(x,x,x,x,x,x)+98p ...
+
+b               = dword ptr  8
+w               = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                mov     edx, [ebp+w]
+                mov     eax, edx
+                mov     ecx, [ebp+b]
+                shr     eax, 8
+                mov     [ecx+1], al
+                mov     eax, edx
+                shr     eax, 10h
+                mov     [ecx], dl
+                shr     edx, 18h
+                mov     [ecx+2], al
+                mov     [ecx+3], dl
+                pop     ebp
+                retn    8
+s20_rev_littleendian endp

@@ -1,0 +1,297 @@
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __stdcall swap(char *a, char *b)
+?swap@@YGXPAE0@Z proc near              ; CODE XREF: KSA(char *,uchar *)+BDp
+                                        ; PRGA(uchar *,char *,uchar *)+A8p
+
+tmp             = dword ptr -4
+a               = dword ptr  8
+b               = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                push    ecx
+                mov     eax, [ebp+a]
+                movzx   ecx, byte ptr [eax]
+                mov     [ebp+tmp], ecx
+                mov     edx, [ebp+a]
+                mov     eax, [ebp+b]
+                mov     cl, [eax]
+                mov     [edx], cl
+                mov     edx, [ebp+b]
+                mov     al, byte ptr [ebp+tmp]
+                mov     [edx], al
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+?swap@@YGXPAE0@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; int __stdcall KSA(char *key, char *S)
+?KSA@@YGHPADPAE@Z proc near             ; CODE XREF: RC4(char *,char *,uchar *)+14p
+
+len             = dword ptr -20h
+var_1C          = dword ptr -1Ch
+var_18          = dword ptr -18h
+j               = dword ptr -14h
+i               = dword ptr -10h
+var_C           = dword ptr -0Ch
+var_8           = dword ptr -8
+var_1           = byte ptr -1
+key             = dword ptr  8
+S               = dword ptr  0Ch
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 20h
+                mov     eax, [ebp+key]
+                mov     [ebp+var_C], eax
+                mov     ecx, [ebp+var_C]
+                add     ecx, 1
+                mov     [ebp+var_18], ecx
+
+loc_401045:                             ; CODE XREF: KSA(char *,uchar *)+25j
+                mov     edx, [ebp+var_C]
+                mov     al, [edx]
+                mov     [ebp+var_1], al
+                add     [ebp+var_C], 1
+                cmp     [ebp+var_1], 0
+                jnz     short loc_401045
+                mov     ecx, [ebp+var_C]
+                sub     ecx, [ebp+var_18]
+                mov     [ebp+var_1C], ecx
+                mov     edx, [ebp+var_1C]
+                mov     [ebp+len], edx
+                mov     [ebp+j], 0
+                mov     [ebp+i], 0
+                jmp     short loc_40107F
+; ---------------------------------------------------------------------------
+
+loc_401076:                             ; CODE XREF: KSA(char *,uchar *)+63j
+                mov     eax, [ebp+i]
+                add     eax, 1
+                mov     [ebp+i], eax
+
+loc_40107F:                             ; CODE XREF: KSA(char *,uchar *)+44j
+                cmp     [ebp+i], 100h
+                jge     short loc_401095
+                mov     ecx, [ebp+S]
+                add     ecx, [ebp+i]
+                mov     dl, byte ptr [ebp+i]
+                mov     [ecx], dl
+                jmp     short loc_401076
+; ---------------------------------------------------------------------------
+
+loc_401095:                             ; CODE XREF: KSA(char *,uchar *)+56j
+                mov     [ebp+var_8], 0
+                jmp     short loc_4010A7
+; ---------------------------------------------------------------------------
+
+loc_40109E:                             ; CODE XREF: KSA(char *,uchar *)+C2j
+                mov     eax, [ebp+var_8]
+                add     eax, 1
+                mov     [ebp+var_8], eax
+
+loc_4010A7:                             ; CODE XREF: KSA(char *,uchar *)+6Cj
+                cmp     [ebp+var_8], 100h
+                jge     short loc_4010F4
+                mov     ecx, [ebp+S]
+                add     ecx, [ebp+var_8]
+                movzx   ecx, byte ptr [ecx]
+                add     ecx, [ebp+j]
+                mov     eax, [ebp+var_8]
+                cdq
+                idiv    [ebp+len]
+                mov     eax, [ebp+key]
+                movsx   edx, byte ptr [eax+edx]
+                add     ecx, edx
+                and     ecx, 800000FFh
+                jns     short loc_4010DC
+                dec     ecx
+                or      ecx, 0FFFFFF00h
+                inc     ecx
+
+loc_4010DC:                             ; CODE XREF: KSA(char *,uchar *)+A2j
+                mov     [ebp+j], ecx
+                mov     eax, [ebp+S]
+                add     eax, [ebp+j]
+                push    eax             ; b
+                mov     ecx, [ebp+S]
+                add     ecx, [ebp+var_8]
+                push    ecx             ; a
+                call    ?swap@@YGXPAE0@Z ; swap(uchar *,uchar *)
+                jmp     short loc_40109E
+; ---------------------------------------------------------------------------
+
+loc_4010F4:                             ; CODE XREF: KSA(char *,uchar *)+7Ej
+                xor     eax, eax
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+?KSA@@YGHPADPAE@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; int __stdcall PRGA(char *S, char *plaintext, char *ciphertext)
+?PRGA@@YGHPAEPAD0@Z proc near           ; CODE XREF: RC4(char *,char *,uchar *)+28p
+
+rnd             = dword ptr -24h
+len             = dword ptr -20h
+var_1C          = dword ptr -1Ch
+var_18          = dword ptr -18h
+j               = dword ptr -14h
+n               = dword ptr -10h
+i               = dword ptr -0Ch
+var_8           = dword ptr -8
+var_1           = byte ptr -1
+S               = dword ptr  8
+plaintext       = dword ptr  0Ch
+ciphertext      = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 24h
+                mov     [ebp+i], 0
+                mov     [ebp+j], 0
+                mov     [ebp+n], 0
+                mov     eax, [ebp+plaintext]
+                mov     [ebp+var_8], eax
+                mov     ecx, [ebp+var_8]
+                add     ecx, 1
+                mov     [ebp+var_18], ecx
+
+loc_40112A:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+3Aj
+                mov     edx, [ebp+var_8]
+                mov     al, [edx]
+                mov     [ebp+var_1], al
+                add     [ebp+var_8], 1
+                cmp     [ebp+var_1], 0
+                jnz     short loc_40112A
+                mov     ecx, [ebp+var_8]
+                sub     ecx, [ebp+var_18]
+                mov     [ebp+var_1C], ecx
+                mov     edx, [ebp+var_1C]
+                mov     [ebp+len], edx
+                jmp     short loc_401156
+; ---------------------------------------------------------------------------
+
+loc_40114D:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+EFj
+                mov     eax, [ebp+n]
+                add     eax, 1
+                mov     [ebp+n], eax
+
+loc_401156:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+4Bj
+                mov     ecx, [ebp+n]
+                cmp     ecx, [ebp+len]
+                jnb     loc_4011F4
+                mov     edx, [ebp+i]
+                add     edx, 1
+                and     edx, 800000FFh
+                jns     short loc_401178
+                dec     edx
+                or      edx, 0FFFFFF00h
+                inc     edx
+
+loc_401178:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+6Ej
+                mov     [ebp+i], edx
+                mov     eax, [ebp+S]
+                add     eax, [ebp+i]
+                movzx   ecx, byte ptr [eax]
+                add     ecx, [ebp+j]
+                and     ecx, 800000FFh
+                jns     short loc_401197
+                dec     ecx
+                or      ecx, 0FFFFFF00h
+                inc     ecx
+
+loc_401197:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+8Dj
+                mov     [ebp+j], ecx
+                mov     edx, [ebp+S]
+                add     edx, [ebp+j]
+                push    edx             ; b
+                mov     eax, [ebp+S]
+                add     eax, [ebp+i]
+                push    eax             ; a
+                call    ?swap@@YGXPAE0@Z ; swap(uchar *,uchar *)
+                mov     ecx, [ebp+S]
+                add     ecx, [ebp+i]
+                movzx   edx, byte ptr [ecx]
+                mov     eax, [ebp+S]
+                add     eax, [ebp+j]
+                movzx   ecx, byte ptr [eax]
+                add     edx, ecx
+                and     edx, 800000FFh
+                jns     short loc_4011D1
+                dec     edx
+                or      edx, 0FFFFFF00h
+                inc     edx
+
+loc_4011D1:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+C7j
+                mov     eax, [ebp+S]
+                movzx   ecx, byte ptr [eax+edx]
+                mov     [ebp+rnd], ecx
+                mov     edx, [ebp+plaintext]
+                add     edx, [ebp+n]
+                movsx   eax, byte ptr [edx]
+                xor     eax, [ebp+rnd]
+                mov     ecx, [ebp+ciphertext]
+                add     ecx, [ebp+n]
+                mov     [ecx], al
+                jmp     loc_40114D
+; ---------------------------------------------------------------------------
+
+loc_4011F4:                             ; CODE XREF: PRGA(uchar *,char *,uchar *)+5Cj
+                xor     eax, eax
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+?PRGA@@YGHPAEPAD0@Z endp
+
+; ---------------------------------------------------------------------------
+                align 10h
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; int __stdcall RC4(char *key, char *plaintext, char *ciphertext)
+?RC4@@YGHPAD0PAE@Z proc near            ; CODE XREF: _main+9Fp
+
+S               = byte ptr -100h
+key             = dword ptr  8
+plaintext       = dword ptr  0Ch
+ciphertext      = dword ptr  10h
+
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 100h
+                lea     eax, [ebp+S]
+                push    eax             ; S
+                mov     ecx, [ebp+key]
+                push    ecx             ; key
+                call    ?KSA@@YGHPADPAE@Z ; KSA(char *,uchar *)
+                mov     edx, [ebp+ciphertext]
+                push    edx             ; ciphertext
+                mov     eax, [ebp+plaintext]
+                push    eax             ; plaintext
+                lea     ecx, [ebp+S]
+                push    ecx             ; S
+                call    ?PRGA@@YGHPAEPAD0@Z ; PRGA(uchar *,char *,uchar *)
+                xor     eax, eax
+                mov     esp, ebp
+                pop     ebp
+                retn    0Ch
+?RC4@@YGHPAD0PAE@Z endp

@@ -1,0 +1,749 @@
+; unsigned int __userpurge SubWord@<eax>(unsigned int word@<ecx>)
+?SubWord@@YGII@Z proc near              ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+BBp
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+D9p
+word = ecx
+                push    esi
+                mov     esi, word
+                shr     word, 14h
+                push    edi
+                mov     edx, esi
+                mov     eax, esi
+                shr     eax, 18h
+                shr     edx, 1Ch
+                push    0Fh
+                pop     edi
+                and     eax, edi
+                add     edx, edx
+                and     word, edi
+                add     word, word
+                movzx   edx, ds:aes_sbox[eax+edx*8]
+                mov     eax, esi
+                shr     eax, 10h
+                and     eax, edi
+                shl     edx, 8
+                movzx   eax, ds:aes_sbox[eax+word*8]
+                mov     word, esi
+                add     edx, eax
+                shr     word, 0Ch
+                and     word, edi
+                shl     edx, 8
+                mov     eax, esi
+                add     word, word
+                shr     eax, 8
+                and     eax, edi
+                movzx   eax, ds:aes_sbox[eax+word*8]
+                mov     word, esi
+                shr     word, 4
+                and     esi, edi
+                and     word, edi
+                add     eax, edx
+                add     word, word
+                shl     eax, 8
+                pop     edi
+                movzx   word, ds:aes_sbox[esi+word*8]
+                add     eax, word
+                pop     esi
+                retn
+?SubWord@@YGII@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge aes_key_setup(const char *key@<ecx>, unsigned int *w@<edx>, int keysize)
+?aes_key_setup@@YGXQBEQAIH@Z proc near  ; CODE XREF: aes_cbc_test(void)+DAp
+
+Rcon            = dword ptr -3Ch
+keysize         = dword ptr  8
+
+key = ecx
+w = edx
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 3Ch
+                push    ebx
+                push    esi
+                push    edi
+                push    8
+                mov     esi, w
+                mov     [ebp+Rcon], 1000000h
+                mov     [ebp+Rcon+4], 2000000h
+                lea     w, [key+2]
+                mov     [ebp+Rcon+8], 4000000h
+                xor     ebx, ebx
+                mov     [ebp+Rcon+0Ch], 8000000h
+                mov     [ebp+Rcon+10h], 10000000h
+                mov     [ebp+Rcon+14h], 20000000h
+                mov     [ebp+Rcon+18h], 40000000h
+                mov     [ebp+Rcon+1Ch], 80000000h
+                mov     [ebp+Rcon+20h], 1B000000h
+                mov     [ebp+Rcon+24h], 36000000h
+                mov     [ebp+Rcon+28h], 6C000000h
+                mov     [ebp+Rcon+2Ch], 0D8000000h
+                mov     [ebp+Rcon+30h], 0AB000000h
+                mov     [ebp+Rcon+34h], 4D000000h
+                mov     [ebp+Rcon+38h], 9A000000h
+                pop     edi
+
+loc_4010EC:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+A3j
+                movzx   key, byte ptr [w-2]
+                movzx   eax, byte ptr [w-1]
+                shl     key, 8
+                or      key, eax
+                movzx   eax, byte ptr [w]
+                shl     key, 8
+                lea     w, [w+4]
+                or      key, eax
+                movzx   eax, byte ptr [w-3]
+                shl     key, 8
+                or      key, eax
+                mov     [esi+ebx*4], key
+                inc     ebx
+                cmp     ebx, edi
+                jl      short loc_4010EC
+
+loc_401115:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+EEj
+                mov     key, [esi+1Ch]  ; word
+                mov     eax, edi
+                and     eax, 80000007h
+                jns     short loc_401126
+                dec     eax
+                or      eax, 0FFFFFFF8h
+                inc     eax
+
+loc_401126:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+AFj
+                jnz     short loc_401144
+                rol     key, 8          ; word
+                call    ?SubWord@@YGII@Z ; SubWord(uint)
+                mov     key, eax
+                lea     eax, [edi-1]
+                cdq
+                and     w, 7
+                add     eax, w
+                sar     eax, 3
+                xor     key, [ebp+eax*4+Rcon]
+                jmp     short loc_401150
+; ---------------------------------------------------------------------------
+
+loc_401144:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int):loc_401126j
+                cmp     eax, 4
+                jnz     short loc_401150
+                call    ?SubWord@@YGII@Z ; SubWord(uint)
+                mov     key, eax
+
+loc_401150:                             ; CODE XREF: aes_key_setup(uchar const * const,uint * const,int)+D2j
+                                        ; aes_key_setup(uchar const * const,uint * const,int)+D7j
+                mov     eax, [esi]
+                xor     eax, key
+                inc     edi
+                mov     [esi+20h], eax
+                add     esi, 4
+                cmp     edi, 3Ch
+                jl      short loc_401115
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn    4
+?aes_key_setup@@YGXQBEQAIH@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge AddRoundKey(char (*state)[4]@<ecx>, const unsigned int *w@<edx>)
+?AddRoundKey@@YGXQAY03EQBI@Z proc near  ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+71p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+94p ...
+state = ecx
+w = edx
+                push    ebx
+                push    esi
+                mov     esi, w
+                push    edi
+                mov     edi, state
+                mov     ebx, [esi]
+                mov     w, ebx
+                mov     al, [esi]
+                mov     state, ebx
+                xor     [edi+0Ch], al
+                mov     al, [esi+4]
+                xor     [edi+0Dh], al
+                mov     al, [esi+8]
+                xor     [edi+0Eh], al
+                mov     al, [esi+0Ch]
+                xor     [edi+0Fh], al
+                shr     ebx, 8
+                xor     [edi+8], bl
+                mov     ebx, [esi+4]
+                shr     w, 18h
+                xor     [edi], dl
+                mov     w, ebx
+                shr     state, 10h
+                xor     [edi+4], cl
+                mov     state, ebx
+                shr     ebx, 8
+                xor     [edi+9], bl
+                mov     ebx, [esi+8]
+                shr     w, 18h
+                xor     [edi+1], dl
+                mov     w, ebx
+                shr     state, 10h
+                xor     [edi+5], cl
+                mov     state, ebx
+                shr     ebx, 8
+                xor     [edi+0Ah], bl
+                mov     ebx, [esi+0Ch]
+                shr     w, 18h
+                xor     [edi+2], dl
+                mov     w, ebx
+                shr     state, 10h
+                xor     [edi+6], cl
+                mov     state, ebx
+                shr     ebx, 8
+                xor     [edi+0Bh], bl
+                shr     w, 18h
+                xor     [edi+3], dl
+                shr     state, 10h
+                xor     [edi+7], cl
+                pop     edi
+                pop     esi
+                pop     ebx
+                retn
+?AddRoundKey@@YGXQAY03EQBI@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge SubBytes(char (*state)[4]@<ecx>)
+?SubBytes@@YGXQAY03E@Z proc near        ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+79p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+9Cp ...
+state = ecx
+                push    esi
+                mov     esi, state
+                push    edi
+                push    0Fh
+                pop     edi
+                movzx   edx, byte ptr [esi]
+                movzx   state, byte ptr [esi+1]
+                mov     eax, edx
+                and     eax, 0FFFFFFF0h
+                and     edx, edi
+                mov     al, ds:aes_sbox[eax+edx]
+                mov     [esi], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+2]
+                mov     [esi+1], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+3]
+                mov     [esi+2], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+4]
+                mov     [esi+3], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+5]
+                mov     [esi+4], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+6]
+                mov     [esi+5], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+7]
+                mov     [esi+6], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+8]
+                mov     [esi+7], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+9]
+                mov     [esi+8], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Ah]
+                mov     [esi+9], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Bh]
+                mov     [esi+0Ah], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Ch]
+                mov     [esi+0Bh], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Dh]
+                mov     [esi+0Ch], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Eh]
+                mov     [esi+0Dh], al
+                mov     eax, state
+                and     eax, 0FFFFFFF0h
+                and     state, edi
+                mov     al, ds:aes_sbox[eax+state]
+                movzx   state, byte ptr [esi+0Fh]
+                mov     [esi+0Eh], al
+                mov     eax, state
+                and     state, edi
+                and     eax, 0FFFFFFF0h
+                pop     edi
+                mov     al, ds:aes_sbox[eax+state]
+                mov     [esi+0Fh], al
+                pop     esi
+                retn
+?SubBytes@@YGXQAY03E@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+; void __userpurge ShiftRows(char (*state)[4]@<ecx>)
+?ShiftRows@@YGXQAY03E@Z proc near       ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+81p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+A4p ...
+state = ecx
+                push    esi
+                mov     esi, state
+                mov     al, [esi+5]
+                movzx   edx, byte ptr [esi+4]
+                movzx   state, byte ptr [esi+8]
+                mov     [esi+4], al
+                mov     al, [esi+6]
+                mov     [esi+5], al
+                mov     al, [esi+7]
+                mov     [esi+6], al
+                mov     al, [esi+0Ah]
+                mov     [esi+8], al
+                mov     al, [esi+0Bh]
+                mov     [esi+0Ah], cl
+                movzx   state, byte ptr [esi+9]
+                mov     [esi+9], al
+                mov     al, [esi+0Fh]
+                mov     [esi+0Bh], cl
+                movzx   state, byte ptr [esi+0Ch]
+                mov     [esi+0Ch], al
+                mov     al, [esi+0Eh]
+                mov     [esi+0Fh], al
+                mov     al, [esi+0Dh]
+                mov     [esi+7], dl
+                mov     [esi+0Eh], al
+                mov     [esi+0Dh], cl
+                pop     esi
+                retn
+?ShiftRows@@YGXQAY03E@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge MixColumns(char (*state)[4]@<ecx>)
+?MixColumns@@YGXQAY03E@Z proc near      ; CODE XREF: aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+89p
+                                        ; aes_encrypt(uchar const * const,uchar * const,uint const * const,int)+ACp ...
+
+var_2           = byte ptr -2
+var_1           = byte ptr -1
+
+state = ecx
+                push    ebp
+                mov     ebp, esp
+                push    state
+                push    ebx
+                push    esi
+                push    edi
+                mov     edi, state
+                mov     bh, [edi]
+                mov     cl, [edi+4]
+                mov     bl, [edi+0Ch]
+                mov     dl, [edi+8]
+                mov     [ebp+var_1], cl
+                movzx   eax, bh
+                imul    esi, eax, 6
+                movzx   eax, cl
+                imul    state, eax, 6
+                mov     [ebp+var_2], dl
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[esi]
+                xor     al, bl
+                xor     al, dl
+                mov     [edi], al
+                movzx   eax, dl
+                imul    edx, eax, 6
+                mov     al, ds:(gf_mul+1)[edx]
+                xor     al, ds:gf_mul[state]
+                xor     al, bl
+                xor     al, bh
+                mov     [edi+4], al
+                movzx   eax, bl
+                imul    state, eax, 6
+                mov     bl, [edi+0Dh]
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[edx]
+                xor     al, [ebp+var_1]
+                xor     al, bh
+                mov     dl, [edi+9]
+                mov     bh, [edi+1]
+                mov     [edi+8], al
+                mov     al, ds:gf_mul[state]
+                xor     al, ds:(gf_mul+1)[esi]
+                xor     al, [ebp+var_2]
+                xor     al, [ebp+var_1]
+                mov     cl, [edi+5]
+                mov     [edi+0Ch], al
+                movzx   eax, bh
+                imul    esi, eax, 6
+                mov     [ebp+var_2], cl
+                movzx   eax, cl
+                imul    state, eax, 6
+                mov     [ebp+var_1], dl
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[esi]
+                xor     al, bl
+                xor     al, dl
+                mov     [edi+1], al
+                movzx   eax, dl
+                imul    edx, eax, 6
+                mov     al, ds:(gf_mul+1)[edx]
+                xor     al, ds:gf_mul[state]
+                xor     al, bl
+                xor     al, bh
+                mov     [edi+5], al
+                movzx   eax, bl
+                imul    state, eax, 6
+                mov     bl, [edi+0Eh]
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[edx]
+                xor     al, [ebp+var_2]
+                mov     dl, [edi+0Ah]
+                xor     al, bh
+                mov     bh, [edi+2]
+                mov     [edi+9], al
+                mov     al, ds:gf_mul[state]
+                xor     al, ds:(gf_mul+1)[esi]
+                xor     al, [ebp+var_1]
+                xor     al, [ebp+var_2]
+                mov     cl, [edi+6]
+                mov     [edi+0Dh], al
+                movzx   eax, bh
+                imul    esi, eax, 6
+                mov     [ebp+var_2], cl
+                mov     [ebp+var_1], dl
+                movzx   eax, cl
+                imul    state, eax, 6
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[esi]
+                xor     al, bl
+                xor     al, dl
+                mov     [edi+2], al
+                movzx   eax, dl
+                imul    edx, eax, 6
+                mov     al, ds:(gf_mul+1)[edx]
+                xor     al, ds:gf_mul[state]
+                xor     al, bl
+                xor     al, bh
+                mov     [edi+6], al
+                movzx   eax, bl
+                imul    state, eax, 6
+                mov     bl, [edi+0Fh]
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[edx]
+                xor     al, [ebp+var_2]
+                xor     al, bh
+                mov     dl, [edi+0Bh]
+                mov     bh, [edi+3]
+                mov     [edi+0Ah], al
+                mov     al, ds:gf_mul[state]
+                xor     al, ds:(gf_mul+1)[esi]
+                xor     al, [ebp+var_1]
+                xor     al, [ebp+var_2]
+                mov     cl, [edi+7]
+                mov     [edi+0Eh], al
+                movzx   eax, bh
+                imul    esi, eax, 6
+                movzx   eax, cl
+                mov     [ebp+var_2], cl
+                imul    state, eax, 6
+                mov     [ebp+var_1], dl
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[esi]
+                xor     al, bl
+                xor     al, dl
+                mov     [edi+3], al
+                movzx   eax, dl
+                imul    edx, eax, 6
+                mov     al, ds:(gf_mul+1)[edx]
+                xor     al, ds:gf_mul[state]
+                xor     al, bl
+                xor     al, bh
+                mov     [edi+7], al
+                movzx   eax, bl
+                imul    state, eax, 6
+                mov     al, ds:(gf_mul+1)[state]
+                xor     al, ds:gf_mul[edx]
+                xor     al, [ebp+var_2]
+                xor     al, bh
+                mov     [edi+0Bh], al
+                mov     al, ds:gf_mul[state]
+                xor     al, ds:(gf_mul+1)[esi]
+                xor     al, [ebp+var_1]
+                xor     al, [ebp+var_2]
+                mov     [edi+0Fh], al
+                pop     edi
+                pop     esi
+                pop     ebx
+                mov     esp, ebp
+                pop     ebp
+                retn
+?MixColumns@@YGXQAY03E@Z endp
+
+
+; =============== S U B R O U T I N E =======================================
+
+; Attributes: bp-based frame
+
+; void __userpurge aes_encrypt(const char *in@<ecx>, char *out@<edx>, const unsigned int *key, int keysize)
+?aes_encrypt@@YGXQBEQAEQBIH@Z proc near ; CODE XREF: aes_cbc_test(void)+115p
+
+state           = byte ptr -10h
+key             = dword ptr  8
+keysize         = dword ptr  0Ch
+
+in = ecx
+out = edx
+                push    ebp
+                mov     ebp, esp
+                sub     esp, 10h
+                push    esi
+                push    edi
+                mov     edi, out
+                mov     al, [in]
+                mov     [ebp+state], al
+                mov     al, [in+1]
+                mov     [ebp+state+4], al
+                mov     al, [in+2]
+                mov     [ebp+state+8], al
+                mov     al, [in+3]
+                mov     [ebp+state+0Ch], al
+                mov     al, [in+4]
+                mov     [ebp+state+1], al
+                mov     al, [in+5]
+                mov     [ebp+state+5], al
+                mov     al, [in+6]
+                mov     [ebp+state+9], al
+                mov     al, [in+7]
+                mov     [ebp+state+0Dh], al
+                mov     al, [in+8]
+                mov     [ebp+state+2], al
+                mov     al, [in+9]
+                mov     [ebp+state+6], al
+                mov     al, [in+0Ah]
+                mov     [ebp+state+0Ah], al
+                mov     al, [in+0Bh]
+                mov     [ebp+state+0Eh], al
+                mov     al, [in+0Ch]
+                mov     [ebp+state+3], al
+                mov     al, [in+0Dh]
+                mov     [ebp+state+7], al
+                mov     al, [in+0Eh]
+                mov     esi, [ebp+key]
+                mov     [ebp+state+0Bh], al
+                mov     al, [in+0Fh]
+                mov     out, esi        ; w
+                lea     in, [ebp+state] ; state
+                mov     [ebp+state+0Fh], al
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+10h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+20h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+30h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+40h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+50h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+60h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+70h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+80h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+90h]  ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+0A0h] ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+0B0h] ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+0C0h] ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?MixColumns@@YGXQAY03E@Z ; MixColumns(uchar (* const)[4])
+                lea     out, [esi+0D0h] ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                lea     in, [ebp+state] ; state
+                call    ?SubBytes@@YGXQAY03E@Z ; SubBytes(uchar (* const)[4])
+                lea     in, [ebp+state] ; state
+                call    ?ShiftRows@@YGXQAY03E@Z ; ShiftRows(uchar (* const)[4])
+                lea     out, [esi+0E0h] ; w
+                lea     in, [ebp+state] ; state
+                call    ?AddRoundKey@@YGXQAY03EQBI@Z ; AddRoundKey(uchar (* const)[4],uint const * const)
+                mov     al, [ebp+state]
+                mov     [edi], al
+                mov     al, [ebp+state+4]
+                mov     [edi+1], al
+                mov     al, [ebp+state+8]
+                mov     [edi+2], al
+                mov     al, [ebp+state+0Ch]
+                mov     [edi+3], al
+                mov     al, [ebp+state+1]
+                mov     [edi+4], al
+                mov     al, [ebp+state+5]
+                mov     [edi+5], al
+                mov     al, [ebp+state+9]
+                mov     [edi+6], al
+                mov     al, [ebp+state+0Dh]
+                mov     [edi+7], al
+                mov     al, [ebp+state+2]
+                mov     [edi+8], al
+                mov     al, [ebp+state+6]
+                mov     [edi+9], al
+                mov     al, [ebp+state+0Ah]
+                mov     [edi+0Ah], al
+                mov     al, [ebp+state+0Eh]
+                mov     [edi+0Bh], al
+                mov     al, [ebp+state+3]
+                mov     [edi+0Ch], al
+                mov     al, [ebp+state+7]
+                mov     [edi+0Dh], al
+                mov     al, [ebp+state+0Bh]
+                mov     [edi+0Eh], al
+                mov     al, [ebp+state+0Fh]
+                mov     [edi+0Fh], al
+                pop     edi
+                pop     esi
+                mov     esp, ebp
+                pop     ebp
+                retn    8
+?aes_encrypt@@YGXQBEQAEQBIH@Z endp

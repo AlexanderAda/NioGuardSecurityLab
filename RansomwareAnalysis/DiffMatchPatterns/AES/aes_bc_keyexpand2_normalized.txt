@@ -1,0 +1,14 @@
+movzx operand, operand
+shl operand, 18h
+mov operand, operand
+mov operand, operand
+movzx operand, operand
+shl operand, 10h
+or operand, operand
+mov operand, operand
+mov operand, operand
+movzx operand, operand
+shl operand, 8
+or operand, operand
+mov operand, operand
+mov operand, operand
