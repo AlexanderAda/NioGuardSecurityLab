@@ -1,0 +1,67 @@
+Location:999
+
+Matched pattern:
+rand, operand
+cmp operand, operand
+jl      short loc_addr
+mov operand, 63h
+mov operand, 0
+loc_addr:
+mov operand, operand
+lea operand, operand
+shl operand, 2
+sub operand, operand
+mov operand, operand
+mov operand, operand
+sar operand, 7
+lea operand, operand
+or operand, operand
+and operand, operand
+mov operand, operand
+xor
+
+Diffs vector:
+(-1, 'loc_addr:movzxoperand,operand')
+(1, 'rand,operandcmpoperand,operandjlshortloc_addr')
+(0, 'mov')
+(-1, 'zx')
+(0, 'operand,')
+(1, '63hmov')
+(0, 'operand')
+(-1, 'shloperand,8or')
+(1, ',0loc_addr:mov')
+(0, 'operand,operand')
+(-1, 'movzx')
+(1, 'lea')
+(0, 'operand,operandshloperand,')
+(-1, '8lea')
+(1, '2sub')
+(0, 'operand,operand')
+(-1, 'or')
+(1, 'mov')
+(0, 'operand,operandmov')
+(-1, 'zx')
+(0, 'operand,operands')
+(-1, 'hl')
+(1, 'ar')
+(0, 'operand,')
+(-1, '8or')
+(1, '7lea')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'or')
+(0, 'operand,operand')
+(-1, 'inc')
+(1, 'and')
+(0, 'operand')
+(-1, 'cmp')
+(1, ',')
+(0, 'operand')
+(-1, ',')
+(1, 'mov')
+(0, 'operand')
+(-1, 'jlshortloc_add')
+(1, ',operandxo')
+(0, 'r')
+Levenshtein distance: 113
+

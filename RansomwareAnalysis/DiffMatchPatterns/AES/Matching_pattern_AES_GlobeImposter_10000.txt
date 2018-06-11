@@ -1,0 +1,52 @@
+Location:9968
+
+Matched pattern:
+_10= dword ptr -10h
+var_C= dword ptr -0Ch
+var_8= dword ptr -8
+var_4= dword ptr -4
+arg_0= dword ptr  4
+arg_4= dword ptr  8
+arg_8= dword ptr  0Ch
+sub operand, 14h
+mov operand, operand
+push operand
+mov operand, operand
+push operand
+movzx operand, operand
+mov operand, 0FFh
+movzx operand, operand
+shl operand, 8
+or operand, o
+
+Diffs vector:
+(-1, 'loc_addr:movzx')
+(1, 'sub')
+(0, 'operand,')
+(-1, 'operand')
+(1, '14h')
+(0, 'mov')
+(-1, 'zx')
+(0, 'operand,operand')
+(1, 'pu')
+(0, 'sh')
+(-1, 'loperand,8oroperand,')
+(0, 'operandmov')
+(-1, 'zx')
+(0, 'operand,operand')
+(1, 'pu')
+(0, 'sh')
+(-1, 'l')
+(0, 'operand')
+(-1, ',8lea')
+(1, 'movzx')
+(0, 'operand,operand')
+(-1, 'or')
+(1, 'mov')
+(0, 'operand,')
+(-1, 'operand')
+(1, '0FFh')
+(0, 'movzxoperand,operandshloperand,8oroperand,o')
+(-1, 'perandmovoperand,operandincoperandcmpoperand,operandjlshortloc_addr')
+Levenshtein distance: 132
+
