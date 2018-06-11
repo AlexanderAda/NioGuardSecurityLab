@@ -1,0 +1,18 @@
+Location:340
+
+Matched pattern:
+erand, operand
+movzx operand, operand
+add operand, operand
+and operand, 800000FFh
+jns     short loc_addr
+dec operand
+or operand, 0FFFFFF00h
+inc 
+
+Diffs vector:
+(1, 'erand,operand')
+(0, 'movzxoperand,operandaddoperand,operandandoperand,800000FFhjnsshortloc_addrdecoperandoroperand,0FFFFFF00hinc')
+(-1, 'operand')
+Levenshtein distance: 20
+
