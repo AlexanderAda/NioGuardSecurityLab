@@ -1,0 +1,60 @@
+Location:3094
+
+Matched pattern:
+d, operand
+inc operand
+cmp operand, 10h
+jnz     short loc_addr
+add operand, 88h
+pop operand
+pop operand
+pop operand
+pop operand
+ret
+sub_48DB16      endp
+
+
+KeyExpand       proc near               
+
+
+var_28          = dword ptr -28h
+var_24          = dword ptr -24h
+var_20          = dword ptr -20h
+var_1C          = byte ptr -1Ch
+arg_0           = dword ptr  8
+arg_4           = dword ptr  0Ch
+arg_8           = dword ptr  10h
+push operand
+mov operand, 4
+mov operand, operand
+push operand
+push operand
+push operand
+lea operand, operand
+mov operand, operand
+sub operand, 1Ch
+mov operand, operand
+mov operand, operand
+rep operand
+mov operand, 0
+mov operand, 14h
+mov operand, operand
+mov operand, operand
+mov operand, operand
+loc_addr:
+
+
+Diffs vector:
+(-1, 'functionprocnearpushoperandmovoperand,operandmovoperand,')
+(1, 'd,operandinc')
+(0, 'operand')
+(-1, 'mov')
+(1, 'cmp')
+(0, 'operand,')
+(-1, 'operandpushoperandmovoperand,operandpushoperandmovoperand,operandmovoperand,operandaddoperand,operandroloperand,7xoroperand,operandmovoperand,operandaddoperand,operandroloperand,9xoroperand,operandmovoperand,operandaddoperand,operandroloperand,0Dhxoroperand,operandmovoperand,operandaddoperand,operandroroperand,0Ehxoroperand,')
+(1, '10hjnzshortloc_addraddoperand,88hpop')
+(0, 'operandpopoperandpopoperandpopoperandret')
+(-1, 'n10h')
+(0, 'functionendp')
+Levenshtein distance: 389
+

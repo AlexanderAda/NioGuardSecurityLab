@@ -1,0 +1,48 @@
+Location:1500
+
+Matched pattern:
+ 10h
+shl operand, 18h
+add operand, operand
+movzx operand, operand
+mov operand, operand
+shl operand, 8
+lea operand, operand
+lea operand, operand
+add operand, operand
+mov operand, operand
+mov operand, operand
+inc operand
+cmp operand, 10h
+jnz     short loc_addr
+mov operand, 0Ah
+mov operand, operand
+loc_addr:
+lea operand, operand
+lea operand, operand
+lea operand, operand
+lea operand, operand
+mov operand, operand
+mov operand, operand
+call func
+lea operand, operand
+lea operand, operand
+lea operand, operand
+mov operand, operand
+lea operand, operand
+call func
+lea operand, operand
+lea operand, operand
+lea operand, operand
+mov operand, operand
+lea operand, operand
+call func
+lea operand, operand
+lea operand, operand
+mov operand, oper
+
+Diffs vector:
+(-1, 'functionprocnearpushoperandmovoperand,operandmovoperand,operandmovoperand,operandpushoperandmovoperand,operandpushoperandmovoperand,operandmovoperand,operandaddoperand,operandroloperand,7xoroperand,operandmovoperand,operandaddoperand,operandroloperand,9xoroperand,operandmovoperand,operandaddoperand,operandroloperand,0Dhxoroperand,operandmovoperand,operandaddoperand,operandroroperand,0Ehxoroperand,operandpopoperandpopoperandpopoperandretn10hfunctionendp')
+(1, '10hshloperand,18haddoperand,operandmovzxoperand,operandmovoperand,operandshloperand,8leaoperand,operandleaoperand,operandaddoperand,operandmovoperand,operandmovoperand,operandincoperandcmpoperand,10hjnzshortloc_addrmovoperand,0Ahmovoperand,operandloc_addr:leaoperand,operandleaoperand,operandleaoperand,operandleaoperand,operandmovoperand,operandmovoperand,operandcallfuncleaoperand,operandleaoperand,operandleaoperand,operandmovoperand,operandleaoperand,operandcallfuncleaoperand,operandleaoperand,operandleaoperand,operandmovoperand,operandleaoperand,operandcallfuncleaoperand,operandleaoperand,operandmovoperand,oper')
+Levenshtein distance: 619
+
