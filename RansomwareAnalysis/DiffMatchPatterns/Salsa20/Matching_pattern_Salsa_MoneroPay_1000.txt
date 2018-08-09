@@ -1,0 +1,100 @@
+Location:1000
+
+Matched pattern:
+
+var_2C          = byte ptr -2Ch
+var_28          = byte ptr -28h
+var_24          = byte ptr -24h
+var_20          = byte ptr -20h
+var_1C          = byte ptr -1Ch
+var_18          = byte ptr -18h
+var_14          = byte ptr -14h
+var_10          = byte ptr -10h
+push operand
+mov operand, operand
+push operand
+push operand
+push operand
+mov operand, operand
+xor operand, operand
+sub operand, 88h
+loc_addr:
+movzx operand, operand
+movzx operand, operand
+movzx operand, operand
+shl operand, 10h
+shl operand, 18h
+add operand, operand
+movzx operand, operand
+mov operand, operand
+shl operand, 8
+lea operand, operand
+lea operand, operand
+add operand, operand
+mov operand, operand
+mov operand, operand
+inc operand
+cmp operand, 10h
+jnz     short lo
+
+Diffs vector:
+(-1, 'functionprocnear')
+(0, 'pushoperandmovoperand,operand')
+(-1, 'movoperand,operandmovoperand,')
+(1, 'pushoperandpush')
+(0, 'operandpushoperandmovoperand,operand')
+(-1, 'pushoperandmov')
+(1, 'xor')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'sub')
+(0, 'operand,')
+(-1, 'operandaddoperand,operandroloperand,7xor')
+(1, '88hloc_addr:movzxoperand,operandmovzx')
+(0, 'operand,operandmov')
+(1, 'zx')
+(0, 'operand,operand')
+(-1, 'add')
+(1, 'shl')
+(0, 'operand,')
+(-1, 'operandro')
+(1, '10hsh')
+(0, 'loperand,')
+(-1, '9xor')
+(1, '18hadd')
+(0, 'operand,operandmov')
+(1, 'zx')
+(0, 'operand,operand')
+(-1, 'add')
+(1, 'mov')
+(0, 'operand,operand')
+(-1, 'ro')
+(1, 'sh')
+(0, 'loperand,')
+(-1, '0Dhxor')
+(1, '8lea')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'lea')
+(0, 'operand,operandaddoperand,operand')
+(-1, 'ror')
+(1, 'mov')
+(0, 'operand,')
+(-1, '0Ehxor')
+(0, 'operand')
+(-1, ',')
+(1, 'mov')
+(0, 'operand')
+(-1, 'pop')
+(1, ',')
+(0, 'operand')
+(-1, 'pop')
+(1, 'inc')
+(0, 'operand')
+(-1, 'po')
+(1, 'cm')
+(0, 'poperand')
+(-1, 'retn10hfunctionendp')
+(1, ',10hjnzshortlo')
+Levenshtein distance: 177
+

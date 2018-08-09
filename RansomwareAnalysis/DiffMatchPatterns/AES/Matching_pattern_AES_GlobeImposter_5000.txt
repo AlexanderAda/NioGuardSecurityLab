@@ -1,0 +1,51 @@
+Location:5004
+
+Matched pattern:
+operand
+movzx operand, operand
+movzx operand, operand
+shl operand, 8
+movzx operand, operand
+xor operand, operand
+movzx operand, operand
+shl operand, 8
+movzx operand, operand
+xor operand, operand
+movzx operand, operand
+shl operand, 8
+movzx operand, operand
+xor operand, operand
+mov operand, operand
+xor operand, operand
+ad
+
+Diffs vector:
+(-1, 'loc_addr:')
+(1, 'operand')
+(0, 'movzxoperand,operandmovzxoperand,operandshloperand,8')
+(1, 'movzxoperand,operandx')
+(0, 'oroperand,operandmovzxoperand,operandshloperand,8')
+(-1, 'lea')
+(1, 'movzx')
+(0, 'operand,operand')
+(1, 'x')
+(0, 'oroperand,operandmovzxoperand,operandshloperand,8')
+(-1, 'or')
+(1, 'movzx')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'xor')
+(0, 'operand,operand')
+(-1, 'inc')
+(1, 'mov')
+(0, 'operand')
+(-1, 'cmp')
+(1, ',')
+(0, 'operand')
+(-1, ',')
+(1, 'xor')
+(0, 'operand')
+(-1, 'jlshortloc_addr')
+(1, ',operandad')
+Levenshtein distance: 68
+

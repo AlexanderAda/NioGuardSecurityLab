@@ -1,0 +1,30 @@
+Location:1063
+
+Matched pattern:
+ov operand, operand
+mov operand, operand
+inc operand
+mov operand, operand
+mov operand, operand
+cmp operand, 100h
+jnz     short loc_addr
+and oper
+
+Diffs vector:
+(-1, 'm')
+(0, 'ov')
+(-1, 'zx')
+(0, 'operand,operand')
+(-1, 'add')
+(1, 'mov')
+(0, 'operand,operand')
+(-1, 'andoperand,800000FFhjnsshortloc_addrdec')
+(1, 'incoperandmovoperand,operandmovoperand,')
+(0, 'operand')
+(-1, 'or')
+(1, 'cmp')
+(0, 'operand,')
+(-1, '0FFFFFF00hincoperand')
+(1, '100hjnzshortloc_addrandoper')
+Levenshtein distance: 75
+

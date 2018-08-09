@@ -1,0 +1,35 @@
+Location:828
+
+Matched pattern:
+, operand
+mov operand, operand
+loc_addr:
+mov operand, operand
+mov operand, operand
+movzx operand, operand
+div operand
+movsx operand, operand
+add
+
+Diffs vector:
+(1, ',operand')
+(0, 'mov')
+(-1, 'zx')
+(0, 'operand,operand')
+(-1, 'add')
+(1, 'loc_addr:mov')
+(0, 'operand,operand')
+(-1, 'and')
+(1, 'mov')
+(0, 'operand,')
+(-1, '800000FFhjnsshortloc_addrdec')
+(1, 'operandmovzxoperand,operanddiv')
+(0, 'operand')
+(-1, 'or')
+(1, 'movsx')
+(0, 'operand,')
+(-1, '0FFFFFF00hinc')
+(0, 'operand')
+(1, 'add')
+Levenshtein distance: 76
+

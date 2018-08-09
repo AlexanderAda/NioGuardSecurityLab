@@ -1,0 +1,68 @@
+Location:19953
+
+Matched pattern:
+erand
+movzx operand, bh
+xor operand, operand
+movzx operand, operand
+xor operand, operand
+movzx operand, ah
+xor operand, operand
+movzx operand, operand
+xor operand, operand
+movzx operand, operand
+mov operand, operand
+shr operand, 10h
+and operand, 0FFFF0000h
+or operand, operand
+shr operand, 10h
+movz
+
+Diffs vector:
+(1, 'erand')
+(0, 'movzxoperand,')
+(1, 'bhxor')
+(0, 'operand')
+(-1, 'shl')
+(1, ',')
+(0, 'operand')
+(-1, ',18h')
+(0, 'mov')
+(1, 'zx')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'xor')
+(0, 'operand,operandmovzxoperand,')
+(1, 'ahxor')
+(0, 'operand')
+(-1, 'shl')
+(1, ',')
+(0, 'operand')
+(-1, ',10hor')
+(1, 'movzx')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'xor')
+(0, 'operand,operandmov')
+(1, 'zx')
+(0, 'operand,operandmov')
+(-1, 'zx')
+(0, 'operand,operandsh')
+(-1, 'l')
+(1, 'r')
+(0, 'operand,')
+(-1, '8oroper')
+(1, '10h')
+(0, 'and')
+(-1, ',')
+(0, 'operand')
+(-1, 'mov')
+(1, ',0FFFF0000hor')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'shr')
+(0, 'operand,')
+(-1, 'operand')
+(1, '10hmovz')
+Levenshtein distance: 75
+

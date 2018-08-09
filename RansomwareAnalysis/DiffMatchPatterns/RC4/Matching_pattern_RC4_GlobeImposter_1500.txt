@@ -1,0 +1,32 @@
+Location:1553
+
+Matched pattern:
+nd
+jle     short loc_addr
+push operand
+mov operand, operand
+loc_addr:
+call func
+xor operand, operand
+inc operand
+cmp operand, operand
+jl      sh
+
+Diffs vector:
+(-1, 'movzxoperand,')
+(1, 'ndjleshortloc_addrpush')
+(0, 'operand')
+(-1, 'add')
+(1, 'mov')
+(0, 'operand,operand')
+(-1, 'andoperand,800000FFhjnsshortloc_addrde')
+(1, 'loc_addr:callfuncxoroperand,operandin')
+(0, 'coperand')
+(-1, 'or')
+(1, 'cmp')
+(0, 'operand,')
+(-1, '0FFFFFF00hinc')
+(0, 'operand')
+(1, 'jlsh')
+Levenshtein distance: 83
+

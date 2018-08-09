@@ -1,0 +1,54 @@
+Location:1473
+
+Matched pattern:
+perand, operand
+shl operand, 10h
+xor operand, operand
+movzx operand, ah
+movzx operand, operand
+shl operand, 18h
+xor operand, operand
+mov operand, operand
+pop operand
+pop operand
+mov operand, operand
+xor operand, operand
+mov operand, operand
+xor operand, operand
+mov operand, operand
+xor operand, op
+
+Diffs vector:
+(-1, 'movzxo')
+(0, 'perand,operandshloperand,1')
+(-1, '8hmov')
+(1, '0hxor')
+(0, 'operand,operandmov')
+(1, 'zx')
+(0, 'operand,')
+(-1, 'operand')
+(1, 'ah')
+(0, 'movzxoperand,operandshloperand,1')
+(-1, '0h')
+(1, '8hx')
+(0, 'oroperand,operandmovoperand,operand')
+(-1, 'mov')
+(1, 'pop')
+(0, 'operand')
+(-1, ',')
+(1, 'pop')
+(0, 'operandmov')
+(-1, 'zx')
+(0, 'operand,operand')
+(-1, 'shl')
+(1, 'xor')
+(0, 'operand,')
+(-1, '8or')
+(1, 'operandmov')
+(0, 'operand,operand')
+(-1, 'mov')
+(1, 'xor')
+(0, 'operand,operandmovoperand,operand')
+(1, 'xoroperand,op')
+Levenshtein distance: 60
+

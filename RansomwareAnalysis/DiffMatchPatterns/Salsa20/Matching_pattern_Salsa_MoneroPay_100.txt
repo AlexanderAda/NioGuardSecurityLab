@@ -1,0 +1,65 @@
+Location:100
+
+Matched pattern:
+erand, operand
+push operand
+push operand
+mov operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 7
+xor operand, operand
+mov operand, operand
+add operand, operand
+rol operand, 9
+xor operand, operand
+mov operand, operand
+add operand, operand
+mov operand, operand
+rol operand, 0Dh
+xor operand, operand
+mov operand, operand
+add operand, operand
+pop operand
+pop operand
+pop operand
+ror operand, 0Eh
+xor operand, operand
+ret
+sub_48DAE4      endp
+
+
+sub_48DB16      proc near               
+
+var_94          = dword ptr -94h
+var_90          = dword ptr -90h
+var_8C          = dword ptr -8Ch
+var_4C          = dword ptr -4Ch
+var_48          = byte ptr -48h
+var_44          = byte ptr -44h
+var_40          = byte ptr -40h
+
+
+Diffs vector:
+(-1, 'functionprocnearpushoperandmovoperand,operandmovoperand,operandmovop')
+(0, 'erand,operandpush')
+(-1, 'operandmovoperand,')
+(0, 'operandpushoperandmovoperand,operandmovoperand,operandaddoperand,operandroloperand,7xoroperand,operandmovoperand,operandaddoperand,operandroloperand,9xoroperand,operandmovoperand,operandaddoperand,')
+(1, 'operandmovoperand,')
+(0, 'operandroloperand,0Dhxoroperand,operandmovoperand,operandaddoperand,operand')
+(-1, 'ror')
+(1, 'pop')
+(0, 'operand')
+(-1, ',0Ehxoroperand,')
+(1, 'pop')
+(0, 'operandpopoperand')
+(-1, 'pop')
+(1, 'roroperand,0Ehxor')
+(0, 'operand')
+(-1, 'pop')
+(1, ',')
+(0, 'operandret')
+(-1, 'n10h')
+(0, 'functionendp')
+Levenshtein distance: 146
+
