@@ -1,0 +1,202 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+UNC1151,2022,Host,File,File hash SHA256,f86d674af9284ceb7d7ea6bd536bfd1bc66ea1cc2c0100f478702ddc99f300e9,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,0c15634eb43b0cbc51923a9e7ed68f1dc9639df3c53184a4c73066d0b292a23e,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,b15d67b4a57184e5202df3c25e20dc0b7f853f4d527d148b337138900989824a,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,769416fa7edf38e91a55f4f7163914ee4aad9c8c890ed641c300b73157acac45,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,744ecdf5fcc81797ffce3c85be0ab6f931c58b32ad2adb6377c2ac0b31c80c64,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,36993fc3312ce757c8adeca3e5969e1fcc11d5b51b12c458ba8d54d73b64d4e7,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,303c78aba3b776472c245f17020f9aa5a53f09a6f6c1e4f34b8e18e33906b5ee,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,963d0d5f86bdb7c95d169cadad792963e184d8c0a204a6eecc2f261c2ee408ca,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,ccd5b9e5947f956e880bd2285a6091dc9f1ee9b0eb8df627ec4e72b451a1c745,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,dfc847405be60c29e86e3e3222e7f63c1ff584727d87d3c35c25c4893e19fda0,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,431cd1e4fef4d771a4b59dbf088f7a85b42b92b2dcec20f56715bb457c6e5f49,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,998b2d7d12aafe1aa99c17224cf157704b67853a58a0a6a00de776f2a2907b4a,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,d813704a41efc0593ff96efd845522e362c898b0628138b77377f48fe73b89b1,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,e97f1d6ec1aa3f7c7973d57074d1d623833f0e9b1c1e53f81af92c057a1fdd72,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,File hash SHA256,7f0511b09b1ab3a64c8827dd8af017acbf7d2688db31a5d98fea8a5029a89d56,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2021,Host,File,File hash SHA256,9390bae396f6cb8b4be9b695f5dda2f8407c3b8c1b15b73cbc8571b921661a7b,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2021,Host,File,File hash SHA256,30f568a18bb7f3ce2419cb3f7b4b8f7619072b211b24a9c462a6c312707d0a72,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Usoris\Remote Utilities Host\Host\Parameters,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Usoris\Remote Utilities Host\Host\Parameters\General,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\P:\fjeoyqva\fnavfvafg.rkr,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Recovery\AdminActive\{AF1E2569-D04F-11EC-BF30-AE7CEA8AF18B},https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\{7P5N40RS-N0SO-4OSP-874N-P0S2R0O9SN8R}\Ihkare Pung\IhkarePung.rkr,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\B04AC0DFA70310942A95D53DA01D552C,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\Folders\C:\Program Files (x86)\Remote Utilities - Host\Printer\common\,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SYSTEM\Remote Utilities Host Installer\CallbackSettings,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2019,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SYSTEM\Remote Utilities Host Installer\notification,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\Windows\system32\cmd.exe /c C:\swrbldin\startclick.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Users\<USER>\AppData\Local\Temp\_ir_sf_temp_0\irsetup.exe"" __IRAOFF:1791234 ""__IRAFN:C:\Users\<USER>\AppData\Local\Temp\<ANALYZED-FILE-NAME>.exe"" ""__IRCT:2"" ""__IRTSS:0"" ""__IRSID:S-1-5-21-3170026379-3177503207-93694414-1001""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\Windows\system32\cmd.exe /c C:\swrbldin\send.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\swrbldin\sanisinst.exe,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\Windows\system32\cmd.exe /c C:\swrbldin\csettings.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Windows\System32\msiexec.exe"" /i ""C:\Users\<USER>\AppData\Local\Temp\RUT_{C9C1EBD8-13B0-44BE-ACCC-F465784F44C1}\host.msi"" /qn",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE"" SCODEF:3052 CREDAT:275457 /prefetch:2",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Program Files (x86)\Vuxner Chat\VuxnerChat.exe""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\Windows\syswow64\MsiExec.exe -Embedding 5ED9C1AD32DB74B22481E91563A78C76 C,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,C:\Windows\syswow64\MsiExec.exe -Embedding C1810FF30E46855E171917A75F2727BA C,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Windows\system32\msiexec.exe"" /i ""C:\Users\<USER>\AppData\Roaming\Vuxner Ltd\Vuxner Trillian 2.0.0.1\install\AEF5672\Vuxner Chat.msi"" AI_SETUPEXEPATH=""C:\Program Files (x86)\Vuxner Chat\VuxnerChat.exe"" SETUPEXEDIR=""C:\Program Files (x86)\Vuxner Chat\"" EXE_CMD_LINE=""/exenoupdates  /forcecleanup  /wintime 1646429854  """,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Windows\System32\WScript.exe"" ""C:\Users\Public\ignit.vbs""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe""  /U C:\Users\Public\Libraries\core.dll",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Registry,Registry Value,"""C:\Windows\System32\wscript.exe"" //B //E:vbs C:\Users\Public\Favorites\desktop.ini",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\Program Files (x86)\Remote Utilities - Host\*.*""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\Program Files (x86)\Remote Utilities - Host""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\swrbldin""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\Program Files\Remote Utilities - Host""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\swrbldin\sanisinst.exe""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"find  ""sanisinst.exe""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,reg  delete HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{9521E224-E4AA-4DA5-92A4-5AA6DFF2CEF1} /f,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,timeout  7,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"regedit  /s ""C:\swrbldin\fix.reg""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,timeout  0,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,cmd line,,"attrib  +s +h ""C:\Program Files\Remote Utilities - Host\*.*""",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,Process,Parent process,"clickbutton.exe  "".*sanisinst.*"" ""Question"" 6",https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,id70.remoteutilities.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,id70.remoteutilities.com:id.remoteutilities.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,cphost14.qhoster.net:78.110.166.82,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,64.20.61.146,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,78.110.166.82,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,66.23.226.254,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,66.23.226.254:5655,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,64.20.61.146:5655,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,id70.remoteutilities.com:64.20.61.146,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,cphost14.qhoster.net,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.218,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.gycijyy.xyz:,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.mcbogey.com/hue5/,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.bedrocksolution.com:108.166.128.202,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.ideeperloshopping.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.ideeperloshopping.com:89.46.105.33,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.mcbogey.com/hue5,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,89.46.105.33,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.216,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.ideeperloshopping.com/hue5/?sBZxw2=A2g+5yEi3p8+ff45/iI642mo4tIKlN1Ug2mE/fPd7Yqy9u+PldJFYYC+ZzE3WWu7QV2lAg==&8pBp3p=2dptyd,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.215,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,108.166.128.202,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:parkingpage.namecheap.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.gycijyy.xyz,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.217,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.211,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.210,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,89.46.105.33:80,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.dsko.store,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.mcbogey.com:198.54.117.212,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.bedrocksolution.com:bedrocksolution.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.ideeperloshopping.com/hue5/,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.mcbogey.com/hue5/?sBZxw2=vv0JGkMdS3sQ8IuOy0CbWIlUwMRf64ch0RpfWNApR8VRvZcIEsC3X1oFT425hu/7DMZ9fA==&8pBp3p=2dptyd,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.bedrocksolution.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.211,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.ministryofpup.com:199.36.158.100,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.comprayventachatarra.com/hue5/,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.ministryofpup.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:parkingpage.namecheap.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.safetyeat.asia,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.almayarelect.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.ministryofpup.com/hue5,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.216,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.218,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.cadconversion.company:,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.cadconversion.company,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.comprayventachatarra.com/hue5/?OH2LRV=FsRXqu+Z6YU/j/s0+8m+M2WywdWcP+f+FgR5GGPO4jBkgvGaW0wSkHbljtb4erklGu63Jw==&nfut_N=xPGx_0PP,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.elnuevoperiodo.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.ministryofpup.com/hue5/?OH2LRV=AsIsiKe5r1XxyTOH4Vx8/ZINA69ZltJgGKWmolTsSK8nsgJDfLQzclN2DfaD+ApgpGrIXA==&nfut_N=xPGx_0PP,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.2kaboomslots.online,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.comprayventachatarra.com/hue5,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.webtextcall.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,URL,,http://www.ministryofpup.com/hue5/,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.215,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.212,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.gesundtest.com,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.217,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,www.comprayventachatarra.com:198.54.117.210,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,xbeta.online,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,IP address,,194.195.211.98:8443,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Network,Domain,,xbeta.online:194.195.211.98,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+MicroBackdoor,2022,Host,File,Parent folder,%PUBLIC%\ignit.vbs,https://cert.gov.ua/article/37626
+,2022,Host,File,Parent folder,%PUBLIC%\Favorites\desktop.ini,https://cert.gov.ua/article/37626
+,2022,Host,File,Parent folder,%PUBLIC%\Libraries\core.dll,https://cert.gov.ua/article/37626
+,2022,Host,File,Parent folder,%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Windows Prefetch.lNk,https://cert.gov.ua/article/37626
+,2022,Host,File,FILE_VERSION_INFO: Original filename,wscript.exe //B //E:vbs C:\Users\Public\Favorites\desktop.ini,https://cert.gov.ua/article/37626
+,2022,Host,File,Parent folder,C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U C:\Users\Public\Libraries\core.dll,https://cert.gov.ua/article/37626
+,2022,Network,Domain,,xbeta.online:8443,https://cert.gov.ua/article/37626
+,2022,Network,IP address,,185.175.158.27,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,e34d6387d3ab063b0d926ac1fca8c4c4,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,2556a9e1d5e9874171f51620e5c5e09a,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,bc6932a0479045b2e60896567a37a36c,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,bd65d0d59f6127b28f0af8a7f2619588,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,fb418bb5bd3e592651d0a4f9ae668962,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,a9dcaf1c709f96bc125c8d1262bac4b6,https://cert.gov.ua/article/37626
+,2022,Host,File,File hash SHA256,d2a795af12e937eb8a89d470a96f15a5,https://cert.gov.ua/article/37626
+MicroBackdoor,2022,Host,File,File hash SHA256,65237e705e842da0a891c222e57fe095,https://cert.gov.ua/article/37626
+,,General,MITRE Technique,,T1547.001,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1218.005,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1059.005,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1071,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1105,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1140,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1056,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1059.001,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1059.007,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,General,MITRE Technique,,T1559.002,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run Value: wscript.exe //B //E:vbs \”C:\\Users\\k\\NTUSR.DAT\,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,d6b2485e037d3d177de82102f30860d8,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,7fbd127ba2f973c22594a28583736c6c,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,1f4add4a2386b8d47aa8a909c2b16d69,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,Process,Parent process,cmd /c certutil -decode C:\Users\k\AppData\Local\Temp\ tmp4E07.tmp C:\Users\k\AppData\Local\Temp\NTUSR.DAT && timeout 10 && wscript.exe //B //E:vbs C:\Users\k\AppData\ Local\Temp\NTUSR.DAT,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,cafb6b5795c26376289832cffc3aee94,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,Email,,socis@socis.kiev.ua,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,0acecad57c4015e14d9b3bb02b433d3e,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,Registry,Registry Key,REG ADD HKCU\\Console\\%SystemRoot^%_system32_cmd.exe /v CodePage /t REG_DWORD /d 65001 /f,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,https://mail.secured-auth.cf/ track?rid=3DsWVkk7K,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,53b31f65bb6ced61c5bafa8e4c98e9e8,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,74572fba26f5e988b297ec5ea5c8ac1c,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,http://88.99.104.179:1985/update/microsoft_crpn,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,http://88.99.104.179:1985/update/microsoft_corp,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,http://88.99.104.179:1985/update/microsoft_crp,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,90adaadf02f2e1a90bdae790de7d565f,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA256,36c81100c86a491e628105884bdfeab8,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,Registry,Registry Key,HKLM\Software\Microsoft\Windows\CurrentVersion\Run\ Value: %TEMP%\conhost.exe,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,0faf36548b8396851368c532ad4ac348,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,3e5b26a5a8e996d5e95339ee3a487a5a,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,96ea8602c7b268311c6a0b409757d803,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,9a2de44916c0f37396eead505508284b,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,http://88.99.104.179:1985/win_update/upgrade,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,http://88.99.132.118:1985/update/microsoft_corp/23,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,842ee5e1e7b50b6e4916c177ace9debc,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,IP address,,88.99.132.118,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,https://gallery.mailchimp.com/49b72c249fd120fb72b31dd09/ files/bf25a5c6-f9b6-4c06-b7ce-eff03ab2b459/news.03.doc,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,URL,,https://fashionhouse.us17.list-manage.com/track/ click?u=49b72c249fd120fb72b31dd09&id= 3bd8c79d59&e=2169aaf971,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,50f192dd5ed9cef64b3c4c03ac0de67d,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,d100fe44b46a8706be28ecaec19de63a,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,IP address,,http://88.99.132.118:1985/update/microsoft_corpshd,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,4f0ab867a2abdec6957b5a0a0f9cde53,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Host,File,File hash SHA255,6bd52a05e1eb703d34b6bcb7f05673a4,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,,Network,IP address,,88.99.132.118,https://www.mandiant.com/sites/default/files/2021-09/rpt-ghostwriter-update-unc1151-000376-1.pdf
+,2023,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\CVRCD13.tmp.cvr,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Windows\Installer\SourceHash{9521E224-E4AA-4DA5-92A4-5AA6DFF2CEF1},https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\_ir_sf_temp_0\Install-1.ico,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\launch.vbs,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\1imageres_114.ico,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Application\\xce\xef\xe5\xf0\xe0\xf6\xe8\xee\xed\xed\xe0\xff \xf1\xe8\xf1\xf2\xe5\xec\xe0 Microsoft\xae Windows\xae.lnk,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\tr.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\fix.reg,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\Application Setup Log.txt,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\csettings.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\tr.reg,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\PerfService.lnk,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\startclick.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\swrbldin\set.bat,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\x86\printer.ico,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\common\emf2pdf.dll,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\x64\msvcp120.dll,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\x64\unidrv_rupd.hlp,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\x86\rupdpm.dll,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\x86\vccorlib120.dll,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~DF5665E74A06A4FF4C.TMP,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2021,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\CAFB6B5795C26376289.PPTX,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2021,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~$CAFB6B5795C26376289.PPTX,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PerfService.lnk,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\RUT_{C9C1EBD8-13B0-44BE-ACCC-F465784F44C1}\host.msi,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a
+,2022,Host,File,Parent folder,C:\Program Files (x86)\Remote Utilities - Host\Printer\common\rupd.lng,https://analyze.intezer.com/families/b43844ba-d646-4c78-bed2-357d7e40be0a

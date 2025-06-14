@@ -1,0 +1,217 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+,2022,Host,File,File hash SHA256,4df873ea077bdbfe5389d30b5b0d0ad4a3fa663af4a4109859b61eb7f6099fc8    ,https://cert.gov.ua/article/37829
+,2022,Host,File,File hash SHA256,090997b4691f1a155187a181dbf54aec034eafc7b9344016867fe50da15829df    ,https://cert.gov.ua/article/37829
+,2022,Host,File,File hash SHA256,6b721ab9f73718c393aca2b9ad06f45b09dbfb23d105ca5872d8df7515ae14c4    ,https://cert.gov.ua/article/37829
+,2022,Host,File,File hash SHA256,5e06d688ac955b351c3ced0083dc7e372e447458e6604fd82ac118a6ac8e553c,https://cert.gov.ua/article/37829
+,2022,Host,File,File hash SHA256,fd72080eca622fa3d9573b43c86a770f7467f3354225118ab2634383bd7b42eb    ,https://cert.gov.ua/article/37829
+,2022,Host,File,File extension,EdgeNotification.dll,https://cert.gov.ua/article/37829
+,2022,Network,URL,,hxxp://45.95.11.34:88/get.php?a=We4Qu6,https://cert.gov.ua/article/37829
+,2022,Network,URL,,hxxp://45.95.11.34:88/_[A-Z0-9]{12}_AZ,https://cert.gov.ua/article/37829
+,2022,Network,URL,,hxxp://45.95.11.34:88/_[A-Z0-9]{12}_BZ,https://cert.gov.ua/article/37829
+,2022,Network,URL,,hxxp://45.95.11.34:3000/test,https://cert.gov.ua/article/37829
+,2022,Network,IP address,,45.95.11.34,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,%TEMP%\501_25_103.doc.b2,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,%TEMP%\EdgeNotification.dll.b2,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,"%TEMP%\501_25_103.doc
+",https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,%TEMP%\EdgeNotification.dll,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Notification,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,"cmd.exe /c REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Run /f /v Notification /t REG_SZ /d ""rundll32.exe ""%TEMP%\EdgeNotification.dll"", GetApplicationNotificationFact""
+",https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,C:\1\Release\DLoad.pdb,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,G:\projects\demo_rt\x64\Release\service.pdb,https://cert.gov.ua/article/37829
+,2022,Host,File,Parent folder,G:\projects\demo_rt\Win32\Release\service.pdb,https://cert.gov.ua/article/37829
+,2022,Host,Console command,,wmic memorychip get /format: list,https://cert.gov.ua/article/37829
+,2022,Host,Console command,,wmic baseboard get /format: list,https://cert.gov.ua/article/37829
+,2022,Host,Console command,,wmic os get /format:list,https://cert.gov.ua/article/37829
+,2022,Host,Console command,,wmic cpu get /format: list,https://cert.gov.ua/article/37829
+,2020,Host,File,Parent folder,C:\Windows\system32\WerFault.exe -u -p 1880 -s 288,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Windows\system32\WerFault.exe -u -p 2424 -s 548,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,"""C:\Users\<USER>\AppData\Local\Temp\dc9c61c15434ce75631d33fd.exe""",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\Realtek\Drivers\Drv7\DP_Sound_Realtek_wnt6\A6305\alcrmv.exe,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\svchost.exe -driver,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,"""C:\Windows\system32\reg.exe""  add ""HKCU\Software\Microsoft\Windows\CurrentVersion\App Paths\fsquirt.exe"" /ve /d C:\Users\<USER>\AppData\Roaming\Realtek\Drivers\Drv7\DP_Sound_Realtek_wnt6\A6305\alcrmv.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,"C:\Windows\system32\cmd.exe /c """"C:\Users\<USER>\AppData\Local\Temp\18100551.bat"" add ""HKCU\Software\Microsoft\Windows\CurrentVersion\App Paths\fsquirt.exe"" /ve /d C:\Users\<USER>\AppData\Roaming\Realtek\Drivers\Drv7\DP_Sound_Realtek_wnt6\A6305\alcrmv.exe""",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Windows\system32\cmd.exe /c C:\Users\<USER>\AppData\Local\Temp\2d0afbf4.bat,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,"""C:\Users\<USER>\AppData\Local\Temp\dc9c61c15434ce75631d33fd.exe""
+C:\Windows\system32\WerFault.exe -u -p 1880 -s 288
+C:\Windows\system32\WerFault.exe -u -p 2424 -s 548",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Windows\system32\WerFault.exe -u -p 1880 -s 288,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,"C:\Windows\system32\WerFault.exe -u -p 1880 -s 288
+C:\Windows\system32\WerFault.exe -u -p 2424 -s 548",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,"""C:\Users\<USER>\AppData\Local\Temp\dc9c61c15434ce75631d33fd.exe""
+C:\Windows\system32\WerFault.exe -u -p 1880 -s 288",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Windows\system32\WerFault.exe -u -p 2424 -s 548,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,"""C:\Users\<USER>\AppData\Local\Temp\dc9c61c15434ce75631d33fd.exe""",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,Process,Name,"dc9c61c15434ce75631d33fd.exe
+WerFault.exe
+WerFault.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,Process,Name,"dc9c61c15434ce75631d33fd.exe
+WerFault.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,Process,Name,"<ANALYZED-FILE-NAME>.exe
+alcrmv.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,Process,Name,"<ANALYZED-FILE-NAME>.exe
+alcrmv.exe
+svchost.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,Process,Name,"alcrmv.exe
+svchost.exe",https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\dc9c61c15434ce75631d33fd.exe,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\Microsoft\Internet Explorer\Cache\Y68JG1TH,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2020,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~log,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\Realtek\Drivers\Drv7\DP_Sound_Realtek_wnt6\A6305\alcrmv.exe,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\2d0afbf4.bat,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\18100551.bat,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\2d0afbf4.bat,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\18100551.bat,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2021,Host,File,File hash SHA256,00ecfbf8ac2bca9e7f977f6f713d91bc813e8473d199780654aa8e201f9377ee,https://analyze.intezer.com/analyses/adc13140-1b68-4a9d-a92b-409c87ee0c28
+,2021,Host,File,File hash SHA256,8b9cebb9fea07657d85502b9f917f8a516e57e745cafc92354042f45016d5f4e,https://analyze.intezer.com/analyses/e2a3082a-35ab-4af5-b276-7d03e5cee233
+,2018,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\App Paths\fsquirt.exe\(Default),https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2018,Network,IP address,,statbfnl.sytes.net:163.172.122.160,https://analyze.intezer.com/families/cc4fdc64-4184-4b3b-9b6a-169317bbe380
+,2013,Network,IP address,,46.165.231.85,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2013,Network,IP address,,213.239.220.41,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2014,Network,IP address,,46.165.241.129,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2014,Network,IP address,,46.165.241.153,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2014,Network,IP address,,78.46.35.74,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2016,Network,IP address,,95.215.111.109,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2016,Network,IP address,,185.118.66.163,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2017,Network,IP address,,185.118.67.233,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2017,Network,IP address,,185.156.173.92,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2018,Network,IP address,,46.165.230.241,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2018,Network,IP address,,194.187.249.157,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2014,Network,Domain,,"activationstate.sytes.net
+",https://github.com/eset/malware-ioc/tree/master/invisimole
+,2014,Network,Domain,,advstatecheck.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2017,Network,Domain,,akamai.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2018,Network,Domain,,statbfnl.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,2018,Network,Domain,,updchecking.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,Mutex,,MSO~2,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,Mutex,,MSO~4,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,Mutex,,Mutex_sync,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,Mutex,,wkssvmtx,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,46.165.220.228,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,80.255.3.66,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,85.17.26.174,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,185.193.38.55,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,194.187.249.157,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,IP address,,195.154.255.211,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,153.re,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,adstat.red,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,adtrax.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,akamai.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,amz-eu401.com,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,blabla234342.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,mx1.be,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,statad.de,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,time.servehttp.com,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,upd.re,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,update.xn—​6frz82g,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,updatecloud.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,updchecking.sytes.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Network,Domain,,wlsts.net,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,File,File extension,NlsModels0019.dll,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,File,File extension,NLSModels0022.dll,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,File,File extension,osppc.dll,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,File,File extension,osppcext.dll,https://github.com/eset/malware-ioc/tree/master/invisimole
+,,Host,File,FILE_VERSION_INFO: Original filename,WebComponents.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,AIDA64.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,poweriso6-full.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,SamsungUniversalPrintDriver3.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,Daemon.Tools.Lite.v5.0.1.0407.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,adberdr11000_ru_ru.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,UltraVNC_1_2_24_X86_Setup.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,7-Zip.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,lanscope_setup.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,UltraVNC_1_2_24_X64_Setup.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,epson373260eu.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,putty.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,WinSetupFromUSB-1-6.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,BDUSBImmunizerLauncher.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,DMMultiView.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%STARTUP%\Control Panel.lnk,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%APPDATA%\Control\Control.js,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%APPDATA%\Microsoft\AddIns\infocardadd.cpl,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,"%APPDATA%\Microsoft\AddIns\
+imageapplet.dat",https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,SMInit.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,File extension,hskin.dll,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,File extension,TVPSkin.dll,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,FILE_VERSION_INFO: Original filename,Settings.ini,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\Software\Microsoft\Feeds\SyncData,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\Software\Microsoft\Feeds\SyncImage,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,C:\Windows\system32\mscorscvs.exe ,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,"C:\Windows\system32\drivers\NGEN
+Framework\NGEN.exe",https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,"C:\Windows\system32\drivers\NGEN
+Framework\NGEN.cab",https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\software\microsoft\drm,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\software\microsoft\windows\currentversion,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\software\microsoft\windows\currentversion\ext,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Key,HKCU\software\microsoft\function discovery\registrystore\publication\explorer,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X1PL,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X1HK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X1RK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X2PL,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X2HK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X2RK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X3PL,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X3HK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,Registry,Registry Value,1Extylc8fC5X3RK,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%WINDIR%\SysWOW64\drivers\Rundll32.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%WINDIR%\SysWOW64\drivers\wdigest.dll,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,,Host,File,Parent folder,%WINDIR%\SysWOW64\wbem\setupSNK.exe,https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+,2016,Host,File,File hash SHA256,858666616d327d4aac1b8fd67831f334615f0585a5c4525e0628ae644093dda4,https://analyze.intezer.com/analyses/21913787-a020-4d21-ab49-cc564fb99870
+,,Host,File,File hash SHA256,3c62096b0f102a43d18833b6b641b963a4790e39ac604e0fff1d25282174f64d,https://analyze.intezer.com/analyses/21913787-a020-4d21-ab49-cc564fb99870/sub/4bf627f8-1d3e-4941-9517-b2a2d3491909/related-samples
+,,Host,File,File hash SHA256,91a77f257ac129e8f2ec198a6912fab042bd231e7ec74b39ec2f206dafeb7625,https://analyze.intezer.com/analyses/1d7d8047-e5f0-4373-8d26-023b5fde8a1d
+,,Host,File,File hash SHA256,06257220e9c4632f1e1f2d6b3869ecaa1bbe8d98a852587b701b151fb6e9ba06,https://analyze.intezer.com/files/91a77f257ac129e8f2ec198a6912fab042bd231e7ec74b39ec2f206dafeb7625
+,,Host,File,File hash SHA256,0c9fe9acc2d815da85cec34c90e7ce7729c242c2971f4262222e40a107a6326b,https://analyze.intezer.com/files/0c9fe9acc2d815da85cec34c90e7ce7729c242c2971f4262222e40a107a6326b
+,,Host,File,File hash SHA256,0f7b04e513955a5527a069de3e2f34ccf09f0a33577d720964d352a049c9fefc,https://analyze.intezer.com/files/0f7b04e513955a5527a069de3e2f34ccf09f0a33577d720964d352a049c9fefc
+,,Host,File,File hash SHA256,c5119b8a75d4965e51e7424964bf92f2708b099a4e6049b13f8aaddabfb6860e,https://analyze.intezer.com/analyses/f1fedd98-4fd4-4a6a-9ebd-17a7a50b6413
+,,Host,File,FILE_VERSION_INFO: Original filename,%volumeSerialNumber%.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,content.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,cache.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,index.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,content.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,content.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,comment.txt,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,descript.ion,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,Default.SFX,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,WinRAR.exe,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,main.ico,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,fdata.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,~mrc_%random%.tmp,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,~src_%random%.tmp,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,~wbc_%random%.tmp,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,%volumeSerialNumber%.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,FILE_VERSION_INFO: Original filename,%random%.%ext%,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,%APPDATA%\Microsoft\Internet Explorer\Cache\AMB6HER8\,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,%APPDATA%\Microsoft\Internet Explorer\Cache\MX0ROSB1\,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,%APPDATA%\Microsoft\Internet Explorer\Cache\index0.dat,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,Winrar\,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,fl_%timestamp%\strcn%num%\,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,sc\~sc%random%.tmp,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,~zlp\zdf_%random%.data,https://habr.com/ru/companies/eset/articles/414419/
+,,Host,File,Parent folder,~lcf\tfl_%random%,https://habr.com/ru/companies/eset/articles/414419/
+,,General,MITRE Technique,,T1548,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1087,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1071,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1010,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1560,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1123,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1119,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1547	,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1059,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1543,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1132,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1005,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1055,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1053,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1082,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1007,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1125,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1080,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1124,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1033,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1016,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1218,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1012,https://attack.mitre.org/software/S0260/
+,,General,MITRE Technique,,T1090,https://attack.mitre.org/software/S0260/

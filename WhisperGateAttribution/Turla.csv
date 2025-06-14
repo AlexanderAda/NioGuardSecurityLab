@@ -1,0 +1,379 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+AcidBox,2017,Host,File,File hash SHA256,eb30a1822bd6f503f8151cb04bfd315a62fa67dbfe1f573e6fcfd74636ecedd5,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File extension,msv1_0.dll,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File extension,pku2u.dll,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File extension,wdigest.dll,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File hash SHA256,3ef071e0327e7014dd374d96bed023e6c434df6f98cce88a1e7335a667f6749d,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File hash SHA256,b3166c417d49e94f3d9eab9b1e8ab853b58ba59f734f774b5de75ee631a9b66d,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File hash SHA256,3ad20ca49a979e5ea4a5e154962e7caff17e4ca4f00bec7f3ab89275fcc8f58c,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,File,File hash SHA256,003669761229d3e1db0f5a5b333ef62b3dffcc8e27c821ce9018362e0a2df7e9,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,Registry,Registry Value,C:\WINDOWS\SYSTEM32\lsass.exe,https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Class\{4D36E97D-E325-11CE-BFC1-08002BE10318}\0003\DriverData (REG_BINARY type),https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Class\{4D36E96A-E325-11CE-BFC1-08002BE10318}\0000\DriverData (REG_BINARY type),https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+AcidBox,2017,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Class\{4D36E969-E325-11CE-BFC1-08002BE10318}\0000\DriverData (REG_BINARY type),https://unit42.paloaltonetworks.com/acidbox-rare-malware/
+ShellAutorun,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+ScreenSaverAutorun,2017,Host,Registry,Registry Key,HKCU\Control Panel\Desktop,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+ScreenSaverAutorun,2017,Host,File,FILE_VERSION_INFO: Original filename,SCRNSAVE.exe,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+TaskSchedulerAutorun,2017,Host,Registry,Registry Value,%APPDATA%\Adobe\adobeup.exe,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+TaskSchedulerAutorun,2017,Host,File,Parent folder,\Adobe\AcrobatReader.Adobe,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+LinkAutorun,2017,Host,Process,Parent process,cmd.exe,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ScreenSaver,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%TEMP%\KB943729.log,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%TEMP%\CVRG72B5.tmp.cvr,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%TEMP%\CVRG1A6B.tmp.cvr,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%TEMP%\CVRG38D9.tmp.cvr,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%TEMP%\~DF1E06.tmp,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%HOMEPATH%\ntuser.dat.LOG3,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,FILE_VERSION_INFO: Original filename,%HOMEPATH%\AppData\Local\Adobe\AdobeUpdater.exe,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ScreenSaver,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\Current Version\Internet Settings\User Agent,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Registry,Registry Key,HKLM\Software\Microsoft\Windows\Current Version\Internet Settings\5.0\User Agent\Post Platform,https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,Mutex,,{531511FA-190D-5D85-8A4A-279F2F592CC7},https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
+,2017,Host,File,File hash SHA256,2A61B4D0A7C5D7DC13F4F1DD5E0E3117036A86638DBAFAEC6AE96DA507FB7624,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,F6C9AE06DFC9C6898E62087CC7DBF1AC29CBD0A4BCDB12E58E0C467E11AD4F75,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,E7FD14CA45818044690CA67F201CC8CFB916CCC941A105927FC4C932C72B425D,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,F667680DF596631FBA58754C16C3041FAE12ED6BF25D6068E6981EE68A6C9D0A,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,26A1A42BC74E14887616F9D6048C17B1B4231466716A6426E7162426E1A08030,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,05254971FE3E1CA448844F8CFCFB2B0DE27E48ABD45EA2A3DF897074A419A3F4,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,FC9961E78890F044C5FC769F74D8440FCECF71E0F72B4D33CE470E920A4A24C3,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,68C6E9DEA81F082601AE5AFC41870CEA3F71B22BFC19BCFBC61D84786E481CB4,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,B295032919143F5B6B3C87AD22BCF8B55ECC9244AA9F6F88FC28F36F5AA2925E,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,244896995B6B83F11DF944CCDA41ED9F1F1D811EBF65D75FE4337FD692011886,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,5D0973324B5B9492DDF252B56A9DF13C8953577BDB7450ED165ABBE4BF6E72D8,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2017,Host,File,File hash SHA256,B362B235539B762734A1833C7E6C366C1B46474F05DC17B3A631B3BFF95A5EEC,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2016,Host,File,File hash SHA256,B79CDF929D4A340BDD5F29B3AECCD3C65E39540D4529B64E50EBEACD9CDEE5E9,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+,2015,Host,File,File hash SHA256,443CD03B37FCA8A5DF1BBAA6320649B441CA50D1C1FCC4F5A7B94B95040C73D1,https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
+Backdoor.Oldrea,2014,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\”TmProvider”,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Backdoor.Oldrea,2014,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\Windows\CurrentVersion\Run\”TmProvider”,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Backdoor.Oldrea,2014,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\Internet Explorer\InternetRegistry\”fertger”,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Backdoor.Oldrea,2014,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\InternetRegistry,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Backdoor.Oldrea,2014,Host,File,File type,explorer.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Network,IP address,,91.203.6.71,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Network,IP address,,93.171.216.118,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Network,IP address,,93.188.161.235,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,SearchIndexer.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,ImeBroker.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,fsutil.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,PnPutil.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,BdeUISrv.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,WinSAT.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,pwNative.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,SnippingTool.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,DFDWizard.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,PrintBrmEngine.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,WbemMonitor.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,dxpserver.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,File type,PowerMng.exe,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Trojan.Karagany,2014,Host,File,Parent folder,C:\ProgramData\Mail\MailAg\gl,https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers
+Kazuar backdoor,2020,Host,File,File hash SHA256,e888b93f4d5f28699b29271a95ccad55ca937977d42228637ad9a7c037d3a6a4,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,File hash SHA256,1f7b35e90b5ddf6bfd110181b1b70487011ab29ca5f942170af7e8393a1da763,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,File hash SHA256,1fca5f41211c800830c5f5c3e355d31a05e4c702401a61f11e25387e25eeb7fa,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,File hash SHA256,60000bc2598eff85a6a83d5302fc3ed2565005d8fd0d9f09d837123a1599ef8d,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,FILE_VERSION_INFO: Original filename,DebugView.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,FILE_VERSION_INFO: Original filename,Agent.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,FILE_VERSION_INFO: Original filename,RuntimeBroker.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Kazuar backdoor,2020,Host,File,FILE_VERSION_INFO: Original filename,WSUSTransfer.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Installer,2020,Host,File,File hash SHA256,493e5fae191950b901764868b065ddddffa4f4c9b497022ee2f998b4a94f0fc2,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Installer,2020,Host,File,FILE_VERSION_INFO: Original filename,DSCEBIN.EXE,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File hash SHA256,f3aaa091fdbc8772fb7bd3a81665f4d33c3b62bf98caad6fee4424654ba26429,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File extension,sacril.dll,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File hash SHA256,2b969111dd1968d47b02d6390c92fb622cd03570b02ecf9215031ff03611a2b7,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File extension,ablhelper.dll,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File hash SHA256,7d5794ad91351c7c5d7fbad8e83e3b71a09baac65fb09ca75d8d18339d24a46f,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Orchestrator,2020,Host,File,File extension,frontapp.dll,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Carbon Configuration File,2020,Host,File,File hash SHA256,8ef22c8b5d6bc2445d3227650804b2e1435a5f986134a9aa7e07f3b948921b5b,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,File hash SHA256,6ca0b4efe077fe05b2ae871bf50133c706c7090a54d2c3536a6c86ff454caa9a,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,FILE_VERSION_INFO: Original filename,ADSchemeIntegrity.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+RPC backdoor,2020,Host,File,File hash SHA256,722fa0c893b39fef787b7bc277c979d29adc1525d77dd952f0cc61cd4d0597cc,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+RPC backdoor,2020,Host,File,FILE_VERSION_INFO: Original filename,101_iex_memory_code_exe.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+Reflective PowerShell loader,2020,Host,File,File hash SHA256,97187123b80b1618f0d8afc2a5f84e9a17ac8e53a6e4ce8b0aa39fe06cec1f36,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,File hash SHA256,20691ff3c9474cfd7bf6fa3f8720eb7326e6f87f64a1f190861589c1e7397fa5,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,File hash SHA256,e33580ae3df9d27d7cfb7b8f518a2704e55c92dd74cbbab8ef58ddfd36524cc8,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,FILE_VERSION_INFO: Original filename,hyperstack.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+HyperStack,2020,Host,File,FILE_VERSION_INFO: Original filename,ADSchemeIntegrity.exe,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,www.berlinguas.com/wp-content/languages/index.php,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,www.balletmaniacs.com/wp-includes/fonts/icons/,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,pastebin.com:443/raw/5qXBPmAZ,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,https://www.bombheros.com/wp-content/languages/index.php,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,https://www.simplifiedhomesales.com/wp-includes/images/index.php,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,http://mtsoft.hol.es/wp-content/gallery/,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+,2020,Network,URL,,http://www.polishpod101.com/forum/language/en/sign/,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity
+WhiteBear Command and Control,2016,Network,IP address,,169.255.137.203,https://securelist.com/introducing-whitebear/81638/
+WhiteBear Command and Control,2016,Network,IP address,,217.171.86.137,https://securelist.com/introducing-whitebear/81638/
+WhiteBear Command and Control,2016,Network,IP address,,66.178.107.140,https://securelist.com/introducing-whitebear/81638/
+,2016,Network,Domain,,mydreamhoroscope.com,https://securelist.com/introducing-whitebear/81638/
+,2016,Network,Domain,,soligro.com,https://securelist.com/introducing-whitebear/81638/
+RPC backdoor,2018,Host,Registry,Registry Key,HKLM\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters\NullSessionPipes,https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
+RPC Spoof Server,2018,Host,File,PDB path,C:\Users\Devel\source\repos\RPCSpoofer\x64\Release_Win2016_10\RPCSpoofServerInstall.pdb,https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
+ComRAT,2017,Host,File,PDB path,C:\Projects\chinch_4_0\projects\chinch4\Build\x64\Release\x64_Release.pdb,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+ComRAT,2017,Host,Registry,Registry Key,HKLM\SOFTWARE\Microsoft\SQMClient\Windows.WSqmCons,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+ComRAT,2017,Host,File,Parent folder,C:\Windows\System32\Tasks\Microsoft\Windows\Customer Experience Improvement Program\Consolidator,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+ComRAT,2017,Host,File,File extension,x64_Release.dll,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+ComRAT,2017,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\CLSID\{59031A47-3F72-44A7-80C5-5595FE6B30EE}\Order,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+backdoor,2014,Network,Domain,,www.arshinmalalan.com/themes/v6/templates/css/in.php,https://securelist.com/the-epic-turla-operation/65545/
+,2014,Network,Domain,,www.losguayaberos.com,https://securelist.com/the-epic-turla-operation/65545/
+,2014,Network,Domain,,thebesttothbrushes.com,https://securelist.com/the-epic-turla-operation/65545/
+,2014,Network,Domain,,newsforum.servehttp.com/wordpress/wp-includes/css/img/upload.php,https://securelist.com/the-epic-turla-operation/65545/
+,2015,Host,Mutex,,Global\EKANS,https://www.ccn-cert.cni.es/pdf/5045-ccn-cert-id-15-20-snake-locker-english-1/file.html
+Network Connection Enumeration,2023,General,MITRE Technique,,T0840,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Data Obfuscation,2023,General,MITRE Technique,,T1001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Protocol Impersonation,2023,General,MITRE Sub-technique,,T1001.003,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+OS Credential Dumping,2023,General,MITRE Technique,,T1003,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Rootkit,2023,General,MITRE Technique,,T1014,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Obfuscated Files or Information,2023,General,MITRE Technique,,T1027,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Software Packing,2023,General,MITRE Sub-technique,,T1027.002,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Masquerading,2023,General,MITRE Technique,,T1036,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Network Sniffing,2023,General,MITRE Technique,,T1040,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Network Service Discovery,2023,General,MITRE Technique,,T1046,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Dynamic-link Library Injection,2023,General,MITRE Sub-technique,,T1055.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Keylogging,2023,General,MITRE Sub-technique,,T1056.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+PowerShell,2023,General,MITRE Sub-technique,,T1059.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Application Layer Protocol,2023,General,MITRE Technique,,T1071,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Web Protocols,2023,General,MITRE Sub-technique,,T1071.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Mail Protocols,2023,General,MITRE Sub-technique,,T1071.003,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+DNS,2023,General,MITRE Sub-technique,,T1071.004,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Data Staged,2023,General,MITRE Technique,,T1074,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Valid Accounts,2023,General,MITRE Technique,,T1078,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+File and Directory Discovery,2023,General,MITRE Technique,,T1083,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Multi-hop Proxy,2023,General,MITRE Sub-technique,,T1090.003,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Non-Application Layer Protocol,2023,General,MITRE Technique,,T1095,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Multi-Stage Channels,2023,General,MITRE Technique,,T1104,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Native API,2023,General,MITRE Technique,,T1106,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Modify Registry,2023,General,MITRE Technique,,T1112,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Automated Collection,2023,General,MITRE Technique,,T1119,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Data Encoding,2023,General,MITRE Technique,,T1132,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Non-Standard Encoding,2023,General,MITRE Sub-technique,,T1132.002,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Network Share Discovery,2023,General,MITRE Technique,,T1135,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Deobfuscate/Decode Files or Information,2023,General,MITRE Technique,,T1140,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Exploit Public-Facing Application,2023,General,MITRE Technique,,T1190,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Domain Trust Discovery,2023,General,MITRE Technique,,T1482,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Installer Packages,2023,General,MITRE Sub-technique,,T1546.016,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Dynamic Linker Hijacking,2023,General,MITRE Sub-technique,,T1547.006,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Crutch v4,2019,Host,File,PDB path,C:\Users\user\Documents\Visual Studio 2012\Projects\MemoryStarter\Release\Extractor.pdb,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,PDB path,C:\Users\user\Documents\Visual Studio 2012\Projects\MemoryStarter\x64\Release\Extractor.pdb,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,cmd line,,mkdir %temp%\Illbeback,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File extension,outllib.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File extension,resources.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File type,outlook.dat,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File type,finder.exe,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File type,msget.exe,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,File type,ihlp.exe,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,Parent folder,C:\Intel\,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,File,Parent folder,C:\AMD\Temp\,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Intel\outllib.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Intel\lang.nls,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Intel\~intel_upd.exe,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Intel\~csrss.exe,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Program Files (x86)\Google\Chrome\Application\dwmapi.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,C:\Program Files (x86)\Mozilla Firefox\rasadhlp.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Host,Registry,Registry Value,%LOCALAPPDATA%\Microsoft\OneDrive\dwmapi.dll,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Network,Domain,,hotspot.accesscam.org,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Network,Domain,,highcolumn.webredirect.org,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Network,Domain,,ethdns.mywire.org,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Network,Domain,,theguardian.webredirect.org,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+Crutch v4,2019,Network,URL,,https://raw.githubusercontent.com/ksRD18pro/ksRD18/master/ntk.tmp,https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/
+,2018,Host,File,File type,flashplayer28_xa_install.exe,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File type,msupdateconf.exe,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File type,msupdatesmal.exe,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File hash SHA256,f9b83eff6d705c214993be9575f8990aa8150128a815e849c6faee90df14a0ea,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File hash SHA256,1193033d6526416e07a5f20022cd3c5c79b73e8a33e80f29f9b06cdc3cb12e26,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File hash SHA256,6868cdac0f06232608178b101ca3a8afda7f31538a165a045b439edf9dadf048,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,AV detect,Win32/TrojanDownloader.Agent.DWY trojan,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,AV detect,Win32/Turla.DH trojan,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,AV detect,Win32/Turla.DH trojan,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Network,URL,,https://209.239.115.91/6OHEJ,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Network,URL,,https://70.32.39.219/n2DE3,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Network,URL,,https://drive.google.com/uc?authuser=0&id=1s4kyrwa7gCH8I5Z1EU1IZ_JaR48A7UeP&export=download,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Network,Domain,,psychology-blog.ezua.com,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,Registry,Registry Value,C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\msupdateconf.exe,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+,2018,Host,File,File extension,ext_server_priv.x86.dll,https://www.welivesecurity.com/2018/05/22/turla-mosquito-shift-towards-generic-tools/
+IronNetInjector,2019,Host,File,PDB path,C:\Users\Devel\source\repos\c4\agent\build_tools\agent_dll_to_Python_loader\NetInjector\NetInjector\obj\Release\NetInjector.pdb,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,PDB path,F:\Dev\NetInjector\bin\Release\NetBootstrapper_Win32.pdb,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,PDB path,F:\Dev\NetInjector\bin\Release\NetBootstrapper_x64.pdb,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,Parent folder,C:\ProgramData\IronPython-2.7,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,b641687696b66e6e820618acc4765162298ba3e9106df4ef44b2218086ce8040,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,c430ebab4bf827303bc4ad95d40eecc7988bdc17cc139c8f88466bc536755d4e,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,c1b8ecce81cf4ff45d9032dc554efdc7a1ab776a2d24fdb34d1ffce15ef61aad,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,8df0c705da0eab20ba977b608f5a19536e53e89b14e4a7863b7fd534bd75fd72,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,b5b4d06e1668d11114b99dbd267cde784d33a3f546993d09ede8b9394d90ebb3,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,b095fd3bd3ed8be178dafe47fc00c5821ea31d3f67d658910610a06a1252f47d,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,3aa37559ef282ee3ee67c4a61ce4786e38d5bbe19bdcbeae0ef504d79be752b6,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,a56f69726a237455bac4c9ac7a20398ba1f50d2895e5b0a8ac7f1cdb288c32cc,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2018,Host,File,File hash SHA256,c59fadeb8f58bbdbd73d9a2ac0d889d1a0a06295f1b914c0bd5617cfb1a08ce9,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,63d7695dabefb97aa30cbe522647c95395b44321e1a3b08b8028e4000d1be15e,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronNetInjector,2019,Host,File,File hash SHA256,ba17af72a9d90822eed447b8526fb68963f0cde78df07c16902dc5a0c44536c4,https://unit42.paloaltonetworks.com/ironnetinjector/
+IronPython-2.7.7z,2019,Host,File,File hash SHA256,82333533f7f7cb4123bceee76358b36d4110e03c2219b80dced5a4d63424cc93,https://unit42.paloaltonetworks.com/ironnetinjector/
+ComRAT v4,2019,Host,File,File hash SHA256,a62e1a866bc248398b6abe48fdb44f482f91d19ccd52d9447cda9bc074617d56,https://unit42.paloaltonetworks.com/ironnetinjector/
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\Software\Microsoft\Tracing\BrowserTelemetry_RASAPI32,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\ConsoleTracingMask,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\FileTracingMask,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\EnableFileTracing,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\FileDirectory,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\EnableConsoleTracing,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\BrowserTelemetry_RASAPI32\MaxFileSize,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\EnableConsoleTracing,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\MaxFileSize,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\FileTracingMask,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\ConsoleTracingMask,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\Software\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\EnableFileTracing,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing\3f94b20cb7f4ff552076_RASAPI32\FileDirectory,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run\Microsoft Agent,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Network,IP address,,46.101.209.249:443,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Network,IP address,,46.101.209.249,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Network,IP address,,92.119.115.207,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Network,IP address,,210.48.231.182,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+Inter-Process Communication,2023,General,MITRE Technique,,T1559,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Archive Collected Data,2023,General,MITRE Sub-technique,,T1560.003,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Hide Artifacts,2023,General,MITRE Technique,,T1564,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Service Execution,2023,General,MITRE Sub-technique,,T1569.002,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Lateral Tool Transfer,2023,General,MITRE Technique,,T1570,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Protocol Tunneling,2023,General,MITRE Technique,,T1572,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Encrypted Channel,2023,General,MITRE Technique,,T1573,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Symmetric Cryptography,2023,General,MITRE Sub-technique,,T1573.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Asymmetric Cryptography,2023,General,MITRE Sub-technique,,T1573.002,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+DLL Side-Loading,2023,General,MITRE Sub-technique,,T1574.002,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Compromise Infrastructure,2023,General,MITRE Technique,,T1584,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Malware,2023,General,MITRE Sub-technique,,T1587.001,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Obtain Capabilities,2023,General,MITRE Technique,,T1588,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Stage Capabilities,2023,General,MITRE Technique,,T1608,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+Deploy Container,2023,General,MITRE Technique,,T1610,https://www.cisa.gov/sites/default/files/2023-05/aa23-129a_snake_malware_2.pdf
+RPC backdoor,2019,Host,File,File hash SHA256,18c173433daafcc3aea17fc4f7792d0ff235f4075a00feda88aa1c9f8f6e1746,https://unit42.paloaltonetworks.com/ironnetinjector/
+RPC backdoor,2019,Host,File,File hash SHA256,a64e79a81b5089084ff88e3f4130e9d5fa75e732a1d310a1ae8de767cbbab061,https://unit42.paloaltonetworks.com/ironnetinjector/
+backdoor,2018,Host,Registry,Registry Key,HKCU\Software\Microsoft\Windows\CurrentVersion\Settings\ZonePolicy\,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Host,Registry,Registry Key,HKCU\Software\Classes\CLSID\{49CBB1C7-97D1-485A-9EC1-A26065633066},https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Host,Registry,Registry Key,HKCU\Software\Classes\CLSID\{84DA0A92-25E0-11D3-B9F7-00C04F4C8F5D},https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Host,File,File type,regsvr32.exe,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Host,File,File path,C:\Users\User\Documents\mapid.tlb,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Network,Domain,,[redacted]@gmx.com,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Network,Domain,,firstname.lastname@gmx.com,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+backdoor,2018,Host,File,File type,powershell.exe,https://www.welivesecurity.com/wp-content/uploads/2018/08/Eset-Turla-Outlook-Backdoor.pdf
+Kazuar,,Host,File,File hash SHA256,8490daab736aa638b500b27c962a8250bbb8615ae1c68ef77494875ac9d2ada2,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,File,File hash SHA256,b51105c56d1bf8f98b7e924aa5caded8322d037745a128781fa0bc23841d1e70,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,File,File hash SHA256,bf6f30673cf771d52d589865675a293dc5c3668a956d0c2fc0d9403424d429b2,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,File,File hash SHA256,cd4c2e85213c96f79ddda564242efec3b970eded8c59f1f6f4d9a420eb8f1858,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Network,URL,,http://gaismustudija.lv/wp-includes/pomo/kontakti.php,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Network,URL,,http://hcdh-tunisie.org/wp-includes/SimplePie/gzencode.php,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Network,URL,,http://www.gallen.fi/wp-content/gallery/,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,Registry,Registry Key,HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,Registry,Registry Key,HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,Registry,Registry Key,HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,Registry,Registry Key,HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+Kazuar,,Host,Registry,Registry Key,HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\load,https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/
+LightNeuron,2018,Host,Registry,Registry Value,%tmp%\winmail.dat,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\ServiceProfiles\NetworkService\appdata\Local\Temp\msmocf.xml,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\ServiceProfiles\NetworkService\appdata\Local\Temp\msmodl.dat,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\serviceprofiles\networkservice\appdata\Roaming\Microsoft\Windows\814ad43-58ab-2cd3-3e68-b82a8f402fd0,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\serviceprofiles\networkservice\appdata\Roaming\Microsoft\Windows\42cf8a1-6e20-8c24-d35f-82c46d8b70ba,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\serviceprofiles\networkservice\appdata\Roaming\Microsoft\Windows\36b1f4a-82b9-eb06-7c1e-90b4b2d5c27d,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft\thumbcache_idx.db,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,Registry,Registry Value,C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft\Windows\thumbcache_32.db,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,Microsoft.Exchange.Security.Interop.dll,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,exrwdb.dll,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,Microsoft.Exchange.MessagingPolicies.Search.dll,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,BPA.Transport.dll,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,BPA.Transport.dll,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+LightNeuron,2018,Host,File,,Microsoft.Exchange.MessagingPolicies.Search.exe,https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+,2023,Host,File,File hash SHA256,0e5603d2872e1730be375f9815c84606c6167000100c2b0e1c5e3acd9feda53a,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,File,File hash SHA256,29314f3cd73b81eda7bd90c66f659235e6bb900e499c9cc7057d10a9083a0b94,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,File,File hash SHA256,0fc624aa9656a8bc21731bfc47fd7780da38a7e8ad7baf1529ccd70a5bb07852,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2023,Host,File,File hash SHA256,3f94b20cb7f4ff55207660649ebbb02679c991fe03efbcb0bd3840fc7f0bd527,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,2c4d01e8eeecd413bd32a4cd90cde5961b927890a36167499d795b67f5090307,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,2a6c6dd4a3ffe202b7ed7ddbcab01904bc9be8633c3fec683a185d76ebbbf025,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,a55b62dabe1b9110606528b45239bf100267d4b1411e5e448aae1c024c7a2482,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,25873db9244b330e4d59cf9f0317209e386303d1bb1602a5ce2dbe3be677c45a,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,4d5ecc274a891aab7db8da9f568adcfce9bb27ac7972d683419fbe3c5e445b59,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,35bac9c921cd0ae122fb69a9e7e10a24a4a135a6a42144f27f1bf70be991b492,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,afcd03e303022e4cf91463f4565d65f991baa16a531e9a5095697e52abe76954,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,22a8368ddc1545a3ee08305319d6956a90818d2b85494923b30b3de56b7e90ba,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,e9c167a9d3d422616f44ecd076b0442dfd2757be3fb407abedd5e7c1595412f9,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,93398f31b72890fc0ed636ba030e8f6f1e07cac0e3783f72c8a9ac02f3889a1b,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,6554aeed6640fe487d5ad85cb21e8e1e43fb814f65a296e24dbf704b72b52d1d,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,7d8b35f074e0bd4ba576c501228d0f2f02721efd31cfd5d378e486eb4f82ec7a,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,b30eb1cb1b079ebc7f2dc4e693a3d5d9ecc37872b76cdd931c2ff45abbfe4b22,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,5faabd50bffa2e304cc376aaaa14cdfe1b63379c7244db0d5ef5da0b52f5857e,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,26ac6ebcc0fb63aac08a07609204bce9d1ff46643fa3276da1186fed0281029c,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Host,File,File hash SHA256,881cd9844895882571ba4f8f2088fc877eb63b75b4c7103a1b494c82be4a4688,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,,Host,cmd line,,net user,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net user /domain,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net accounts,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net accounts /domain,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,fsutil fsinfo drives,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net localgroup,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net localgroup Administrators,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,"net group ""Domain Admins"" /domain",https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,tasklist /v,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,tasklist,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net use,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net view,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net view /DOMAIN,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,"net group ""Domain Computers"" /domain",https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,"net group ""Domain Controllers"" /domain",https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,"net group ""Exchange Servers"" /domain",https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,systeminfo,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,set,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,tracert ,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,netstat -an,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net file,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net session,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,tasklist /svc,https://attack.mitre.org/groups/G0010/
+,,Host,cmd line,,net time,https://attack.mitre.org/groups/G0010/
+,2022,Network,Domain,,script.googleusercontent.com,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Network,IP address,,192.168.122.206:49224,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Network,IP address,,192.168.122.211:49256,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+,2022,Network,IP address,,192.168.122.211:49256,https://analyze.intezer.com/families/3ac8a718-fc2d-47d4-a000-7d6fdc9879cc
+Arp,,General,MITRE Software ID,,S0099,https://attack.mitre.org/groups/G0010/
+Carbon,,General,MITRE Software ID,,S0335,https://attack.mitre.org/groups/G0010/
+certutil,,General,MITRE Software ID,,S0160,https://attack.mitre.org/groups/G0010/
+ComRAT,,General,MITRE Software ID,,S0126,https://attack.mitre.org/groups/G0010/
+Crutch,,General,MITRE Software ID,,S0538,https://attack.mitre.org/groups/G0010/
+Empire,,General,MITRE Software ID,,S0363,https://attack.mitre.org/groups/G0010/
+Epic,,General,MITRE Software ID,,S0091,https://attack.mitre.org/groups/G0010/
+Gazer,,General,MITRE Software ID,,S0168,https://attack.mitre.org/groups/G0010/
+HyperStack,,General,MITRE Software ID,,S0537,https://attack.mitre.org/groups/G0010/
+IronNetInjector,,General,MITRE Software ID,,S0581,https://attack.mitre.org/groups/G0010/
+Kazuar,,General,MITRE Software ID,,S0265,https://attack.mitre.org/groups/G0010/
+LightNeuron,,General,MITRE Software ID,,S0395,https://attack.mitre.org/groups/G0010/
+Mimikatz,,General,MITRE Software ID,,S0002,https://attack.mitre.org/groups/G0010/
+Mosquito,,General,MITRE Software ID,,S0256,https://attack.mitre.org/groups/G0010/
+NBTscan,,General,MITRE Software ID,,S0590,https://attack.mitre.org/groups/G0010/
+nbtstat,,General,MITRE Software ID,,S0102,https://attack.mitre.org/groups/G0010/
+Net,,General,MITRE Software ID,,S0039,https://attack.mitre.org/groups/G0010/
+netstat,,General,MITRE Software ID,,S0104,https://attack.mitre.org/groups/G0010/
+Penquin,,General,MITRE Software ID,,S0587,https://attack.mitre.org/groups/G0010/
+PowerStallion,,General,MITRE Software ID,,S0393,https://attack.mitre.org/groups/G0010/
+PsExec,,General,MITRE Software ID,,S0029,https://attack.mitre.org/groups/G0010/
+Reg,,General,MITRE Software ID,,S0075,https://attack.mitre.org/groups/G0010/
+Systeminfo,,General,MITRE Software ID,,S0096,https://attack.mitre.org/groups/G0010/
+Tasklist,,General,MITRE Software ID,,S0057,https://attack.mitre.org/groups/G0010/
+TinyTurla,,General,MITRE Software ID,,S0668,https://attack.mitre.org/groups/G0010/
+Uroburos,,General,MITRE Software ID,,S0022,https://attack.mitre.org/groups/G0010/
+,,General,Software,,Arp,
+,,General,Software,,Carbon,
+,,General,Software,,certutil,
+,,General,Software,,ComRAT,
+,,General,Software,,Crutch,
+,,General,Software,,Empire,
+,,General,Malware,,Epic,
+,,General,Software,,Gazer,
+,,General,Software,,HyperStack,
+,,General,Software,,IronNetInjector,
+,,General,Malware,,Kazuar,
+,,General,Malware,,LightNeuron,
+,,General,Software,,Mimikatz,
+,,General,Software,,Mosquito,
+,,General,Software,,NBTscan,
+,,General,Software,,nbtstat,
+,,General,Software,,Net,
+,,General,Software,,netstat,
+,,General,Software,,Penquin,
+,,General,Software,,PowerStallion,
+,,General,Software,,PsExec,
+,,General,Software,,Reg,
+,,General,Software,,Systeminfo,
+,,General,Software,,Tasklist,
+,,General,Malware,,TinyTurla,
+,,General,Malware,,Uroburos,
+,,General,Software,,Powershell,
+,,General,Malware,,Snake,

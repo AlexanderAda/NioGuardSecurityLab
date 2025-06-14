@@ -1,0 +1,220 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+Industroyer,2016,Host,File,,104.dll,https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+CaddyWiper,2022,Host,File,,NETAPI32.dll,https://www.truesec.com/hub/blog/analysis-of-caddywiper-wiper-targeting-ukraine
+CaddyWiper,2022,Host,File,,kernel32.dll,https://www.truesec.com/hub/blog/analysis-of-caddywiper-wiper-targeting-ukraine
+CaddyWiper,2022,Host,File,,advapi32.dll,https://www.truesec.com/hub/blog/analysis-of-caddywiper-wiper-targeting-ukraine
+CaddyWiper,2022,Host,File,,netapi32.dll,https://www.truesec.com/hub/blog/analysis-of-caddywiper-wiper-targeting-ukraine
+CaddyWiper,2022,Host,File,,advapi32.dll,https://www.truesec.com/hub/blog/analysis-of-caddywiper-wiper-targeting-ukraine
+,,General,MITRE Technique,ICS,T0895,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0803,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0804,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0805,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0807,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0885,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0884,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0813,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0814,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0816,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0819,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0822,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0823,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0867,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0826,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0827,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0828,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0831,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0849,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0886,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0846,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0853,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0894,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0857,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0855,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,ICS,T0859,https://attack.mitre.org/groups/G0034/
+Industroyer2 та Caddywiper,2022,Host,File,Parent folder,C:\Windows\Temp\link.ps1,https://cert.gov.ua/article/39518
+Industroyer,2016,Host,Registry,Registry Key,HKLM\SYSTEM\CurrentControlSet\Services\\ImagePath,https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+BlackEnergy,2022,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\cnwog.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2022,Host,Parent folder,,C:\Windows\system32\cmd.exe /c del C:\Users\<USER>\AppData\Local\Temp\cnwog.exe >> NUL,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2019,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 1888 -s 532,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2019,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 1232 -s 3160,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2019,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 1888 -s 532,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2018,Host,Parent folder,,"C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE"" /n ""C:\Users\<USER>\AppData\Local\Temp\?????? ???????.doc",https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2018,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\qkf.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2018,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\4b2efcda5269f4b80dc417a2.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2018,Host,Parent folder,,C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\d1d187ef930257ef6f1562d9.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Program Files (x86)\Internet Explorer\iexplore.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,"C:\Windows\System32\rundll32.exe"" ""C:\Users\<USER>\AppData\Local\FONTCACHE.DAT",https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\net1 start amdsata,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\net1 start adpahci,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\flashplayerapp.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\net1 start adpu320,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 2628 -s 224,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 1972 -s 212,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 788 -s 224,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 1120 -s 200,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\svchost.exe -service,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 284 -s 212,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Windows\system32\WerFault.exe -u -p 924 -s 192,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\5af3fd53aea5e008d8725c72.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e55
+BlackEnergy,2017,Host,Parent folder,,C:\Program Files (x86)\Internet Explorer\iexplore.exe,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+BlackEnergy,2017,Host,Parent folder,,c:\users\mike\appdata\local\temp\<ANALYZED-FILE-NAME>.exe -opt=svc,https://analyze.intezer.com/families/f5de3677-8d27-4d4a-881f-ce961e1d23e5
+Centreon,2021,General,MITRE Technique,,T1190,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1505.003,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1503.003,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Technique,,T1543,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1543.002,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1543.004,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1059.004,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1548.001,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Technique,,T1140,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Technique,,T1083,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Technique,,T1573,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Sub-technique,,T1071.001,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2021,General,MITRE Technique,,T1041,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
+Centreon,2018,General,MITRE Technique,,T1133,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1542.001,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1037.004,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1562.004,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1036.005,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Technique,,T1082,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1132.002,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Technique,,T1008,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Sub-technique,,T1573.002,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Centreon,2018,General,MITRE Technique,,T1571,https://www.ncsc.gov.uk/news/joint-advisory-shows-new-sandworm-malware-cyclops-blink-replaces-vpnfilter
+Industroyer,2016,Host,File,,"C:\Users\<Public OR Executing User>\
+imapi",https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+Industroyer,2016,Host,Mutex,,ApiPortection9d3,https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+Industroyer,2016,Host,Mutex,,<Blank Value>,https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+Industroyer,2016,Host,Service Name,,defragsvc,https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+Industroyer,2016,Network,User Agent String,,Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1),https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+Industroyer,2016,Host,cmd line,,"<Drive>:\<name>.exe -ip=<IP_address>
+-ports=<ports>",https://www.dragos.com/wp-content/uploads/CrashOverride-01.pdf
+GreyEnergy,2018,Network,User Agent String,,"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64;
+Trident/7.0; .NET4.0C; .NET4.0E; ms-office; MSOffice 16)",https://www.nozominetworks.com/downloads/US/Nozomi-Networks-GreyEnergy-Dissecting-the-Malware.pdf
+GreyEnergy,2018,Network,User Agent String,,Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko,https://www.welivesecurity.com/wp-content/uploads/2018/10/ESET_GreyEnergy.pdf
+GreyEnergy,2018,Network,User Agent String,,"• Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3; Trident/7.0; rv:11.0) like
+Gecko",https://www.welivesecurity.com/wp-content/uploads/2018/10/ESET_GreyEnergy.pdf
+GreyEnergy mini,2018,Network,URL,,https://82.118.236.23:8443/27c00829d57988279f3ec61a05dee75a,https://cert.gov.ua/article/2804
+GreyEnergy mini,2018,Network,URL,,http://82.118.236.23:8080/27c00829d57988279f3ec61a05dee75a,https://cert.gov.ua/article/2804
+GreyEnergy mini,2018,Network,URL,,https://88.198.13.116:8443/xmlservice,https://cert.gov.ua/article/2804
+GreyEnergy mini,2018,Network,URL,,http://88.198.13.116:8080/xmlservice https://217.12.204.100/news/,https://cert.gov.ua/article/2804
+GreyEnergy mini,2018,Network,URL,,http://217.12.204.100/news/,https://cert.gov.ua/article/2804
+NotPetya,2017,Host,Parent folder,,\??\UNC\192.168.122.1\admin$\<ANALYZED-FILE-NAME>.dll,https://analyze.intezer.com/families/81ae609a-8d6d-4ef5-be08-931c0a3bf3ed
+NotPetya,2017,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\4F11.tmp,https://analyze.intezer.com/families/81ae609a-8d6d-4ef5-be08-931c0a3bf3ed
+NotPetya,2017,Host,Parent folder,,C:\Users\<USER>\AppData\Local\Temp\4F11.tmp,https://analyze.intezer.com/families/81ae609a-8d6d-4ef5-be08-931c0a3bf3ed
+NotPetya,2017,Host,Parent folder,,C:\README.TXT,https://analyze.intezer.com/families/81ae609a-8d6d-4ef5-be08-931c0a3bf3ed
+,,General,MITRE Sub-technique,,T1087.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1087.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1098,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1583,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1583.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1583.004,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1595.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1071.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1110,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1059.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1059.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1059.005,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1586.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1554,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1584.004,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1584.005,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1136.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1543.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1543.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1555.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1485,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1132.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1486,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1213,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1005,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1491.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1140,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1587.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1561.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1484.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1499,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1585.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1585.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1041,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1190,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1203,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1133,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1083,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1592.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1589.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1589.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1590.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1591.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1562.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1562.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1070.004,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1105,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1056.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1570,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1036,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1036.004,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1036.005,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1036.008,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1112,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1040,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1095,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1571,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1027,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1027.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1027.010,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1588.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1588.006,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1003.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1003.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1566.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1566.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1598.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1055,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1572,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1090,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1219,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1021.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1018,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1053.005,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1593,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1594,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1505.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1505.003,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1072,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1539,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1195.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1218.011,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1082,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1049,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1033,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1199,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1204.001,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1204.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1078,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1078.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Sub-technique,,T1102.002,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1047,https://attack.mitre.org/groups/G0034/
+,,General,MITRE Technique,,T1660,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,AcidRain,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Bad Rabbit,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,BlackEnergy,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,CaddyWiper,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,CHEMISTGAMES,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Cyclops Blink,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Exaramel for Linux,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Exaramel for Windows,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,GreyEnergy,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Impacket,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Industroyer,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Industroyer2,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Invoke-PSImage,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,KillDisk,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Mimikatz,https://attack.mitre.org/groups/G0034/
+,,General,Software,,Net,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,NotPetya,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Olympic Destroyer,https://attack.mitre.org/groups/G0034/
+,,General,Software,,P.A.S. Webshell,https://attack.mitre.org/groups/G0034/
+,,General,Malware,,Prestige,https://attack.mitre.org/groups/G0034/
+,,General,Software,,PsExec,https://attack.mitre.org/groups/G0034/

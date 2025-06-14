@@ -1,0 +1,628 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+CozyDuke,2014,Host,File,PDB path,"E:\Visual Studio 2010\Projects\Agent_NextGen\Agent2011v3\Agent2011\Agent\
+ tasks\bin\ GetPasswords\exe\GetPasswords.pdb",https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CozyDuke,2014,Host,File,PDB path,D:\Projects\Agent2011\Agent2011\Agent\tasks\bin\systeminfo\exe\systeminfo.pdb,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CozyDuke,2014,Host,File,PDB path,\\192.168.56.101\true\soft\Agent\tasks\Screenshots\agent_screeshots\Release\ agent_ screeshots.pdb,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CozyDuke,2014,Host,File,AV detect,Trojan.Win32.CozyBear.v,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,IP address,,209.200.83.43,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,IP address,,121.193.130.170:443,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,IP address,,183.78.169.5:443,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,IP address,,200.119.128.45:443,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,IP address,,210.59.2.20:443,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,URL,,www.getiton.hants.org.uk:80/themes/front/img/ajax.php,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Network,URL,,www.seccionpolitica.com.ar:80/galeria/index.php,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,screenshot_task.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,cmd_task.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,Subsystematiumdag.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,atiumdag.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,aticaldd.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File extension,amdhcp32.dll,https://securelist.com/the-cozyduke-apt/69731/
+CozyDuke,2014,Host,File,File hash SHA256,8853979fce0f767b495abd55b696203209e95f04aaefe16c52c1724d07972154,https://analyze.intezer.com/analyses/4bbd539a-41d5-44a0-95e8-c88a852d147e
+CozyDuke,2014,Host,File,File hash SHA256,0dc7438be5b21a36651de0a08361b18d76f0920517a7d51f75dc234740f392ca,https://analyze.intezer.com/analyses/f5f7a4e7-fbf0-4552-9520-7d4e5ba8b4ed
+CozyDuke,2014,Host,File,File hash SHA256,37ceea0922d1177a9de74f4858678acf6afd22706489fcca35a509bca9688cb7,https://analyze.intezer.com/analyses/a8fba05e-a7b7-44d9-b7e4-d36af5e88a07
+CozyDuke,2014,Host,File,File hash SHA256,01468b1d3e089985a4ed255b6594d24863cfd94a647329c631e4f4e52759f8a9,https://analyze.intezer.com/analyses/2a82eb8c-cdb5-463c-a978-b5d2289597b9
+CozyDuke,2014,Host,File,File hash SHA256,f9ff78669e4b251ac1e31076eaf420bee6f2060dbc926cc33603f893658ca86c,https://analyze.intezer.com/analyses/18c13d2a-6cff-46ad-92fb-84d95c84f615
+CozyDuke,2014,Host,File,File hash SHA256,7fd72a36f7e0e6e0a8bc777fc9ed41e0a6d5526c98bc95a09e189531cf7e70d5,https://analyze.intezer.com/analyses/b7f5e6c1-7680-40fd-bfeb-686337752aaa
+CozyDuke,2014,Host,File,AV detect,Trojan:W32/CozyDuke.A,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CozyDuke,2014,Host,File,AV detect,Trojan:W32/CozyDuke.B,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CozyDuke,2014,Host,File,AV detect,Trojan-Dropper:W32/CozyDuke.C,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CozyDuke,2014,Host,File,AV detect,Trojan:W32/CozyDuke.D,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CozyDuke,2014,Host,File,AV detect,Trojan:W64/CozyDuke.E,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+PinchDuke,2008,Host,File,File hash SHA256,52ba22dc22f5a85f66e2a9a530a8f848eabeff19b02edda7a88c68f519bf91a8,https://analyze.intezer.com/analyses/efcba2e7-838e-48ac-b6db-6019d16d75f5
+PinchDuke,2008,Host,File,File hash SHA256,b9c723575b7798f7ac14f7e03b8b2ae047d5d37900a27793972e512abfecdb07,https://analyze.intezer.com/analyses/50dec00d-8b12-4634-b1e5-7df7eb09745d
+PinchDuke,2008,Host,File,File hash SHA256,98cd87a544ca06ae249e4f3c9790efbd63d8954e0ff695d2404e92f2383871bf,https://analyze.intezer.com/analyses/0b1b4e84-9982-43c8-89a8-977303141269
+PinchDuke,2008,Host,File,File hash SHA256,98eca1c2b6db3224ca1790fba1b1d5915f5448ae85dc4ec553718a0d0dd443a2,https://analyze.intezer.com/analyses/ba7b4cee-358d-4f5c-b63e-45394b8742e6
+PinchDuke,2008,Host,File,File hash SHA256,28f1940e63b6fde028dd1ae55979296daa4f7b081df5e3e251b7f98825415a86,https://analyze.intezer.com/analyses/05316bf0-2b1c-4b2a-8c59-1ac8bd48e2bc
+PinchDuke,2008,Host,File,File hash SHA256,7abf424fd57e49756307cc07e05627470a0d1f000a3c8fcc422ea4391981f6a2,https://analyze.intezer.com/analyses/eb3cd5c9-1227-4016-bc8f-efdbd9b02e73
+PinchDuke,2008,Host,File,File hash SHA256,7a3b78feba1670850602b7c33cb0968b4d89db609d98c81744b43cae23d563f5,https://analyze.intezer.com/analyses/fecf77e7-81a8-4869-bd68-3a7e4172e933
+PinchDuke,2008,Host,File,File hash SHA256,d9cfcd9e64cdd0a4beba9da2b1cfdf7b5af9480bc19d6fdf95ec5b1f07fceb1d,https://analyze.intezer.com/analyses/ca050f1b-75a4-424d-96fa-5919a575574f
+PinchDuke,2008,Host,File,File hash SHA256,d88bd6947eef00bd3baadc55ff1c55b3cdcff5ba8fd145d5b5bf8894c42a7fd3,https://analyze.intezer.com/analyses/28c01b8f-1758-40e6-b4cc-c7862ed19b40
+PinchDuke,2008,Host,File,File hash SHA256,4e31304e1ea66c267b5882f9335a2384eea18a6617a49308846ce624b68e7489,https://analyze.intezer.com/analyses/e5807cf2-16d5-4aec-827e-3727ce21e0e6
+PinchDuke,2008,Host,File,File hash SHA256,b2417de25ad9e6bed08229561eb96d4f2e83ab63b4407c7601a0113ed193fe84,https://analyze.intezer.com/analyses/5eaf0062-95a4-49db-8f41-a14d788389de
+PinchDuke,2008,Host,File,File hash SHA256,51eda4521b3ee9d6917832e4e04a4f58891867b8f7b0ade61725fd124ba40f82,https://analyze.intezer.com/analyses/4087fe6a-4921-4e7b-a6e9-7caf14112c83
+PinchDuke,2008,Host,File,File hash SHA256,005630f7e82ffa8f17261e4321184a15a15bd960e7ac3e584be2a27de88838d4,https://analyze.intezer.com/analyses/6b3712b2-83b5-41e9-aeff-9f9dc868c555
+PinchDuke,2008,Host,File,File hash SHA256,ded70a8fc7074ea0ceb7f489b2ebb1198154a2507538fc73cbb74712d5fc6d19,https://analyze.intezer.com/analyses/8ceb4176-4f78-49c6-b6ed-2c428b66c87a
+PinchDuke,2008,Host,File,File hash SHA256,0ce3bfa972ced61884ae7c1d77c7d4c45e17c7d767e669610cf2ef72b636b464,https://analyze.intezer.com/analyses/dae564f3-f86e-416d-a3ed-413032500aba
+PinchDuke,2008,Host,File,File hash SHA256,0f47573093859737935aa5ff31cde058718a816b321b0250451b99d04730cc10,https://analyze.intezer.com/analyses/75112080-c6f3-4583-9c38-134b59999049
+PinchDuke,2008,Host,File,File hash SHA256,236ee4d1a9ba8f24dfe905235ee45d133a7c71928ad9f90b29334dae1c7ff594,https://analyze.intezer.com/analyses/4d7e969f-5464-40a4-b89a-f208d48e0cc9
+PinchDuke,2008,Host,File,File hash SHA256,35f911365d14ff533acce7367c2ab74167a9beb7b4e8fd487f25b9db4d68f627,https://analyze.intezer.com/analyses/718af6e5-f362-4ecb-9dad-50008bb81f9e
+PinchDuke,2008,Host,File,File hash SHA256,28b56f4245bd2081a8d0885bcd0cad7b384ee4a927d87ce8532c5650ac532916,https://analyze.intezer.com/analyses/bb137c89-1e1b-4082-a132-c4bb953f0adc
+PinchDuke,2008,Host,File,File hash SHA256,56f87c2b24a502fbda0ae9cee8f21615b1ba39737d70d2f4f4011fa6fdd174a1,https://analyze.intezer.com/analyses/109e2a64-6b80-4036-bca9-9d5a0f15a203
+PinchDuke,2008,Host,File,File hash SHA256,49bc860fb8856436e1d540754732843f1a534901ecdd031870702bacab58ae54,https://analyze.intezer.com/analyses/b244210e-d124-4e90-97f5-6f1ff099e73b
+PinchDuke,2008,Host,File,File hash SHA256,dd29a6b5c62d8726a3073b6f7d20e6f34d00616de61fc55d04bda9e7824cd598,https://analyze.intezer.com/analyses/0928149b-4ee6-4960-8e60-410429cf235c
+PinchDuke,2008,Host,File,File hash SHA256,a607fa51662afdc089dd3f80bf6863d4cc00a73d74d4ddb9d7b74ed1b0337bf1,https://analyze.intezer.com/analyses/cd141a1d-ec6f-42b7-a2a7-b685b589deb4
+PinchDuke,2008,Host,File,File hash SHA256,8b7427620d6537aa905727af48f7dec1e003a8b7c74d417f0a5ded7926a7d590,https://analyze.intezer.com/analyses/194908e3-1f2b-4b10-a2f6-5f97a39b6dca
+PinchDuke,2008,Host,File,File hash SHA256,5704c7e80eb4b35e05970558918f3268a9287cead8e20a63063ed4f231263f9a,https://analyze.intezer.com/analyses/48c228bb-ad7b-4b81-86b8-e0cff6e5d0b8
+PinchDuke,2008,Host,File,File hash SHA256,98018bc52e1b82160e435acda5b9a9ca725b3328254b957b6cc2c38addbfad53,https://analyze.intezer.com/analyses/842db1f7-a0cd-4605-af7b-aca92e53ffe6
+GeminiDuke,2009,Host,File,File hash SHA256,1323e3d7656a427733663f03b3037326ffa9c57c68fa8e014a5bf7cb1455359a,https://analyze.intezer.com/analyses/313e98d5-f763-40d5-9490-d145111fd5a8
+GeminiDuke,2009,Host,File,File hash SHA256,bc54acf4e60688ea668ef40ef965f2bad41dcf260ddae26d28b5551461c4b402,https://analyze.intezer.com/analyses/19513a39-1715-426b-913f-20e9a945a93c
+GeminiDuke,2009,Host,File,File hash SHA256,a8b01a219a9fe565aadf82bc28b60048c60b640e780386c7a84a425049df5af9,https://analyze.intezer.com/analyses/d261cdbe-a70e-4c3d-9c08-2a19eae98793
+GeminiDuke,2009,Host,File,File hash SHA256,ce2c4dd21b99407bfa7066a6a57d180c00527e7db8ee52558c597550ac8b5d7c,https://analyze.intezer.com/analyses/cd2dfafd-6ec7-451b-b855-528699881c52
+GeminiDuke,2009,Host,File,File hash SHA256,7b9e542426408aa384d0394820f82f330e615a1ad17a777d04720458b33b08a3,https://analyze.intezer.com/analyses/575d87f3-a69e-4fa9-a7d0-efaef4a5b627
+,2020,General,MITRE Technique,,T1583.003,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1195.002,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1199,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1059.007,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1098,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1098.001,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1547.009,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1574.008,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1055.002,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1134.001,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1484.002,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1547.009,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1574.008,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1070,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1070.001,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1070.006,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1218.005,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1218.011,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1003.003,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1003.006,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1003.008,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1552.001,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1552.004,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+,2020,General,MITRE Technique,,T1552.006,https://www.mandiant.com/resources/blog/unc2452-merged-into-apt29
+NobleBaron,2021,Host,File,File hash SHA256,3b94cc71c325f9068105b9e7d5c9667b1de2bde85b7abc5b29ff649fd54715c4,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Host,File,File hash SHA256,2a352380d61e89c89f03f4008044241a38751284995d000c73acf9cad38b989e,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Host,File,File hash SHA256,776014a63bf3cc7034bd5b6a9c36c75a930b59182fe232535bb7a305e539967b,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Host,File,File hash SHA256,a4f1f09a2b9bc87de90891da6c0fca28e2f88fd67034648060cef9862af9a3bf,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Host,File,File hash SHA256,c4ff632696ec6e406388e1d42421b3cd3b5f79dcb2df67e2022d961d5f5a9e78,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Network,IP address,,45.135.167.27,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Network,IP address,,139.99.167.177,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Network,URL,,74d6b7b2.app.giftbox4u.com,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Network,URL,,content.pcmsar.net,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+NobleBaron,2021,Network,URL,,hanproud.com,https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+YTTRIUM,,Network,URL,,hxxps://www.jmj.com/personal/nauerthn_state_gov/TUJE7QJl[random string],https://www.microsoft.com/en-us/security/blog/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/
+YTTRIUM,,Network,URL,,hxxps://www.jmj.com/personal/nauerthn_state_gov/VFVKRTdRSm,https://www.microsoft.com/en-us/security/blog/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/
+YTTRIUM,,Network,URL,,pandorasong.com,https://www.microsoft.com/en-us/security/blog/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/
+YTTRIUM,,Network,IP address,,95.216.59.92,https://www.microsoft.com/en-us/security/blog/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/
+YTTRIUM,,Host,File,File hash SHA256,e2945268c976f8dc33ba9a8d1a804f00cff46aabc01cd3196651322a71863b87,https://analyze.intezer.com/analyses/fbcfb9aa-553f-46d5-8d9a-e3828204b992
+YTTRIUM,,Host,File,File hash SHA256,2cea2a1f53dac3f4fff156eacc2ecc8e98b1a64f0f5b5ee1c42c69d9a226c55c,https://analyze.intezer.com/analyses/82a0ade3-8ef3-40b3-8e46-ad02a63c3c92
+YTTRIUM,,Host,File,File hash SHA256,b77ff307ea74a3ab41c92036aea4a049b3c2e69b12a857d26910e535544dfb05,https://analyze.intezer.com/analyses/23def84e-c91e-4df3-b6b2-f7bf69d4287f
+,,,,,,
+,,,,,,
+MiniDuke,2010,Network,URL,,ecolesndmessines.org,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+MiniDuke,2010,Network,URL,,salesappliances.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+MiniDuke,2010,Host,File,File hash SHA256,e961202d84aad7fa9faaeb63651735416612d25c611a7a025e2eaab67c79e272,https://analyze.intezer.com/analyses/44f5faf8-230f-48d4-800e-a36029e190a1
+MiniDuke,2010,Host,File,File hash SHA256,abfffd23c81b6301675567622ccee08cf578ce91f372fce68cff8fc1dbc3053d,https://analyze.intezer.com/analyses/25f42ea4-a71a-4640-a8a2-f171315c7e1f
+MiniDuke,2010,Host,File,File hash SHA256,05e4224d4dd4e5fbd381ed33edb5bf847fbc138fbe9f57cb7d1f8fc9fa9a382d,https://analyze.intezer.com/analyses/ee4a92c1-c0c6-4328-a8d9-e334df9ce8af
+MiniDuke,2010,Host,File,File hash SHA256,55129d34050b2c028de564e3166611e1d148c26de0972cbe047caf530f118468,https://analyze.intezer.com/analyses/36b05f7d-4f47-4ec1-8b1c-05852bf82aa9
+MiniDuke,2010,Host,File,File hash SHA256,29ad305cba186c07cedc1f633c09b9b0171289301e1d4319a1d76d0513a6ac50,https://analyze.intezer.com/analyses/af95921f-c54a-4bf2-acc9-f542812026fe
+MiniDuke,2010,Host,File,File hash SHA256,de8184c6850d17f90e861309828af1f7b7e3b1695ebe5d303d3d4b6ef4ba1218,https://analyze.intezer.com/analyses/52b53b60-b8a7-4399-8b2a-6b481eddc6ae
+MiniDuke,2010,Host,File,File hash SHA256,1f19bd932336fa721e739b32c07b67c01ea4bd0ebc70e92a70f41e51f4668a0a,https://analyze.intezer.com/analyses/545c2b20-8df9-4c17-9f93-4bf15a4dcd23
+MiniDuke,2010,Host,File,File hash SHA256,7889fbd40f65cfe21d0c7486b29eb4c5042abff4ac660c12c7936831445cfd6e,https://analyze.intezer.com/analyses/2c01c476-431f-42dc-9b3e-826ddc7988fb
+MiniDuke,2010,Host,File,File hash SHA256,35c08566dc38ad65e906b3683ace98e5beef855aeedc611a0317a72eee193539,https://analyze.intezer.com/analyses/e634536a-d728-4a33-9422-2ae5cd839121
+MiniDuke,2010,Host,File,File hash SHA256,c60621e82f58b5ea5b36cde40889a076cb2c7f1612144998b1d388200bc7e295,https://analyze.intezer.com/analyses/a7b1bd2b-f326-4d06-a5a7-d11f554d2885
+MiniDuke,2010,Host,File,File hash SHA256,8e28dcf7fd7ce1ad9a65c186e09a7843ee31af924509148f085958cadfdda8fb,https://analyze.intezer.com/analyses/e6077377-c275-4577-bd3b-5c10d8cde0cd
+MiniDuke,2010,Host,File,File hash SHA256,dfe146fffd2ae59172f52048f7e7d231807e0d732e19bdb443820a8305165741,https://analyze.intezer.com/analyses/31ab5cac-b0ec-47c8-9d16-4a3605432383
+MiniDuke,2010,Host,File,File hash SHA256,f4b01a3a299b09d2b4418cb66e80c34e3ec04016ed27199c472515cf95a023d0,https://analyze.intezer.com/analyses/927d3910-634a-44e7-ae9f-38261f801886
+MiniDuke,2010,Host,File,File hash SHA256,15101f74f974e3e80cc37805ebe5cc2efed77bb5745d82e1b44b1da4f0c83691,https://analyze.intezer.com/analyses/5f7eefc9-ad35-4b43-8252-ba8a78509616
+MiniDuke,2010,Host,File,File hash SHA256,354786c5df71cd090c96d1328b4e31cd28b8ddc77904863d100b6c35ad235b69,https://analyze.intezer.com/analyses/50d5d905-29ae-4eeb-bb9c-1f8fa4c2e677
+MiniDuke,2010,Host,File,File hash SHA256,764f8c8f8832954c99fb0c2ac5ac5d89506dc5dc50310c9112318b75e9f9e2bf,https://analyze.intezer.com/analyses/ec97a52a-45af-47f5-99e0-c540a1ee50bc
+MiniDuke,2010,Host,File,File hash SHA256,55265193d63d56553e8e135e9a60d7d7c13cbf9d82ac25f84306ec98d74725b0,https://analyze.intezer.com/analyses/c7c9de6c-0614-4a7c-991f-6fe526049070
+MiniDuke,2010,Host,File,File hash SHA256,4809c2c7fa19acfa011f97946205f979afb54ac2c166f48ab35a20cd9d53a2ca,https://analyze.intezer.com/analyses/2b9445a6-9313-49f3-af2d-c83a6c92645e
+MiniDuke,2010,Host,File,File hash SHA256,9c13a32033bc7dd06016651b0f21a2bed9be1dc40c6879f925c71e05f4f1c8f7,https://analyze.intezer.com/analyses/2c72ddd9-8a1f-4785-9513-8adfa7e01c80
+MiniDuke,2010,Host,File,File hash SHA256,a6e2852f2e6701656da74adb412cd0850b0d27750803613223be3eb5ac5cc26c,https://analyze.intezer.com/analyses/91935d5b-7059-42ec-8e98-c849864a8085
+MiniDuke,2010,Host,File,File hash SHA256,f151f5a656d43a76a07fa03166906d51f9683b27b0e9b86464e3a68e9dba1fac,https://analyze.intezer.com/analyses/20463c12-7d50-4b82-9691-61c10f7cb318
+MiniDuke,2010,Host,File,AV detect,Trojan-Dropper:W32/MiniDuke.B,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+MiniDuke,2010,Host,File,AV detect,Trojan-Dropper:W32/MiniDuke.D,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+Miniduke,2010,Host,File,PDB path,c:botgenstudiogenerationsfdd88801binBot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,c:botgenstudiogenerationsfed14e50binBot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,D:SVANITROBotGenStudioInterfaceGenerations80051A85binbot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,d:svanitrobotgenstudiointerfacegenerations805f8183binBot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,d:productionnitrosvagenerations80deae99binBot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,C:Projectsnemesis-geminanemesisbincarriersezlzma_x86_exe.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,C:ProjectsNEMESISnemesis-geminanemesisbincarriersezlzma-boost-kitchen_sink_x86_exe.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,D:PRODUCTIONNITROSVAGenerations80911F82binbot.pdb,https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+Miniduke,2010,Host,File,PDB path,c:\src\dlldropper\Release\L2P.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Host,File,PDB path,C:\src\hellodll\Release\hellodll.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,IP address,,194.38.160.153,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,IP address,,95.128.72.24,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,IP address,,72.34.47.186,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,IP address,,188.40.99.143,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,IP address,,200.63.46.23,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08083618/themysteryofthepdf0-dayassemblermicrobackdoor.pdf
+Miniduke,2010,Network,URL,,http://news.grouptumbler.com/news/feed.php? i=Me3tMZEHAuvkc~uJsO~W7lX1vSsgkuW99vD3FRgi,https://www.circl.lu/files/tr-14/circl-analysisreport-miniduke-stage3-public.pdf
+Miniduke,2010,Network,URL,,http://news.grouptumbler.com/,https://www.circl.lu/files/tr-14/circl-analysisreport-miniduke-stage3-public.pdf
+Miniduke,2010,Network,URL,,http://news.grouptumbler.com/news/feed . php? i={Custom BASE64},https://www.circl.lu/files/tr-14/circl-analysisreport-miniduke-stage3-public.pdf
+Miniduke,2010,Network,User Agent String,,"Mozilla/5.0 (Windows NT 6.1)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+Miniduke,2010,Network,User Agent String,,Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+Miniduke,2010,Network,User Agent String,,Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0),https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+Miniduke,2010,Network,User Agent String,,"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)
+Chrome/37.0.2062.35 Safari/537.36 OPR/24.0.1558.21",https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+Miniduke,2010,Network,User Agent String,,"Mozilla/5.0 (Windows; Windows NT 6.1) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7
+Safari/534.57.2",https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+WellMess,2020,Network,IP address,,103.103.128.221,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2021,Network,IP address,,103.73.188.101 ,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2022,Network,IP address,,111.90.146.143,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2023,Network,IP address,,119.81.173.130 ,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2024,Network,IP address,,119.81.178.105 ,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2025,Network,IP address,,120.53.12.132,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2026,Network,IP address,,122.114.226.172,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2027,Network,IP address,,141.255.164.29,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2028,Network,IP address,,149.202.12.210 ,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2029,Network,IP address,,169.239.128.110 ,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2030,Network,IP address,,176.119.29.37,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2031,Network,IP address,,192.48.88.107,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2032,Network,IP address,,193.182.144.105,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2033,Network,IP address,,202.59.9.59,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2020,Host,Strings in malware,,"rule wellmess_dotnet_unique_strings {
+ meta:
+ description = ""Rule to detect WellMess .NET samples based on unique
+strings and function/variable names""
+ author = ""NCSC""
+ hash =
+""2285a264ffab59ab5a1eb4e2b9bcab9baf26750b6c551ee3094af56a4442ac41""
+ strings:
+ $s1 = ""MaxPostSize"" wide
+ $s2 = ""HealthInterval"" wide
+ $s3 = ""Hello from Proxy"" wide
+ $s4 = ""Start bot:"" wide
+ $s5 = ""Choise"" ascii wide
+ $s7 = ""FromNormalToBase64"" ascii
+ $s8 = ""FromBase64ToNormal"" ascii
+ $s9 = ""ConvBytesToWords"" ascii
+ $s10 = ""WellMess"" ascii
+ $s11 = ""chunksM"" ascii
+ condition:
+ uint16(0) == 0x5a4d and uint16(uint16(0x3c)) == 0x4550 and 3 of them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2020,Host,Strings in malware,,"rule wellmess_botlib_function_names {
+ meta:
+ description = ""Rule to detect WellMess Golang samples based on the
+function names used by the actor""
+ author = ""NCSC""
+ hash =
+""8749c1495af4fd73ccfc84b32f56f5e78549d81feefb0c1d1c3475a74345f6a8""
+ strings:
+ $s1 = ""botlib.wellMess"" ascii wide
+ $s2 = ""botlib.saveFile"" ascii wide
+ $s3 = ""botlib.reply"" ascii wide
+ $s4 = ""botlib.init"" ascii wide
+ $s5 = ""botlib.generateRandomString"" ascii wide
+ $s6 = ""botlib.encrypt"" ascii wide
+ $s7 = ""botlib.deleteFile"" ascii wide
+ $s8 = ""botlib.convertFromString"" ascii wide
+ $s9 = ""botlib.chunksM"" ascii wide
+ $s10 = ""botlib.Work"" ascii wide
+ $s11 = ""botlib.UnpackB"" ascii wide
+ $s12 = ""botlib.Unpack"" ascii wide
+ $s13 = ""botlib.UDFile"" ascii wide
+ $s14 = ""botlib.Split"" ascii wide
+ $s15 = ""botlib.Service"" ascii wide
+ $s16 = ""botlib.SendMessage"" ascii wide
+ $s17 = ""botlib.Send.func1"" ascii wide
+ $s18 = ""botlib.Send"" ascii wide
+ $s19 = ""botlib.ReceiveMessage"" ascii wide
+ $s20 = ""botlib.RandStringBytes"" ascii wide
+ $s21 = ""botlib.RandInt"" ascii wide
+ $s22 = ""botlib.Post"" ascii wide
+ $s23 = ""botlib.Parse"" ascii wide
+ $s24 = ""botlib.Pad"" ascii wide
+ $s25 = ""botlib.Pack"" ascii wide
+ $s26 = ""botlib.New"" ascii wide
+ $s27 = ""botlib.KeySizeError.Error"" ascii wide
+ $s28 = ""botlib.Key"" ascii wide
+ $s29 = ""botlib.Join"" ascii wide
+ $s30 = ""botlib.GetRandomBytes"" ascii wide
+ $s31 = ""botlib.GenerateSymmKey"" ascii wide
+ $s32 = ""botlib.FromNormalToBase64"" ascii wide
+ $s33 = ""botlib.EncryptText"" ascii wide
+ $s34 = ""botlib.Download"" ascii wide
+ $s35 = ""botlib.Decipher"" ascii wide
+ $s36 = ""botlib.Command"" ascii wide
+ $s37 = ""botlib.Cipher"" ascii wide
+ $s38 = ""botlib.CalculateMD5Hash"" ascii wide
+ $s39 = ""botlib.Base64ToNormal"" ascii wide
+ $s40 = ""botlib.AES_Encrypt"" ascii wide
+ $s41 = ""botlib.AES_Decrypt"" ascii wide
+ $s42 = ""botlib.(*rc6cipher).Encrypt"" ascii wide
+ $s43 = ""botlib.(*rc6cipher).Decrypt"" ascii wide
+ $s44 = ""botlib.(*rc6cipher).BlockSize"" ascii wide
+ $s45 = ""botlib.(*KeySizeError).Error"" ascii wide
+ $s46 = ""botlib.DownloadDNS"" ascii wide
+ $s47 = ""botlib.JoinDnsChunks"" ascii wide
+ $s48 = ""botlib.SendDNS"" ascii wide
+ $s49 = ""botlib.CreateDNSName"" ascii wide
+ condition:
+ ((uint16(0) == 0x5a4d and uint16(uint16(0x3c)) == 0x4550) or
+uint32(0) == 0x464c457f) and any of them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2020,Host,Strings in malware,,"rule wellmess_certificate_base64_snippets {
+ meta:
+ description = ""Rule for detection of WellMess based on base64
+snippets of certificates used""
+ author = ""NCSC""
+ hash =
+""8749c1495af4fd73ccfc84b32f56f5e78549d81feefb0c1d1c3475a74345f6a8""
+ strings:
+ $a1 = ""BgNVHQ4EBwQFAQIDBA""
+ $a2 = ""YDVR0OBAcEBQECAwQG""
+ $a3 = ""GA1UdDgQHBAUBAgMEB""
+ $b1 = ""BgNVBAYTBVR1bmlzMQswCQYDVQQKEwJJVD""
+ $b2 = ""YDVQQGEwVUdW5pczELMAkGA1UEChMCSVQx""
+ $b3 = ""GA1UEBhMFVHVuaXMxCzAJBgNVBAoTAklUM""
+ condition:
+ ((uint16(0) == 0x5a4d and uint16(uint16(0x3c)) == 0x4550) or
+uint32(0) == 0x464c457f) and any of ($a*) and any of ($b*)
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2020,Host,Strings in malware,,"rule wellmess_regex_used_for_parsing_beacons {
+ meta:
+ description = ""Detects WellMess Golang and .NET samples based on the
+regex they used to parse commands and beacon information""
+ author = ""NCSC""
+ hash =
+""8749c1495af4fd73ccfc84b32f56f5e78549d81feefb0c1d1c3475a74345f6a8""
+ strings:
+ $a = ""fileName:(?<fn>.*?)\\sargs:(?<arg>.*)\\snotwait:(?<nw>.*)""
+ascii wide
+ $b = ""<;(?<key>[^;]*?);>(?<value>[^<]*?)<;[^;]*?;>"" ascii wide
+ condition:
+ ((uint16(0) == 0x5a4d and uint16(uint16(0x3c)) == 0x4550) or
+uint32(0) == 0x464c457f) and any of them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+WellMess,2020,Host,File,File hash SHA256,14e9b5e214572cb13ff87727d680633f5ee238259043357c94302654c546cad2 ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File hash SHA256,5ca4a9f6553fea64ad2c724bf71d0fac2b372f9e7ce2200814c98aac647172fb ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File hash SHA256,7c39841ba409bce4c2c35437ecf043f22910984325c70b9530edf15d826147ee ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File hash SHA256,953b5fc9977e2d50f3f72c6ce85e89428937117830c0ed67d468e2d93aa7ec9a ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File hash SHA256,e329607379a01483fc914a47c0062d5a3a8d8d65f777fbad2c5a841a90a0af09  ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File hash SHA256,fd3969d32398bbe3709e9da5f8326935dde664bbc36753bd41a0b111712c0950 ,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,AV detect,Win.Trojan.WellMess-6706033-0,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,File,File extension,x643.Microsoft.Dtc.PowerShell.dll,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Host,User Agent String,,Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:21.0) Gecko/20100101 Firefox/21.0,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,User Agent String,,Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:21.0) Gecko/20130331 Firefox/21.0,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,User Agent String,,Mozilla/5.0 (X11; U; Linux i686; zh-CN; rv:1.9.1.8),https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,User Agent String,,Mozilla/5.0 (X11; OpenBSD amd64; rv:28.0) Gecko/20100101,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,IP address,,85.93.2.116,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,IP address,,141.98.212.55:53,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,IP address,,192.48.88.107,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+WellMess,2020,Network,IP address,,103.73.188.101,https://www.cisa.gov/news-events/analysis-reports/ar20-198b
+SoreFang,2020,Network,IP address,,103.216.221.19,https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_directory_enumeration_output_strings {
+ meta:
+ description = ""Rule to detect SoreFang based on formatted string
+output for directory enumeration""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = ""----------All usres directory----------""
+ $ = ""----------Desktop directory----------""
+ $ = ""----------Documents directory----------""
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_encryption_key_2b62 {
+ meta:
+ description = ""Rule to detect SoreFang based on hardcoded encryption
+key""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = ""2b6233eb3e872ff78988f4a8f3f6a3ba""
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_encryption_key_schedule {
+ meta:
+ description = ""Rule to detect SoreFang based on the key schedule used
+for encryption""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = {C7 05 ?? ?? ?? ?? 63 51 E1 B7 B8 ?? ?? ?? ?? 8B 48 FC 81 E9 47
+86 C8 61 89 08 83 C0 04 3D ?? ?? ?? ?? 7E EB 33 D2 33 C9 B8 2C 00 00 00
+89 55 D4 33 F6 89 4D D8 33 DB 3B F8 0F 4F C7 8D 04 40 89 45 D0 83 F8 01
+7C 4F 0F 1F 80 00 00 00 00}
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_command_elem_cookie_ga_boundary_string {
+ meta:
+ description = ""Rule to detect SoreFang based on scheduled task
+element and Cookie header/boundary strings""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = ""<Command>"" wide
+ $ = ""Cookie:_ga=""
+ $ = ""------974767299852498929531610575""
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and 2 of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_encryption_round_function {
+ meta:
+ description = ""Rule to detect SoreFang based on the encryption round
+function""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = {8A E9 8A FB 8A 5D 0F 02 C9 88 45 0F FE C1 0F BE C5 88 6D F3 8D
+14 45 01 00 00 00 0F AF D0 0F BE C5 0F BE C9 0F AF C8 C1 FA 1B C0 E1 05
+0A D1 8B 4D EC 0F BE C1 89 55 E4 8D 14 45 01 00 00 00 0F AF D0 8B C1}
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_add_random_commas_spaces {
+ meta:
+ description = ""Rule to detect SoreFang based on function that adds
+commas and spaces""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = {E8 ?? ?? ?? ?? B9 06 00 00 00 99 F7 F9 8B CE 83 FA 04 7E 09 6A
+02 68 ?? ?? ?? ?? EB 07 6A 01 68 ?? ?? ?? ??}
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_modify_alphabet_custom_encode {
+ meta:
+ description = ""Rule to detect SoreFang based on arguments passed into
+custom encoding algorithm function""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = {33 C0 8B CE 6A 36 6A 71 66 89 46 60 88 46 62 89 46 68 66 89 46
+64}
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of
+them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Host,Strings in malware,,"rule sorefang_remove_chars_comma_space_dot {
+ meta:
+ description = ""Rule to detect SoreFang based on function that removes
+commas, spaces and dots""
+ author = ""NCSC""
+ hash =
+""58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2""
+ strings:
+ $ = {8A 18 80 FB 2C 74 03 88 19 41 42 40 3B D6 75 F0 8B 5D 08}
+ $ = {8A 18 80 FB 2E 74 03 88 19 41 42 40 3B D6 75 F0 8B 5D 08}
+ $ = {8A 18 80 FB 20 74 03 88 19 41 42 40 3B D6 75 F0 8B 5D 08}
+ condition:
+ (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and all
+of them
+}",https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf
+SoreFang,2020,Network,IP address,,103.216.221.19,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,Network,IP address,,192.168.169.103,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,Host,File,File hash SHA256,58d8e65976b53b77645c248bfa18c3b87a6ecfb02f306fe6ba4944db96a5ede2 ,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,Host,File,File hash SHA256,65495d173e305625696051944a36a031ea94bb3a4f13034d8be740982bc4ab75 ,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,Host,File,File hash SHA256,a4b790ddffb3d2e6691dcacae08fb0bfa1ae56b6c73d70688b097ffa831af064 ,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,Network,User Agent String,,Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1,https://www.cisa.gov/news-events/analysis-reports/ar20-198a
+SoreFang,2020,General,MITRE Technique,,T1087	,https://attack.mitre.org/software/S0516/
+SoreFang,2020,General,MITRE Technique,,T1140,https://attack.mitre.org/software/S0516/
+SoreFang,2020,General,MITRE Technique,,T1083,https://attack.mitre.org/software/S0516/
+,,,,,,
+,,,,,,
+CosmicDuke,2013,Host,File,File hash SHA256,aecb468db5cebcfa25deadeb3b12fbc48b05a485b44deb500b4002521bc3e685,https://analyze.intezer.com/analyses/f607dd14-c6dc-4a3b-94a6-82ac3144b90a
+CosmicDuke,2013,Host,File,File hash SHA256,187b1cc7264c04c3158f835546cad0be74e6411bb50cb8899179a71018f0b4b9,https://analyze.intezer.com/analyses/2731b9c9-a1ef-4783-bfb5-9bf822d9c48a
+CosmicDuke,2013,Host,File,File hash SHA256,246543cc4a538472bed0626c159715a963e39dfc69d79f60c3ab227c62277016,https://analyze.intezer.com/analyses/8ce4fca5-f381-45e9-b89d-acd783fd0364
+CosmicDuke,2013,Host,File,File hash SHA256,7c14761d20617ab7f408d6c63367f16026377d7c13f3e3c67525e034fc0c6d7c,https://analyze.intezer.com/analyses/a0fa52a2-a3c0-42b5-83a9-9148ebe14490
+CosmicDuke,2013,Host,File,File hash SHA256,dad4c4aea24f2bd3e2f4b93bf782ebef70e8fdf930aff25a3e1b85a717314aa0,https://analyze.intezer.com/analyses/5a3c20b0-b74f-4186-bedb-a4f2e6499332
+CosmicDuke,2013,Host,File,File hash SHA256,ccd3c69710977360459c0d2539d5e7e7defce097bcfee3ae62e564de7c938f17,https://analyze.intezer.com/analyses/d0825817-d8e9-495d-9e25-fd8e6db5b0b2
+CosmicDuke,2013,Host,File,File hash SHA256,a8200a476f72ef77f4cd6bd71ebae9f473e923b140600b9da0bbaf1f22e1cecb,https://analyze.intezer.com/analyses/b12ae1a6-8653-4409-904d-e0b652a4c978
+CosmicDuke,2013,Host,File,File hash SHA256,41d63d293a6e2722fcf82f8bf67b8f566bd4d3f669ede146ccc286f0228d8f62,https://analyze.intezer.com/analyses/90f97d63-09f5-471f-bc37-959f36ed3991
+CosmicDuke,2013,Host,File,File hash SHA256,a31551902d2cbb7110a9f5f04bfba7269410850155dc6163c7bf8cad171ed68c,https://analyze.intezer.com/analyses/5c2acb80-5e66-4740-b23d-35d15dbaee05
+CosmicDuke,2013,Host,File,File hash SHA256,620da58f80640661ccec202a3b20f138b8a0c9f374fb1fb5525dd3fe00ac5a8c,https://analyze.intezer.com/analyses/27417931-361e-4bd8-bf33-48ef95b84b3a
+CosmicDuke,2013,Host,File,File hash SHA256,70a7248b90573ba2edde5d9e8f0acd478235054480d98b0531d85725555f3a5c,https://analyze.intezer.com/analyses/ce7e3e5b-eadf-4ae5-9e96-048fb9e36fbd
+CosmicDuke,2013,Host,File,File hash SHA256,1dbb96c130b12eacfe2956b536ca8e8ef59691f513816011866320e0e77daab2,https://analyze.intezer.com/analyses/ee64347e-145a-4c6a-b61e-2567d271b9b3
+CosmicDuke,2013,Host,File,File hash SHA256,05637ef950feaeb0944d9fccca38eeff38e366c24a137ef08c9f1442aeb6afb7,https://analyze.intezer.com/analyses/0f714f4b-e7d0-465d-a5b3-8fc46efb8d98
+CosmicDuke,2013,Host,File,File hash SHA256,0314ed09890d5aa2dba659fe1343be93d48c3875a89e261484967fea7ea6c7eb,https://analyze.intezer.com/analyses/4b7635a3-8388-40d6-8b43-68d73a38136a
+CosmicDuke,2013,Host,File,File hash SHA256,0a013787f9c1731213059f2d8e1a7514f610783aaaea8fa5736063ab7793c0d7,https://analyze.intezer.com/analyses/405b73fd-5a8d-4124-9807-91fa10b783b4
+CosmicDuke,2013,Host,File,File hash SHA256,52d1b5387739dcf6a68efb21e8ccf83b9b29fb29724091d7a8084d2315f81d80,https://analyze.intezer.com/analyses/e1687b81-6132-4297-a6ca-34e51ccb6409
+CosmicDuke,2013,Host,File,File hash SHA256,1c86bcc74684c2533026a8b4d9463ad4b5a1f30f6915ca19197b41e0cb893b77,https://analyze.intezer.com/analyses/b5f4e9e4-51d5-464d-8511-1c52a6080775
+CosmicDuke,2013,Host,File,File hash SHA256,2c480399bff7d05736caa1858fd43d9223df3fd531ae574dc3c9eb06cc3579ef,https://analyze.intezer.com/analyses/aab3eebc-1119-4796-9009-8cbf5006e912
+CosmicDuke,2013,Host,File,File hash SHA256,182ab7eb1dce2827a05aff0d83a13dd8346bd3b8ab2dfb681817a0d3aab05b15,https://analyze.intezer.com/analyses/7342eefa-532b-4c8a-bcc5-b6994370d298
+CosmicDuke,2013,Host,File,File hash SHA256,55ba0c04d488903e07f0747407ed56319f0d9aac113c7f9c62287442f1f78c45,https://analyze.intezer.com/analyses/5ba218a6-a6ee-45a1-9373-9db0fae451d6
+CosmicDuke,2013,Host,File,File hash SHA256,ffc6a96b542196dbe322de199ee7b2621966d4c0d32ab43f78b9516a3576da09,https://analyze.intezer.com/analyses/70abbfaf-8313-4df0-826b-6000bb2b3056
+CosmicDuke,2013,Host,File,File hash SHA256,cae1277446cb62f1ed3674e7ea87063a28b9d364e3638fa779fe8e3d6e1fb15f,https://analyze.intezer.com/analyses/53911ae5-5f7a-4a6d-8043-2cc4937fb181
+CosmicDuke,2013,Host,File,File hash SHA256,2e8aa9dac584a51c7d960baccf76747c858175573f5c013b7c44328f0871da04,https://analyze.intezer.com/analyses/0bd8822b-0ce4-4712-a92b-5bf8a415c05d
+CosmicDuke,2013,Host,File,File hash SHA256,82670519b8d63d36967c611bc94659e5bff867837129ac93bcffe7589af46384,https://analyze.intezer.com/analyses/bd2c88c9-fdf2-4428-b342-5dcd28642545
+CosmicDuke,2013,Host,File,File hash SHA256,47f3405ab0da5af125bcc6ebb6d17a1573b090c54d7a0a00630ec170ccc4b9d1,https://analyze.intezer.com/analyses/171a2223-d7a6-4a09-9fe6-fb03ae2df39e
+CosmicDuke,2013,Host,File,File hash SHA256,5ef73d904cf5dcbec5919fba0b640168d6feb8f7021507568297e3da1a7e47a5,https://analyze.intezer.com/analyses/1d0a3ee7-0dfe-4d82-bac8-1569515dc599
+CosmicDuke,2013,Host,File,File hash SHA256,f61cdc7f68f47d23c4571b517ab4cdcfd984cf3f6f8f91dec99dfd7dc5a2dcff,https://analyze.intezer.com/analyses/c3cb0c37-fe3e-40cf-b3d0-bd9c28247819
+CosmicDuke,2013,Host,File,File hash SHA256,3c5d2fcacafc21d9f43c595ddf03bec801ccb958b8641018612c21bc741800d0,https://analyze.intezer.com/analyses/37914edf-af27-4400-9753-99dd7af8c2be
+CosmicDuke,2013,Host,File,File hash SHA256,b7c4b998d7ebea62b81f2a12c5e8608a21079a0bcecdef81c0f5818a80b0c7eb,https://analyze.intezer.com/analyses/7714b3d7-25f4-4a1d-8763-0e07a2ffdb68
+CosmicDuke,2013,Host,File,File hash SHA256,a1176b60ca96cfeb37dde61bde935f645a64fabd8e300f072fc355434b711dcf,https://analyze.intezer.com/analyses/43b7b471-bb6f-4129-9426-a433d3c13601
+CosmicDuke,2013,Host,File,File hash SHA256,75e8567e7667eb02eec661134ecc07a7970d9448fc5b7dc021b5bcb039953a47,https://analyze.intezer.com/analyses/1d184a98-880a-4370-b0be-9d8fef67ca2b
+CosmicDuke,2013,Host,File,File hash SHA256,831267e0977becf098b5064aac6fd39b5f8e6fd975c06d4b8540cea71d402317,https://analyze.intezer.com/analyses/699cf45c-6b17-4537-8938-0ad89cab8574
+CosmicDuke,2013,Host,File,File hash SHA256,fede980fc70a86f949828b834edc0847490d497efcbd3a1155b7d3afe7c32543,https://analyze.intezer.com/analyses/6d816770-f349-4094-b527-e906e6bb44ca
+CosmicDuke,2013,Host,File,File hash SHA256,7e371cd323898e403df7a80add34d791e160e443bcd2d02f27ddc0c04ba1bdab,https://analyze.intezer.com/analyses/8e25d586-1f44-4bf4-8364-44dbe8c37938
+CosmicDuke,2013,Host,File,File hash SHA256,1590bdbaff2c178387e924b689b030057b4cbd2865e9c4dd3886a8791ac8e4ee,https://analyze.intezer.com/analyses/ed0c9e76-2c0a-4c5c-8675-023dbbdd7188
+CosmicDuke,2013,Host,File,File hash SHA256,fe5bc1248fc79fc15663ef169f0a269c1abe847d00b01e9571fe5c0d760d68f0,https://analyze.intezer.com/analyses/9d35fc82-958d-4f90-bd95-868b78403df3
+CosmicDuke,2013,Host,File,File hash SHA256,64e3a2bba82027dd6ff631fa5890a7ba8331b62a0a4c0b1ca24d143c2b61c323,https://analyze.intezer.com/analyses/20fc4a2a-e362-4057-82c2-34089ce8bc50
+CosmicDuke,2013,Host,File,File hash SHA256,027c9da59c77e83b42535a0c965c4994a144715e796453fc2a5b189f0036c4b4,https://analyze.intezer.com/analyses/1783e4a8-261c-4f3d-b501-f231d7416be7
+CosmicDuke,2013,Host,File,File hash SHA256,8290b324f5cdb5c3ea17fa48a74bc11c856f0da0b049d07d9316d161f71f26a5,https://analyze.intezer.com/analyses/f578d5f2-28f7-49c2-b179-f6ea1cbcdfd3
+CosmicDuke,2013,Host,File,File hash SHA256,38c0252f75b1c6b3980e40bb69cb932773a6e0b189fc8a80efc2dcb455209eab,https://analyze.intezer.com/analyses/73437ce2-098a-4c71-ab89-c24ffe40841a
+CosmicDuke,2013,Host,File,File hash SHA256,3d37e753812687fb7287cf8644d13fe2673ea7c3b540637c1ce1c6819f1c521b,https://analyze.intezer.com/analyses/78a97395-a916-407b-8de1-577e3aad8b8c
+CosmicDuke,2013,Host,File,File hash SHA256,92172ff7bfeee332409a145bc626bebf732225d006877168f35c046368e5118c,https://analyze.intezer.com/analyses/51b4bba3-fbdf-4e78-86fe-2a7ad1971d07
+CosmicDuke,2013,Host,File,File hash SHA256,334ed05005ce829224d0dd4cc5baab6b837cf02ac0e321c8f97d11b3ba1c77a7,https://analyze.intezer.com/analyses/1b6b757a-3693-42b1-b166-b38f0ac241a1
+CosmicDuke,2013,Host,File,File hash SHA256,d5f1d8d2629b91744fe812207cb3f0bebfd1aec9937b7744a263d1a4e3421063,https://analyze.intezer.com/analyses/ca67bdd1-c300-407c-92fc-f5dd116a919f
+CosmicDuke,2013,Host,File,File hash SHA256,2146da9bc0e27d7eb10983b7dd89f250fa0015ce284dde8f0bb6a79626d34a2a,https://analyze.intezer.com/analyses/5a77ae38-164e-4bd3-b5a4-2a4bb50f6680
+CosmicDuke,2013,Host,File,AV detect,Trojan-Dropper:W32/CosmicDuke.A,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan-PSW:W32/CosmicDuke.B,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan:W32/CosmicDuke.C,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan-PSW:W32/CosmicDuke.F,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan-Dropper:W32/CosmicDuke.G,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan:W32/CosmicDuke.H,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Host,File,AV detect,Trojan:W32/CosmicDuke.I,https://labs.withsecure.com/content/dam/labs/docs/dukes-whitepaper.pdf
+CosmicDuke,2013,Network,IP address,,194.69.193.147,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,69.89.31.57,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,72.167.13.78,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,192.155.88.252,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,188.241.115.41,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,31.44.186.38,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,94.242.199.88,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,212.76.128.149,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,91.224.141.235,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,199.231.188.109,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,46.246.120.178,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,178.21.172.157,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,188.116.32.164,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,64.18.143.90,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,209.99.17.27,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,IP address,,212.7.198.107,https://blog.crysys.hu/2014/07/miniduke-2-cosmicduke/
+CosmicDuke,2013,Network,URL,,https://www.exploit-db.com/exploits/17473,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,c:\botgenstudio\generations\8f1777b0\bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,c:\botgenstudio\generations\fed14e50\bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,c:\botgenstudio\generations\55ff7700\bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,D:\production\nitro\sva\generations\809113dd\bin\ Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,D:\SVA\NITRO\PRODUCTION\Generations\805B1D01\bin\bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,D:\PRODUCTION\NITRO\SVA\Generations\8052B6C0\bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,D:\PRODUCTION\NITRO\SVA\Generations\80B8A0BA\ bin\bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,d:\sva\nitro\botgenstudio\interface\ generations\80ddfcc1\bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,Host,File,PDB path,D:\PRODUCTION\NITRO\KSK\Generations\70BCDEA1\ bin\Bot.pdb,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/04/20081948/cosmicduke_whitepaper.pdf
+CosmicDuke,2013,General,MITRE Technique,,T1113,https://github.com/Cyb3rWard0g/Invoke-ATTACKAPI/blob/master/Invoke-ATTACKAPI.ps1
+CosmicDuke,2013,General,MITRE Technique,,T1005,https://github.com/Cyb3rWard0g/Invoke-ATTACKAPI/blob/master/Invoke-ATTACKAPI.ps2
+,2022,Network,URL,,http://46.246.120.178/modules/db/mgr.php?mgn&Auth=80051A85&Session=11EBB35A7B00CF39&DataID=100&FamilyID=393F552E2F294E11AC40DD02AD110099&,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,Network,URL,,http://dl.google.com/edgedl/release2/chrome/adhi3v7xhnepyo2mmjszydd2nmdq_102.0.5005.62/102.0.5005.62_101.0.4951.67_chrome_updater.exe?cms_redirect=yes&mh=Yy&mip=109.226.37.172&mm=28&mn=sn-jjjpa-ua8e&ms=nvh&mt=1660954311&mv=u&mvi=3&pl=24&rmhost=r6---sn-jjjpa-ua8e.gvt1.com&shardbypass=sd&rm=sn-jjjpa-ua8e7s&req_id=841d576019c83cb1,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,Network,URL,,http://www.google.com/search?q=\xff9b\xffbcZ97oiMCmPcD,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,Network,URL,,http://sixsquare.net/forum2/image.php?extra_1=01ec976e60c0c9142ce04c905c9ab50c6aaa7ec9e9dddffd55&placement=2c673bf84961316f8e5e40d96267aa2c18cc1f3e0a5542,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,Network,URL,,http://m.twitter.com/qlspenctch,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,Network,URL,,http://info.leveldelta.com/php/text.php?i=Gy0uHOKZ~~c$ArR8~TL4tr1s3R8qyDC7lijWMk5W,https://analyze.intezer.com/families/8d170717-600e-4560-b6e9-e46c4fcaaac6
+,2022,General,Vulnerability (CVE),,CVE-2022-30170,https://socradar.io/apt-profile-cozy-bear-apt29/
+TEARDROP,,Host,File,File extension,b820e8a2057112d0ed73bd7995201dbed79a79e13c79d4bdad81a22f12387e07,https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+TEARDROP,,Network,URL,,https(://)infinitysoftwares(.)com/wp-admin/new_file.php,https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+Raindrop,,Host,File,File extension,be9dbbec6937dfe0a652c0603d4972ba354e83c06b8397d6555fd1847da36725,https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+Raindrop,,Host,File,File extension,f2d38a29f6727f4ade62d88d8a68de0d52a0695930b8c92437a2f9e4de92e418,https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+Raindrop,,Network,URL,,https(://)panhardware(.)com/wp-admin/new_file.php,https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+Raindrop,,Host,File,File extension,C:\Windows\ELAMBKUP\WdBoot.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\Registration\crmlog.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\SKB\LangModel.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\AppPatch\AcWin.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\PrintDialog\appxsig.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\Microsoft.NET\Framework64\sbscmp30.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\Panther\MainQueueOnline.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Raindrop,,Host,File,File extension,C:\Windows\LiveKernelReports\KerRep.dll,https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+Dark Halo,2020,Network,IP address,,13.57.184.217,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,13.59.205.66,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,18.217.225.111,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,18.220.219.143,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,3.16.81.254,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,3.87.182.149‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,34.219.234.134,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,54.193.127.66,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,IP address,,54.215.192.52,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,deftsecurity.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,digitalcollege.org,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,freescanonline.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,globalnetworkissues.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,kubecloud.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,seobundlekit.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,solartrackingsystem.net,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,thedoccloud.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+Dark Halo,2020,Network,URL,,virtualwebdata.com,https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+,2018,General,Vulnerability (CVE),,CVE-2018-13379,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-1653,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-2725,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-9670,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-11510,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-19781,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2019,General,Vulnerability (CVE),,CVE-2019-7609,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2020,General,Vulnerability (CVE),,CVE-2020-4006,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2020,General,Vulnerability (CVE),,CVE-2020-5902,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2020,General,Vulnerability (CVE),,CVE-2020-14882,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2021,General,Vulnerability (CVE),,CVE-2021-21972,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,2021,General,Vulnerability (CVE),,CVE-2021-26855,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,,General,MITRE Technique,,T1190,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,,General,MITRE Technique,,T1595.002,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+,,General,MITRE Technique,,T1505.003,https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf
+PolyglotDuke,2020,Host,File,File hash SHA256,0c39fce5bd32b4f91a1df4f6321c2f01c017195659c7e95a235ef71ca2865aa9,https://malware.news/t/unpacking-of-apt29-polyglotduke/54954
+PolyglotDuke,2020,Host,File,File hash SHA256,7e6d37f23857b4b7f3b7324fa4966ae69acf95a43115ff6ee07d85cf06a2a4c7,https://malware.news/t/unpacking-of-apt29-polyglotduke/54955
+PolyglotDuke,2020,Host,File,,acciaio.com.br,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,ceycarb.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,coachandcook.at,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,fisioterapiabb.it,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,lorriratzlaff.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,mavin21c.dothome.co.kr,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,motherlodebulldogclub.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,powerpolymerindustry.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,publiccouncil.org,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PolyglotDuke,2020,Host,File,,rulourialuminiu.co.uk,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+FatDuke,2017,Host,File,File hash SHA256,0be57d1244fefc679feb7aa9996e539481be7b8f4c9246817f81caa8c2f61a57,https://analyze.intezer.com/analyses/268dfe0a-7ae2-49ab-b962-b40067dea0fd
+FatDuke,2017,Host,File,File hash SHA256,a95449f7c7c1ea5359bd76f25f57b89802d94f649ba059b910d8e46d9a914fcf,https://analyze.intezer.com/analyses/55d38968-6c62-42b9-870d-242d682cba1e
+FatDuke,2017,Network,URL,,busseylawoffice.com,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+FatDuke,2017,Network,URL,,fairfieldsch.org,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+PowerDuke,2016,Network,IP address,,81.82.196.162,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,65.15.88.243,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,84.206.44.194,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,185.124.86.121,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,185.132.124.43,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,185.26.144.109,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,173.243.80.6,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,IP address,,177.10.96.30,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,URL,,efax.pfdresearch.org,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,URL,,efax.pfdregistry.net,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Network,URL,,efax.pfdweek.com,https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/
+PowerDuke,2016,Host,File,File hash SHA256,b27ff2978ad3f65dd2fa6107bd437c4ab493cce9862baa5af0df4d0d935bfb3c,https://analyze.intezer.com/analyses/7f1daeef-82c2-40e5-ba78-e1b0d3be82a9
+PowerDuke,2016,Host,File,File hash SHA256,6119c92f5b5cb2cd953925e17ceb4a02a9007029dd27a35d44b116ff9718f814,https://analyze.intezer.com/analyses/6a72dedf-3ade-4225-8a44-5872cba9c4ba
+PowerDuke,2016,Host,File,File hash SHA256,2d2fa32f928f8abf31b9e79153422d65fe72cd5ad0d1f815a9d2ffa42fc8d224,https://analyze.intezer.com/analyses/c2da0005-a25d-4913-8c6e-b1e919a1d0a9
+PowerDuke,2016,Host,File,File hash SHA256,f37da55a4329df13b1283cbfd237ae832cebb4b9c4ed16e5a1e0b98d9b7fdf25,https://analyze.intezer.com/analyses/c83e2644-2582-422f-8b1b-f1bc6e3cfdfb
+PowerDuke,2016,Host,File,File hash SHA256,3bd7a49b769c9c3559af68de94b03ef537fc520e2e8c5513d3ee883db2d86ddf,https://analyze.intezer.com/analyses/cd1646d4-d0f3-4d06-bd41-7596f41a976c
+PowerDuke,2016,Host,File,File hash SHA256,4538af0a76fecc6e45e6d45c22618c52ba89bf596a0b68dd2d4d2358fb5c86ef,https://analyze.intezer.com/analyses/828e15fa-5ea1-4dd4-a1c2-c1e540ca7d77
+PowerDuke,2016,Host,File,File hash SHA256,6412ea144bb0b8f7d32becda26cd1549825fd7b282f1f96319e5f4000e3d4618,https://analyze.intezer.com/analyses/3cec5eaf-b1f7-43eb-9022-c1c715fe46ab
+PowerDuke,2016,Host,File,File hash SHA256,a870660d33b9801210f956e27d2e4ae329ca84acb132f4cdfccd3caee84b1b9a,https://analyze.intezer.com/analyses/3dad5748-51d9-4670-be8d-eb319383f59d
+PowerDuke,2016,Host,File,File hash SHA256,ef4a4319b9c37c1f05a4cbfb136c0eaf4a05476028d40a2a6bb07afc567f0f88,https://analyze.intezer.com/analyses/71deb4aa-c55d-487f-b3d3-c3d17ff07225
+LiteDuke,2014,Network,User Agent String,,Opera/9.80 (Windows NT 5.1; U; en-US) Presto/2.7.62 Version/11.01,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+LiteDuke,2014,Network,User Agent String,,"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4",https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+LiteDuke,2014,Network,User Agent String,,"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.13(KHTML, like Gecko) Chrome/9.0.597.98 Safari/534.13",https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+LiteDuke,2014,Network,User Agent String,,Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+LiteDuke,2014,Network,User Agent String,,Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729),https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf
+CloudDuke,2015,Host,File,AV detect,Trojan:W32/CloudDuke.B,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CloudDuke,2015,Host,File,AV detect,Trojan:W64/CloudDuke.B,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CloudDuke,2015,Host,File,AV detect,Trojan-Downloader:W32/CloudDuke.A,https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf
+CloudDuke,2015,Host,File,File hash SHA256,6c7e768e48b9b225b7b9f84528c53c2e6f9b639ce2e7919fe0dff9aad07ea4f5,https://analyze.intezer.com/analyses/7cd04f08-2f8f-462f-af12-db59f2c15574
+CloudDuke,2015,Host,File,File hash SHA256,c3ea57eea9f522cfc70ef8c3b614f7e44903293a2e8354359b99efbf4cd436df,https://analyze.intezer.com/analyses/c1b1fb18-6416-49ab-9fb5-e693ede426af
+CloudDuke,2015,Host,File,File hash SHA256,ecd0ce1973500c27bb5d70f326d115fba84c0b1680a726a041ed57b42063e7b1,https://analyze.intezer.com/analyses/d535eaa3-6346-49ef-b1c6-71d6d2e5042a
+CloudDuke,2015,Host,File,File hash SHA256,56531cc133e7a760b238aadc5b7a622cd11c835a3e6b78079d825d417fb02198,https://analyze.intezer.com/analyses/5f931c9e-5c2d-4694-a590-0edf25c65a28
+CloudDuke,2015,Host,File,File hash SHA256,ee5eb9d57c3611e91a27bb1fc2d0aaa6bbfa6c69ab16e65e7123c7c49d46f145,https://analyze.intezer.com/analyses/9aa5d8a9-a04d-439f-a0ab-fb65a260985a
+CloudDuke,2015,Host,File,File hash SHA256,1d4ac97d43fab1d464017abb5d57a6b4601f99eaa93b01443427ef25ae5127f7,https://analyze.intezer.com/analyses/c19bdb57-1f71-4c8d-a4a1-94df81824103
+CloudDuke,2015,Host,File,File hash SHA256,e1490d6e5ce4c2cddef0815c55bf8946cb830ce0ac7f586cf1ae16ef66f1bd8b,https://analyze.intezer.com/analyses/979c959e-c0ce-45ff-9a71-0db23f6371bd
+CloudDuke,2015,Host,File,File hash SHA256,5d695ff02202808805da942e484caa7c1dc68e6d9c3d77dc383cfa0617e61e48,https://analyze.intezer.com/analyses/f239b5e9-2b89-4752-bbfa-f2fa8964f0eb
+CloudDuke,2015,Host,File,File hash SHA256,56ac764b81eb216ebed5a5ad38e703805ba3e1ca7d63501ba60a1fb52c7ebb6e,https://analyze.intezer.com/analyses/317d2450-b55a-456e-9523-02005102125d
+CloudDuke,2015,Host,File,File hash SHA256,c1ee4232d1b6504fc7f93cb0478e90049a71992498ed2d701925d852e91cfcc3,https://analyze.intezer.com/analyses/8ad86dbb-a789-4130-aded-fa8bf542c669
+CloudDuke,2015,Host,File,File hash SHA256,97d8725e39d263ed21856477ed09738755134b5c0d0b9ae86ebb1cdd4cdc18b7,https://analyze.intezer.com/analyses/96829cf2-a99d-404b-a9dc-009820fd241e
+CloudDuke,2015,Host,File,File hash SHA256,0f7d64f514e99a2abdc10dc85e7e6f57c210a0f35472f7b897a19b73be36bece,https://analyze.intezer.com/analyses/0fec17e1-5a45-4184-80c0-75a4b6b1619f
+CloudDuke,2015,Host,File,File hash SHA256,51e713c7247f978f5836133dd0b8f9fb229e6594763adda59951556e1df5ee57,https://analyze.intezer.com/analyses/d6026ac0-24f7-442f-b676-78e229646af1
+CloudDuke,2015,Host,File,File hash SHA256,d3d503934c0dfe75e386d0fb8da2e32238d93739624b6c5a929fe5b722b35d36,https://analyze.intezer.com/analyses/c531dd42-5c83-4296-b8ed-3e57a1115783
+CloudDuke,2015,Host,File,File hash SHA256,a713982d04d2048a575912a5fc37c93091619becd5b21e96f049890435940004,https://analyze.intezer.com/analyses/ffe65b8c-d6c9-4293-a615-94cb05742d63
+CloudDuke,2015,Host,File,File hash SHA256,ed7abf93963395ce9c9cba83a864acb4ed5b6e57fd9a6153f0248b8ccc4fdb46,https://analyze.intezer.com/analyses/61120767-eeaf-4221-b261-f9fbfeff314e
+CloudDuke,2015,Host,File,File hash SHA256,85c5ba695992ed59269ea7f7a58f3453f6047729d1f68a444d450439bbccc1f4,https://analyze.intezer.com/analyses/cf3c3369-3f97-4fc6-8615-17c7468a6cc5
+CloudDuke,2015,Host,File,File hash SHA256,12f58639a883b0fcfe3d2e8bcb0330b978731975c9dfa2f8e583adbafc4d534e,https://analyze.intezer.com/analyses/2efbde0d-6474-43e1-9045-bdb6bad7b3ff
+CloudDuke,2015,Host,File,File hash SHA256,d4d79be85dc98f74088d6393a8fdf2b5d947ae4f279909af2aed0221dcecfe94,https://analyze.intezer.com/analyses/ea7dce89-c630-4ad8-acf8-fd34580a8fa4
+CloudDuke,2015,Host,File,File hash SHA256,6c8eb3365b7fb7683b9b465817e5cb87574026e306c700f3d103eba056777720,https://analyze.intezer.com/analyses/21482e2b-c93d-4007-b259-2e349879eda9
+CloudDuke,2015,Host,File,File hash SHA256,88a40d5b679bccf9641009514b3d18b09e68b609ffaf414574a6eca6536e8b8f,https://analyze.intezer.com/analyses/e67f35cc-c529-4287-9ece-c13b6f899d6e
+CloudDuke,2015,Host,File,File hash SHA256,80cb4007b9756246404c260bc69abf5d4938a1cc217d40ecbfdd6171b02b9e24,https://analyze.intezer.com/analyses/e6a1aca1-ec2e-4125-a792-846262214cea
+CloudDuke,2015,Host,File,File hash SHA256,bfc1bafd9b01178037226fa55546d7ed7e9203c13e1b66419e887fee704d5196,https://analyze.intezer.com/analyses/abfa5f6c-6619-4868-8bcc-43d3719ac68a

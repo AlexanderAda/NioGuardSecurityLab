@@ -1,0 +1,248 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+,2017,General ,MITRE Technique,,T1087,https://attack.mitre.org/techniques/T1087/
+,2017,General ,MITRE Technique,,T1098,https://attack.mitre.org/techniques/T1098/
+,2017,General ,MITRE Technique,,T1583,https://attack.mitre.org/techniques/T1583/
+,2017,General ,MITRE Technique,,T1595,https://attack.mitre.org/techniques/T1595/
+,2017,General ,MITRE Technique,,T1071,https://attack.mitre.org/techniques/T1071/
+,2017,General ,MITRE Technique,,T1560,https://attack.mitre.org/techniques/T1560/
+,2017,General ,MITRE Technique,,T1547,https://attack.mitre.org/techniques/T1547/
+,2017,General ,MITRE Technique,,T1110,https://attack.mitre.org/techniques/T1110/
+,2017,General ,MITRE Technique,,T1059,https://attack.mitre.org/techniques/T1059/
+,2017,General ,MITRE Technique,,T1584,https://attack.mitre.org/techniques/T1584/
+,2017,General ,MITRE Technique,,T1136,https://attack.mitre.org/techniques/T1136/
+,2017,General ,MITRE Technique,,T1005,https://attack.mitre.org/techniques/T1005/
+,2017,General ,MITRE Technique,,T1074,https://attack.mitre.org/techniques/T1074/
+,2017,General ,MITRE Technique,,T1189,https://attack.mitre.org/techniques/T1189/
+,2017,General ,MITRE Technique,,T1114,https://attack.mitre.org/techniques/T1114/
+,2017,General ,MITRE Technique,,T1190,https://attack.mitre.org/techniques/T1190/
+,2017,General ,MITRE Technique,,T1203,https://attack.mitre.org/techniques/T1203/
+,2017,General ,MITRE Technique,,T1210,https://attack.mitre.org/techniques/T1210/
+,2017,General ,MITRE Technique,,T1133,https://attack.mitre.org/techniques/T1133/
+,2017,General ,MITRE Technique,,T1083,https://attack.mitre.org/techniques/T1083/
+,2017,General ,MITRE Technique,,T1187,https://attack.mitre.org/techniques/T1187/
+,2017,General ,MITRE Technique,,T1591,https://attack.mitre.org/techniques/T1591/
+,2017,General ,MITRE Technique,,T1564,https://attack.mitre.org/techniques/T1564/
+,2017,General ,MITRE Technique,,T1562,https://attack.mitre.org/techniques/T1562/
+,2017,General ,MITRE Technique,,T1070,https://attack.mitre.org/techniques/T1070/
+,2017,General ,MITRE Technique,,T1105,https://attack.mitre.org/techniques/T1105/
+,2017,General ,MITRE Technique,,T1036,https://attack.mitre.org/techniques/T1036/
+,2017,General ,MITRE Technique,,T1112,https://attack.mitre.org/techniques/T1112/
+,2017,General ,MITRE Technique,,T1135,https://attack.mitre.org/techniques/T1135/
+,2017,General ,MITRE Technique,,T1588,https://attack.mitre.org/techniques/T1588/
+,2017,General ,MITRE Technique,,T1003,https://attack.mitre.org/techniques/T1003/
+,2017,General ,MITRE Technique,,T1069,https://attack.mitre.org/techniques/T1069/
+,2017,General ,MITRE Technique,,T1566,https://attack.mitre.org/techniques/T1566/
+,2017,General ,MITRE Technique,,T1598,https://attack.mitre.org/techniques/T1598/
+,2017,General ,MITRE Technique,,T1012,https://attack.mitre.org/techniques/T1012/
+,2017,General ,MITRE Technique,,T1021,https://attack.mitre.org/techniques/T1021/
+,2017,General ,MITRE Technique,,T1018,https://attack.mitre.org/techniques/T1018/
+,2017,General ,MITRE Technique,,T1053,https://attack.mitre.org/techniques/T1053/
+,2017,General ,MITRE Technique,,T1113,https://attack.mitre.org/techniques/T1113/
+,2017,General ,MITRE Technique,,T1505,https://attack.mitre.org/techniques/T1505/
+,2017,General ,MITRE Technique,,T1608,https://attack.mitre.org/techniques/T1608/
+,2017,General ,MITRE Technique,,T1195,https://attack.mitre.org/techniques/T1195/
+,2017,General ,MITRE Technique,,T1016,https://attack.mitre.org/techniques/T1016/
+,2017,General ,MITRE Technique,,T1033,https://attack.mitre.org/techniques/T1033/
+,2017,General ,MITRE Technique,,T1221,https://attack.mitre.org/techniques/T1221/
+,2017,General ,MITRE Technique,,T1204,https://attack.mitre.org/techniques/T1204/
+,2017,General ,MITRE Technique,,T1078,https://attack.mitre.org/techniques/T1078/
+,2017,General ,MITRE Technique,,T0817,https://attack.mitre.org/techniques/T0817/
+,2017,General ,MITRE Technique,,T0862,https://attack.mitre.org/techniques/T0862/
+,2017,General ,MITRE Software ID,,S0093,https://attack.mitre.org/techniques/S0093/
+,2017,General ,MITRE Software ID,,S0488,https://attack.mitre.org/techniques/S0488/
+,2017,General ,MITRE Software ID,,S0357,https://attack.mitre.org/techniques/S0357/
+,2017,General ,MITRE Software ID,,S0500,https://attack.mitre.org/techniques/S0500/
+,2017,General ,MITRE Software ID,,S0002,https://attack.mitre.org/techniques/S0002/
+,2017,General ,MITRE Software ID,,S0039,https://attack.mitre.org/techniques/S0039/
+,2017,General ,MITRE Software ID,,S0108,https://attack.mitre.org/techniques/S0108/
+,2017,General ,MITRE Software ID,,S0029,https://attack.mitre.org/techniques/S0029/
+,2017,General ,MITRE Software ID,,S0075,https://attack.mitre.org/techniques/S0075/
+,2017,General ,MITRE Software ID,,S0094,https://attack.mitre.org/techniques/S0094/
+,2014,Network,Domain,,ameresco[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,cfemedia[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,cfemedia.gcnpublishing[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,controleng[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,csemag[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,gama[.]com.tr,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,grand-central[.]net,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,oilandgaseng[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,plantengineering[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,reenergyholding[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2014,Network,Domain,,turcas.[.]com.tr,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2019,Network,Domain,,dtek[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2019,Network,Domain,,unn[.]com[.]ua,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2019,Network,Domain,,ntn[.]ua,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2019,Network,Domain,,zomua[.]tv,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2019,Network,Domain,,fcdynamo[.]kiev[.]ua,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,39essex[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Bsicomputer[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Chariotoilandgas[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Energo-pro[.]ge,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Energyplatform[.]eu,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Firstenergy[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Gamyba[.]le[.]lt,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Gritech[.]fr,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Gse[.]com[.]ge,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Jfaerospace[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Longreachoilandgas[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Nahoonservices[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Rare[.]fr,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Samashmusic[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Sbmania[.]net,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Strainstall[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Utilico[.]co[.]uk,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Vitogaz[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Vitoreseau[.]com,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2015,Network,Domain,,Yell[.]ge,https://vblocalhost.com/uploads/VB2021-Slowik.pdf
+,2011,File,AV detect,,Backdoor.Dorshel,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Trojan.Karagany.B,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Trojan.Heriplor,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Trojan.Listrix,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Hacktool.Credrix,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Backdoor.Goodor,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Trojan.Phisherly,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,AV detect,,Screenutil,https://westoahu.hawaii.edu/cyber/ics-cybersecurity/ics-summary-for-week-of-september-8-2017/
+,2011,File,File extension,,%SYSTEM%\TMPprovider0XX.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%SYSTEM%\svcprocess0XX.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%SYSTEM%\Phalanx-3d.Agent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%SYSTEM%\Phalanx-3d.ServerAgent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%COMMON_APPDATA%\TMPprovider0XX.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%COMMON_APPDATA%\Phalanx-3d.Agent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%COMMON_APPDATA%\Phalanx-3d.ServerAgent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%APPDATA%\TMPprovider0XX.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%APPDATA%\Phalanx-3d.Agent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%APPDATA%\Phalanx-3d.ServerAgent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%APPDATA%\sydmain.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\TMPprovider0XX.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Phalanx-3d.Agent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Phalanx-3d.ServerAgent.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\srvsce32.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\~tmpnet.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\tmp687.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\*.xmd,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\*.yls,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\qln.dbx,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Low\ddex.exe,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Low\~tmppnet.dll,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Low\~ntp.tmp,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Low\~task.tmp,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\Low\~ldXXXX.TMP,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\bp.exe,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,%TEMP%\~tmp1237.txt,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Cap\,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Mail\,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Mail\MailAg\,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Cap\Cap.exe,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Mail\MailAg\scs.jpg,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2011,File,File extension,,C:\ProgramData\Mail\MailAg\scs.txt,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,401215e6ae0b80cb845c7e2910dddf08af84c249034d76e0cf1aa31f0cf2ea67,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,398a69b8be2ea2b4a6ed23a55459e0469f657e6c7703871f63da63fb04cefe90,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,a8e6abaa0ddc34b9db6bda17b502be7f802fb880941ce2bd0473fd9569113599,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,7fa188fb3bfecbd0fbbb05cfa4a3078ac44f68c63b784b20046e470613e35f96,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,70103c1078d6eb28b665a89ad0b3d11c1cbca61a05a18f87f6a16c79b501dfa9,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,401215e6ae0b80cb845c7e2910dddf08af84c249034d76e0cf1aa31f0cf2ea67,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,c7caa7fa2a23508b0a024a6a4b2dcaad34ab11ea42dffc3a452901c007cdfc34,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,0b74282d9c03affb25bbecf28d5155c582e246f0ce21be27b75504f1779707f5,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,d5687b5c5cec11c851e84a1d40af3ef52607575487a70224f63458c24481076c,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,34254c2decc973dbd8f28b47690f233f5c5d3e1735ee20a6b8dd1dbe80d16d81,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,c521adc9620efd44c6fe89ff2385e0101b0e45bcd7ffcdd88e26fbab4bec2ef1,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,6b72d7aaccb2bf2f2cc08f8fab1c1a65beccd62d2f404d6c04806f3dc3c7ed3b,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,dd6ea7b1f6d796fce4c562402549ef27f510747ddc9d71c54f47c9a75a7cf870,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,e94b97716d354a21dcff365e91d2f445fe2cac6a01a38f6dd1c921c57eeafef4,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,3b6611878a4ebbafae0841e8057171d27793c5c883fdf8fb631c147f18dd90fe,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,9879f436afab7121e74c43cc9e7a9561711254fb1fc2400f68791932d2414c44,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,File,File hash SHA256,,f6aab09e1c52925fe599246dfdb4c1d06bea5c380c4c3e9c33661c869d41a23a,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2014,File,File hash SHA256,,b8514bff04e8f4e77430202db61ec5c206d3ec0f087a65ee72c9bb94a058b685,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080840/Kaspersky_Lab_crouching_yeti_appendixes_eng_final.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,SearchIndexer.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,ImeBroker.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,fsutil.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,PnPutil.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,BdeUISrv.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,WinSAT.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,pwNative.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,SnippingTool.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,DFDWizard.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,PrintBrmEngine.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,WbemMonitor.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,dxpserver.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,2013,,FILE_VERSION_INFO: Original filename,,PowerMng.exe,https://web.archive.org/web/20140801093235/http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

@@ -1,0 +1,192 @@
+Attack / Operation / Campaign,Year of attack,IoC Class,IoC Type,IoC Subtype,Indicator,Source of info
+,,General,MITRE Technique,,T1087,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1557,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1071,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1560,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1197,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1547,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1547,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1059,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1059,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1136,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1136,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1543,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1555,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1005,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1074,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1074,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1585,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1048,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1041,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1567,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1210,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1133,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1222,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1562,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1070,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1105,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1490,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1570,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1036,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1112,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1135,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1027,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1588,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1588,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1566,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1566,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1055,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1055,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1021,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1021,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1021,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1021,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1018,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1053,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1489,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1518,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1518,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1558,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1553,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1218,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1082,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1016,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1033,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1569,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1552,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1550,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1204,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1204,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1078,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1078,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Technique,,T1047,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1087.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1557.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1071.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1560.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1547.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1547.004,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1059.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1059.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1136.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1136.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1543.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1555.004,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1074.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1585.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1048.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1567.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1222.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1562.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1070.004,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1036.004,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1027.010,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1588.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1588.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1003.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1003.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1003.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1566.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1566.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1055.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1021.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1021.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1021.006,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1053.005,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1518.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1558.003,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1553.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1218.011,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1569.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1552.006,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1550.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1204.001,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1204.002,https://attack.mitre.org/groups/G0102/
+,,General,MITRE Sub-technique,,T1078.002,https://attack.mitre.org/groups/G0102/
+,,General,Software,,AdFind,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Anchor,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Bazar,https://attack.mitre.org/groups/G0102/
+,,General,Software,,BITSAdmin,https://attack.mitre.org/groups/G0102/
+,,General,Software,,BloodHound,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Cobalt Strike,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Conti,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Diavol,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Dyre,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Emotet,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Empire,https://attack.mitre.org/groups/G0102/
+,,General,Software,,GrimAgent,https://attack.mitre.org/groups/G0102/
+,,General,Software,,LaZagne,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Mimikatz,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Net,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Nltest,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Ping,https://attack.mitre.org/groups/G0102/
+,,General,Software,,PsExec,https://attack.mitre.org/groups/G0102/
+,,General,Software,,Rubeus,https://attack.mitre.org/groups/G0102/
+,,General,Malware,,Ryuk,https://attack.mitre.org/groups/G0102/
+,,General,Malware,,TrickBot,https://attack.mitre.org/groups/G0102/
+,,General,Malware,,Emotet,
+,,MITRE Software ID,,,S0552,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0504,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0534,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0190,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0521,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0154,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0575,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0659,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0024,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0367,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0363,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0632,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0349,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0002,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0039,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0359,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0097,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0029,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S1071,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0446,https://attack.mitre.org/groups/G0102/
+,,MITRE Software ID,,,S0266,https://attack.mitre.org/groups/G0102/
+,,Host,cmd line,,"net group ""Domain admins"" /DOMAIN",https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Get-ADComputer,https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Invoke-Inveigh,https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Invoke-WCMDump,https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Find-GPOPassword,https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Get-GPPPassword,https://attack.mitre.org/groups/G0102/
+,,Host,cmdlet,,Invoke-SMBExec,https://attack.mitre.org/groups/G0102/
+,,Host,Programming language,,PowerShell,https://attack.mitre.org/groups/G0102/
+,,Host,cmd line,,cmd.exe,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,net view,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,net view /all,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,net view /all /domain,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,nltest /domain_trusts /all_trusts,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"net localgroup ""administrator""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"net group ""domain admins"" /dom",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"AdFind.exe -f ""(objectcategory=person)""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"AdFind.exe -f ""(objectcategory=computer)""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"AdFind.exe -f ""(objectcategory=organizationalUnit)""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,AdFind.exe -sc trustdmp,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"AdFind.exe -subnets -f ""(objectCategory=subnet)""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,"AdFind.exe -f ""(objectcategory=group)""",https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,AdFind.exe -gcb -sc trustdmp,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,vssadmin,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,cmd line,,vssadmin.exe Delete Shadows /All /Quiet,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Host,File,Folder,C:\PerfLogs\1\,https://attack.mitre.org/groups/G0102/
+,,Host,File,Folder,C:\User\1\,https://attack.mitre.org/groups/G0102/
+,,Host,Registry,Registry Key,\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,https://attack.mitre.org/groups/G0102/
+,,Host,Registry,Registry parameter,\SOFTWARE\Microsoft\Windows\CurrentVersion\Run,https://attack.mitre.org/groups/G0102/
+,,Host,Registry,Registry parameter,\System\CurrentControlSet\Control\SecurityProviders\WDigest,https://attack.mitre.org/groups/G0102/
+,,Host,Certificate,CA,DigiCert,https://attack.mitre.org/groups/G0102/
+,,Host,Certificate,CA,GlobalSign,https://attack.mitre.org/groups/G0102/
+,,Host,Certificate,CA,COMODO,https://attack.mitre.org/groups/G0102/
+,,Network,IP address,,5.2.70.149,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,IP address,,34.222.33.48,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,Domain,,dghns.xyz,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,IP address,,45.153.240.240,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,Domain,,checktodrivers.com,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,IP address,,108.62.12.121,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,Domain,,topservicebooster.com,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,IP address,,161.117.191.245,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
+,,Network,Domain,,chaseltd.top,https://thedfirreport.com/2020/11/05/ryuk-speed-run-2-hours-to-ransom/
